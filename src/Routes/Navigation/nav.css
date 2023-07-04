@@ -1,0 +1,60 @@
+.navbar{
+    border: 1px solid red;
+    width: 100%;
+}
+
+
+/* Styling for top navigation bar*/
+.navTop{
+    border: 1px solid black;
+    width: 95%;
+    margin: 0 auto;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile, .Logo, .Cart {
+    border: 1px solid green;
+}
+
+
+/* Image optimization for top navbar*/
+.profile img {
+    width: 40px;
+}
+
+.Logo img {
+    width: 250px;
+}
+
+.Cart img {
+    width: 40px;
+}
+
+
+/* Styling bottom navbar */
+
+.navBottom{
+    border: 1px solid cyan;
+    width: 95%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.navLinks ul{
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.navLinks ul li a {
+    color: black;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.shopBY:hover .shopBy{
+    display: block;
+}

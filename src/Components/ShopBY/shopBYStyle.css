@@ -1,0 +1,41 @@
+
+
+.shopBy{
+    border: 1px solid black;
+    width: 800px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 3px;
+}
+
+
+.sec1{
+    width: 50%;
+    border: 1px solid orange;
+
+}
+
+.sec2{
+    width: 50%;
+    border: 1px solid orange;
+
+}
+
+
+
+.sec2Main, .sec1Main{
+    border: 1px solid black;
+ 
+}
+
+.sec2Main ul, .sec1Main ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+
+
