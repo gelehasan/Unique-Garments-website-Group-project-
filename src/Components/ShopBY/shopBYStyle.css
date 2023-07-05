@@ -1,12 +1,18 @@
 
 
 .shopBy{
+
     border: 1px solid black;
     width: 800px;
     height: 200px;
-    margin: 0 auto;
-    display: flex;
+
+    position: absolute;
     gap: 3px;
+    left: 50%;
+    right: 50%;
+    top: 11.5em;
+    transform: translate(-50%, -50%);
+    display: none;
 }
 
 
@@ -38,4 +44,11 @@
 }
 
 
+
+.dropShow{
+    display: flex;
+    max-height: 500px; /* Adjust the maximum height as needed */
+    transition: max-height 0.3s ease-in;
+    
+}
 

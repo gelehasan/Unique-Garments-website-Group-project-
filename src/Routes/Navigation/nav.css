@@ -1,6 +1,7 @@
 .navbar{
     border: 1px solid red;
     width: 100%;
+ 
 }
 
 
@@ -41,6 +42,7 @@
     display: flex;
     margin: 0 auto;
     justify-content: center;
+   
 }
 
 .navLinks ul{
@@ -55,6 +57,13 @@
     text-decoration: none;
 }
 
-.shopBY:hover .shopBy{
-    display: block;
-}
+
+
+
+
+
+
+
+
+
+
