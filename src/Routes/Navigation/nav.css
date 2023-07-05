@@ -60,6 +60,75 @@
 
 
 
+/* For close and open buttons*/
+
+
+.closeMenu, .openMenu{
+    width: 40px;
+
+}
+
+.closeMenu{
+    display: none;
+}
+
+
+.openMenu{
+    display: none;
+}
+
+
+
+@media (max-width:830px) {
+  
+.navTop{
+    width: 100%;
+}
+
+
+    .navBottom{
+        position: absolute;
+        width: 100%;
+        height: 40px;
+   
+    }
+
+    .openMenu{
+        cursor: pointer;
+        position: absolute;
+        display: block;
+        right: 0%;
+    }
+    .closeMenu{
+        cursor: pointer;
+        position: absolute;
+        display: block;
+        right: 7em;
+    }
+    .navLinkShow{
+     display: none;
+    }
+    .navLinks{
+        position: relative;
+        background-color: cyan;
+        position: absolute;
+        right: 0;
+    }
+
+    .navLinks ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        gap: 20px;
+        height: 350px;   
+    }
+    
+}
+
+
+
+
 
 
 

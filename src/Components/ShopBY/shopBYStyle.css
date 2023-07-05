@@ -2,38 +2,36 @@
 
 .shopBy{
 
-    border: 1px solid black;
+    
     width: 800px;
-    height: 200px;
-
+    height: 300px;
+    background-color: color;
+ 
     position: absolute;
     gap: 3px;
     left: 50%;
     right: 50%;
-    top: 11.5em;
+    top: 14.9em;
     transform: translate(-50%, -50%);
     display: none;
 }
 
 
 .sec1{
-    width: 50%;
-    border: 1px solid orange;
+    width: 400px;
+ 
 
 }
 
 .sec2{
-    width: 50%;
-    border: 1px solid orange;
+    width: 400px;
+  
 
 }
 
 
 
-.sec2Main, .sec1Main{
-    border: 1px solid black;
- 
-}
+
 
 .sec2Main ul, .sec1Main ul{
     display: flex;
@@ -47,8 +45,68 @@
 
 .dropShow{
     display: flex;
-    max-height: 500px; /* Adjust the maximum height as needed */
+    height: 500px; 
     transition: max-height 0.3s ease-in;
     
+}
+
+
+@media (max-width:830px){
+   
+    .dropShow {
+        flex-direction: column;
+        gap: 0px;
+
+        transition: max-height 0.3s ease-in;
+
+        top: 17.7em;
+        background-color: aquamarine;
+        
+        position: absolute;
+        display: block;
+        right: 0%;
+        width: 200px;
+        height: 500px;
+        right: 0%;
+      }
+    
+
+      .sec1 {
+  
+     width: 200px;
+     height: 250px;
+        
+      }
+      .sec1Main{
+        border-top: 1px solid black;
+      
+       height: 200px;
+        padding: 0;
+    }
+    .sec1Main ul{
+      
+        margin: 0 auto;
+        width: 100px;
+        height: 200px !important;
+
+    }
+
+      .sec2 {
+     
+        width: 200px;
+        height: 250px;
+      }
+    
+      .sec2Main{
+        border-top: 1px solid black;
+       height: 200px;
+      
+    }
+    .sec2Main ul{
+        margin: 0 auto;
+        height: 200px !important;
+   
+    }
+      
 }
 

@@ -1,6 +1,8 @@
 import logo from '../../Assets/logo.png';
 import cartIcon from '../../Assets/shopping-cart.svg';
 import userIcon from '../../Assets/user.svg';
+import closeBtn from '../../Assets/xmark.svg';
+import openBtn from '../../Assets/menu.svg';
 import './nav.css';
 import '../../Components/ShopBY/shopBYStyle.css';
 import ShopBY from '../../Components/ShopBY/shopBY';
@@ -11,12 +13,13 @@ const Navbar = ()=>{
         //In this case see it as a variable with boolean expersion 
         //which changes based on the action performed
         const [isShopBY, setShopBY]= useState(false);
+        const [showMenu, setshowMenu]= useState();
 
-
-    
+        const toggleMenu = ()=>{
+            setshowMenu(!showMenu)
+        }
 
     return(
-
       <div    className="navbar">
 
         <div className="navTop"> 
@@ -38,14 +41,10 @@ const Navbar = ()=>{
         </div>
 
      
-
+        {/** Bottom navbar for links */}
         <div    className="navBottom">
-
-       
-        <div    className="navLinks">
+        <div    className={ showMenu? "navLinks  ":  "navLinks  navLinkShow"} >
             <ul>
-           
-              
                 <li> <a href='#'> New Arrivals </a></li>
                 <li><a href='#'>  Brands</a></li>
                 <li><a href='#'> Garments</a></li>
@@ -60,6 +59,21 @@ const Navbar = ()=>{
                 <li><a href='#'> Magazine</a> </li>
             </ul>
         </div>
+
+        {/* For closing and opening menu*/}
+        <div    className='closeOpenBtn'>
+
+            {
+                showMenu ? 
+                <img className='closeMenu' src={closeBtn} onClick={toggleMenu} />     
+         
+                 :
+                 <img className='openMenu' src={openBtn} onClick={toggleMenu} />
+                
+            }
+  
+
+  </div>
 
         </div>
 

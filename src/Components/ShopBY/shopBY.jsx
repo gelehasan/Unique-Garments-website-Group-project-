@@ -10,7 +10,7 @@ const ShopBY = ({isShopBY,setShopBY})=>{
   }
   console.log(isShopBY)
     return(
-        <div className= {isShopBY ? "shopBy dropShow" : "shopBy"}>
+        <div className= {isShopBY ? "shopBy dropShow " : "shopBy "}>
             <div  className="sec1">
             <h3> For you</h3>
             <div className="sec1Main">
