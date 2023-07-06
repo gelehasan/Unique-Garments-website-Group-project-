@@ -4,8 +4,8 @@ import userIcon from '../../Assets/user.svg';
 import closeBtn from '../../Assets/xmark.svg';
 import openBtn from '../../Assets/menu.svg';
 import './nav.css';
-import '../../Components/ShopBY/shopBYStyle.css';
-import ShopBY from '../../Components/ShopBY/shopBY';
+import '../../Components/ShopBY-links/shopBYStyle.css';
+import ShopBY from '../../Components/ShopBY-links/shopBY';
 import { useState } from 'react';
 const Navbar = ()=>{
         //We use usestate to determine if we show the drop down or not

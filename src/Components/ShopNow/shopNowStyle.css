@@ -1,0 +1,23 @@
+
+.shopNowItems{
+    display: flex;
+
+    gap: 25px;
+}
+
+.ItemsContainer{
+    width: 35%;
+
+}
+
+.shopImage{
+    width: 100%;
+}
+.shopImage img {
+width: 100%;
+}
+
+.shopTitle{
+    border: 1px solid ;
+    text-align: center;
+}

@@ -1,0 +1,15 @@
+.magazineContainer{
+    width: 95%;
+    margin: 0 auto;
+   height: 450px;
+   border: 1px solid  brown;
+}
+
+.magazineContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+

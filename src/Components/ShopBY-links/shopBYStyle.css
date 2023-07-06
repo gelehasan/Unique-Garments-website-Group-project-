@@ -1,17 +1,15 @@
 
 
 .shopBy{
-
-    
     width: 800px;
-    height: 300px;
+  
     background-color: color;
- 
+    border: 1px solid black;
     position: absolute;
     gap: 3px;
     left: 50%;
     right: 50%;
-    top: 14.9em;
+    top: 14.8em;
     transform: translate(-50%, -50%);
     display: none;
 }
@@ -45,7 +43,9 @@
 
 .dropShow{
     display: flex;
-    height: 500px; 
+    height: 300px; 
+    background-color: white;
+
     transition: max-height 0.3s ease-in;
     
 }
@@ -67,7 +67,7 @@
         right: 0%;
         width: 200px;
         height: 500px;
-        right: 0%;
+      
       }
     
 

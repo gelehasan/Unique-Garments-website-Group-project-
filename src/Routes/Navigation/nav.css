@@ -37,7 +37,7 @@
 /* Styling bottom navbar */
 
 .navBottom{
-    border: 1px solid cyan;
+    
     width: 95%;
     display: flex;
     margin: 0 auto;
@@ -64,7 +64,7 @@
 
 
 .closeMenu, .openMenu{
-    width: 40px;
+    width: 34px;
 
 }
 
@@ -86,12 +86,7 @@
 }
 
 
-    .navBottom{
-        position: absolute;
-        width: 100%;
-        height: 40px;
-   
-    }
+  
 
     .openMenu{
         cursor: pointer;
@@ -103,26 +98,31 @@
         cursor: pointer;
         position: absolute;
         display: block;
-        right: 7em;
+        right: 10em;
     }
     .navLinkShow{
      display: none;
     }
     .navLinks{
-        position: relative;
-        background-color: cyan;
+      
         position: absolute;
-        right: 0;
+        background-color: cyan;
+        width: 200px;
+        
+        right: -0.6%;
     }
 
     .navLinks ul {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 150px;
+    
         gap: 20px;
         height: 350px;   
     }
+
+
+ 
     
 }
 
