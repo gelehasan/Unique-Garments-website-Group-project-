@@ -1,0 +1,10 @@
+
+.productImage{
+    width: 220px;
+    height: 150px;
+}
+.productItem{
+    border: 1px solid red;
+    width: 220px;
+    height: 180px;
+}

@@ -1,0 +1,6 @@
+.catagoriesContent{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    max-width: 80%;
+    margin: 0 auto;
+}
