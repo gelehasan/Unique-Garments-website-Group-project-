@@ -1,0 +1,36 @@
+.signUp-Container{
+    margin: 0 auto;
+ 
+    width: 50%;
+   
+    color: black;
+border: 1px solid black;
+    
+    margin: 5em auto 0 auto;
+    display: flex;
+    justify-content: center;
+    }
+    
+.signUpbtn{
+  
+    background-color: lightseagreen;
+    font-size: 1.3rem;
+}
+#fashionType{
+    text-align: center;
+ 
+  width: 143px;
+  height: 23px;
+}
+    
+    
+   
+    @media(max-width: 780px){
+        .signUp-card{
+            display: none;
+        }
+        .signUp-content{
+            width: 100%;
+        }
+    
+}
