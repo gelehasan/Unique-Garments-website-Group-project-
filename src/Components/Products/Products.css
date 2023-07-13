@@ -1,10 +1,35 @@
 
 .productImage{
+    border: 1px solid red;
+    position: relative;
     width: 220px;
     height: 150px;
+   
 }
 .productItem{
+    position: relative;
     border: 1px solid red;
     width: 220px;
     height: 180px;
+   
+}
+
+.description{
+    border: 1px solid red;
+   display: flex;
+  justify-content: space-between;
+}
+
+.addProduct{
+    cursor: pointer;
+    position: absolute;
+  
+    top: 6em;
+    left: 3em;
+   font-size: 1.2rem;
+   padding: 2px;
+   background-color:darkblue;
+   border: none;
+   color: white;
+   border-radius: 1px;
 }

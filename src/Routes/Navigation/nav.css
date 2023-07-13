@@ -17,6 +17,7 @@
 }
 .profile, .Logo, .Cart {
     border: 1px solid green;
+    cursor: pointer;
 }
 
 
@@ -104,7 +105,7 @@
      display: none;
     }
     .navLinks{
-      
+        z-index: 2;
         position: absolute;
         background-color: cyan;
         width: 200px;

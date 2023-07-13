@@ -3,10 +3,15 @@ import cartIcon from '../../Assets/shopping-cart.svg';
 import userIcon from '../../Assets/user.svg';
 import closeBtn from '../../Assets/xmark.svg';
 import openBtn from '../../Assets/menu.svg';
+import { Outlet } from 'react-router-dom';
 import './nav.css';
 import '../../Components/ShopBY-links/shopBYStyle.css';
 import ShopBY from '../../Components/ShopBY-links/shopBY';
 import { useState } from 'react';
+import CartBag from '../../Components/CartBag/CartBag';
+import { useContext } from 'react';
+import { CartShopConext } from '../../Context/cartShopContext';
+import CheckOut from '../CheckOut-for-MVP/checkout';
 const Navbar = ()=>{
         //We use usestate to determine if we show the drop down or not
         // Use state can be used to store many thing such as arrays, etcs not just boolean 
@@ -14,7 +19,8 @@ const Navbar = ()=>{
         //which changes based on the action performed
         const [isShopBY, setShopBY]= useState(false);
         const [showMenu, setshowMenu]= useState();
-
+        const {isCartOpen,setIsCartOpen, isCheckoutOpen} = useContext(CartShopConext)
+            console.log(isCartOpen)
         const toggleMenu = ()=>{
             setshowMenu(!showMenu)
         }
@@ -24,16 +30,14 @@ const Navbar = ()=>{
 
         <div className="navTop"> 
 
-            <div className="profile">    
-            <img  src={ userIcon}/>
+            <div className="profile" >    
+           <a href='/SignUp'>  <img  src={ userIcon}/> </a>
           </div>
-   
-
        <div    className="Logo">
-        <img  src={logo }/>
+       <a href='/'>  <img  src={logo }/></a>
         </div>
      
-        <div   className="Cart">
+        <div   className="Cart" onClick={()=> setIsCartOpen(!isCartOpen)}>
         <img  src={cartIcon }/>
         </div>
         
@@ -46,7 +50,7 @@ const Navbar = ()=>{
         <div    className={ showMenu? "navLinks  ":  "navLinks  navLinkShow"} >
             <ul>
                 <li> <a href='#'> New Arrivals </a></li>
-                <li><a href='#'>  Brands</a></li>
+                <li><a href='/brands'>  Brands</a></li>
                 <li><a href='#'> Garments</a></li>
                 <li><a href='#'> Shoes</a></li>
                 {/* When a user hovers over shop by its set to true and shows the drop down
@@ -76,8 +80,15 @@ const Navbar = ()=>{
   </div>
 
         </div>
+        {
+            isCartOpen &&<CartBag />
 
-
+           
+        }  
+        {
+            isCheckoutOpen && <CheckOut />
+        }
+        <Outlet></Outlet>
         </div>
     )
 }

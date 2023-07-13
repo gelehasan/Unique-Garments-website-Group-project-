@@ -7,17 +7,32 @@ import NewRelease from './Components/NewRelease/newRelease';
 import Magazine from './Components/Magazine/magazineSection';
 import Discount from './Components/Discounts/discount';
 import Footer from './Components/Footer/footers';
+import HomePage from './Routes/HomePage/HomePage';
+import Catagories from './Components/Categories/Categories';
+import { Route,Routes } from 'react-router-dom';
+import SignUp from './Components/SignUp/SignUp';
+import CheckOut from './Routes/CheckOut-for-MVP/checkout';
 function App() {
   return (
     <div className="App">
-     
-  <Navbar />
-  <ShopBYObject />
-  <NewRelease />
-  <Magazine />
-  <Discount />
 
-  <Footer />
+  <Routes>
+    <Route path='/' element={<Navbar />}>
+
+    <Route index element={<HomePage />} />
+    brands
+
+    <Route path='/brands' element={<Catagories />} />
+   <Route path='/SignUp' element={<SignUp />} />
+   <Route path='/checkout' element={<CheckOut />} />
+   
+   </Route>
+   
+   
+   
+  </Routes>
+     
+  
     </div>
   );
 }
