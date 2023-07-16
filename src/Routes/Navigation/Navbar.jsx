@@ -12,6 +12,7 @@ import CartBag from '../../Components/CartBag/CartBag';
 import { useContext } from 'react';
 import { CartShopConext } from '../../Context/cartShopContext';
 import CheckOut from '../CheckOut-for-MVP/checkout';
+import { Link } from 'react-router-dom';
 const Navbar = ()=>{
         //We use usestate to determine if we show the drop down or not
         // Use state can be used to store many thing such as arrays, etcs not just boolean 
@@ -31,7 +32,7 @@ const Navbar = ()=>{
         <div className="navTop"> 
 
             <div className="profile" >    
-           <a href='/SignUp'>  <img  src={ userIcon}/> </a>
+         <Link to={"/SignUp"}>  <img  src={ userIcon}/> </Link>
           </div>
        <div    className="Logo">
        <a href='/'>  <img  src={logo }/></a>
@@ -50,7 +51,7 @@ const Navbar = ()=>{
         <div    className={ showMenu? "navLinks  ":  "navLinks  navLinkShow"} >
             <ul>
                 <li> <a href='#'> New Arrivals </a></li>
-                <li><a href='/brands'>  Brands</a></li>
+                <li> <Link to={"/brands"}>  Brands </Link></li>
                 <li><a href='#'> Garments</a></li>
                 <li><a href='#'> Shoes</a></li>
                 {/* When a user hovers over shop by its set to true and shows the drop down
