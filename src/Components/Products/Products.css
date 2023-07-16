@@ -1,6 +1,6 @@
 
 .productImage{
-    border: 1px solid red;
+
     position: relative;
     width: 220px;
     height: 150px;
@@ -8,14 +8,14 @@
 }
 .productItem{
     position: relative;
-    border: 1px solid red;
+
     width: 220px;
     height: 180px;
    
 }
 
 .description{
-    border: 1px solid red;
+
    display: flex;
   justify-content: space-between;
 }

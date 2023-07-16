@@ -5,10 +5,10 @@ const ShopNow= ({items})=>{
     return(
         <div    className='shopNowItems'>
             {
-                items.map((item)=>{
+                items.map((item,index)=>{
                     const {title, imageUrl}= item;
                     return( 
-                    <div className='ItemsContainer'>
+                    <div className='ItemsContainer' key={index}>
                     <div className="shopImage">
                        <img src={imageUrl}  /> 
                     </div>

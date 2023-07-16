@@ -58,5 +58,15 @@
   align-items: start;
   font-size: 1.2rem;
 }
+
+.closebtn{
+
+  width: 30px;
+  font-size: 1.4rem;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  left: 0;
+}
   
   

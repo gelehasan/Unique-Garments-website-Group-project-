@@ -13,6 +13,7 @@ import { useContext } from 'react';
 import { CartShopConext } from '../../Context/cartShopContext';
 import CheckOut from '../CheckOut-for-MVP/checkout';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../Context/userContext';
 const Navbar = ()=>{
         //We use usestate to determine if we show the drop down or not
         // Use state can be used to store many thing such as arrays, etcs not just boolean 
@@ -20,8 +21,10 @@ const Navbar = ()=>{
         //which changes based on the action performed
         const [isShopBY, setShopBY]= useState(false);
         const [showMenu, setshowMenu]= useState();
-        const {isCartOpen,setIsCartOpen, isCheckoutOpen} = useContext(CartShopConext)
-            console.log(isCartOpen)
+        const {isCartOpen,setIsCartOpen, isCheckoutOpen} = useContext(CartShopConext);
+        const {currentUser}= useContext(UserContext);
+       // let {displayName}= currentUser;
+        //  console.log("Curren user is", displayName)
         const toggleMenu = ()=>{
             setshowMenu(!showMenu)
         }
@@ -31,11 +34,17 @@ const Navbar = ()=>{
         
         <div className="navTop"> 
 
-            <div className="profile" >    
-         <Link to={"/SignUp"}>  <img  src={ userIcon}/> </Link>
+            <div className="profile"  >  
+
+         <Link to={currentUser? "#": "/SignUp"}> 
+          <img  src={ userIcon}/>
+         
+         {currentUser? `Hi ${currentUser.displayName}` : "Sign up" }
+        
+           </Link>
           </div>
        <div    className="Logo">
-       <a href='/'>  <img  src={logo }/></a>
+       <Link to={"/"}>  <img  src={logo }/></Link>
         </div>
      
         <div   className="Cart" onClick={()=> setIsCartOpen(!isCartOpen)}>
@@ -50,7 +59,7 @@ const Navbar = ()=>{
         <div    className="navBottom">
         <div    className={ showMenu? "navLinks  ":  "navLinks  navLinkShow"} >
             <ul>
-                <li> <a href='#'> New Arrivals </a></li>
+                <li > <a href='#'> New Arrivals </a></li>
                 <li> <Link to={"/brands"}>  Brands </Link></li>
                 <li><a href='#'> Garments</a></li>
                 <li><a href='#'> Shoes</a></li>

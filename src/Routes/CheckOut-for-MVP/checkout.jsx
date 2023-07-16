@@ -3,12 +3,19 @@ import { useContext } from 'react';
 import { CartShopConext } from '../../Context/cartShopContext';
 
 const CheckOut= ()=>{
-    const {bagItem} = useContext(CartShopConext);
+    const {bagItem, isCheckoutOpen,setIsCheckoutOpen} = useContext(CartShopConext);
   
+    const handleVisbility = ()=>{
+      setIsCheckoutOpen(false)
+    }
+
     return(
-        <div class="check-page">
-        <div class="form">
-       
+        <div class="check-page" >
+        <div class="form" >
+          <div className='closebtn' onClick={handleVisbility}>
+            X
+          </div>
+
           <form class="login-form"  action="https://formspree.io/f/xknlnejb" method='POST'>
             <input name='name'  type="text" placeholder="Name" className='userinput' required/>
             <input name='email' type="email" placeholder="email"  className='userinput' required/>

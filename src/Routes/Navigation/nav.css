@@ -1,5 +1,5 @@
 .navbar{
-    border: 1px solid red;
+ 
     width: 100%;
  
 }
@@ -7,7 +7,7 @@
 
 /* Styling for top navigation bar*/
 .navTop{
-    border: 1px solid black;
+   
     width: 95%;
     margin: 0 auto;
     height: 60px;
@@ -16,11 +16,18 @@
     align-items: center;
 }
 .profile, .Logo, .Cart {
-    border: 1px solid green;
+ 
     cursor: pointer;
 }
 
 
+.profileSpan{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+  text-align: center;
+  
+}
 /* Image optimization for top navbar*/
 .profile img {
     width: 40px;

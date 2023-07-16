@@ -20,6 +20,8 @@ export const CartShopConext = createContext({
     addItem:()=>{},
     isCartOpen:false,
     isCheckoutOpen:false,
+    isOrderCardOpen:false,
+    setisOrderCardOpen: ()=>{},
     setIsCheckoutOpen: ()=>{},
     setIsCartOpen: ()=>{},
     setbagItem: ()=>{}
@@ -32,6 +34,7 @@ export const CartShopProvider = ({children})=>{
     const [bagItem, setbagItem]= useState([]);
     const [isCartOpen, setIsCartOpen]= useState(false);
     const [isCheckoutOpen, setIsCheckoutOpen]= useState(false);
+    const [isOrderCardOpen, setisOrderCardOpen]= useState(false);
 
 
     const values={
