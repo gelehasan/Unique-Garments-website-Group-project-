@@ -27,7 +27,7 @@ const Navbar = ()=>{
 
     return(
       <div    className="navbar">
-
+        
         <div className="navTop"> 
 
             <div className="profile" >    

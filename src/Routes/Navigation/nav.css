@@ -37,6 +37,9 @@
 
 /* Styling bottom navbar */
 
+.navLinks{
+    z-index: 2;
+}
 .navBottom{
     
     width: 95%;
@@ -91,12 +94,14 @@
 
     .openMenu{
         cursor: pointer;
+        z-index: 3;
         position: absolute;
         display: block;
         right: 0%;
     }
     .closeMenu{
         cursor: pointer;
+        z-index: 3;
         position: absolute;
         display: block;
         right: 10em;
