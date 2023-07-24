@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { CartShopConext } from '../../Context/cartShopContext';
 const CartBag = ()=>{
     const {bagItem, isCheckoutOpen, setIsCheckoutOpen} = useContext(CartShopConext);
-    console.log(bagItem)
+   
     return(
         <div    className="bagItems">
 {

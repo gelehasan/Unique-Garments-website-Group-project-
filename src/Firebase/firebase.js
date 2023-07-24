@@ -30,8 +30,6 @@ export const signUpAuthentication = async (registrationFields={}) => {
     const {user}= await createUserWithEmailAndPassword(auth, email, password);
 
     let {displayName}= user;
-    
-    
     //Check if the displayName from the user object is null or undefined
     // If so, assign the displayName from the additional object parameter
     if(displayName == null){
@@ -56,7 +54,7 @@ if (!userSnapshot.exists()) {
     createdAt,
     });
 
-    console.log("Thank you for creating an Account")
+    
     } catch (error) {
     console.log("error creating the user", error.message);
     }

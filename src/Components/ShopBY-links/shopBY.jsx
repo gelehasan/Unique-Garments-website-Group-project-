@@ -2,13 +2,13 @@ import './shopBYStyle.css'
 import '../../Routes/Navigation/nav.css';
 
 const ShopBY = ({isShopBY,setShopBY})=>{
-  console.log(isShopBY)
+
 
   //When a user clicks on one of the links it will set the drop down to false
   const changeHandler = ()=>{
     setShopBY(false)
   }
-  console.log(isShopBY)
+  
     return(
         <div className= {isShopBY ? "shopBy dropShow " : "shopBy "}>
             <div  className="sec1">

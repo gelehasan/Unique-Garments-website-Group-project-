@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { CartShopConext } from '../../Context/cartShopContext';
 
 const CheckOut= ()=>{
-    const {bagItem, isCheckoutOpen,setIsCheckoutOpen} = useContext(CartShopConext);
+    const {bagItem, setIsCheckoutOpen} = useContext(CartShopConext);
   
     const handleVisbility = ()=>{
       setIsCheckoutOpen(false)

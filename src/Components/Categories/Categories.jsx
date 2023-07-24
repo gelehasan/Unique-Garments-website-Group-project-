@@ -1,6 +1,6 @@
 import Product from "../Products/Products";
 import FilterOptions from "../ProductFilters/FilterOptions";
-import DataShop from '../../data';
+
 import './Categories.css';
 import { useState, useEffect } from "react";
 
@@ -9,7 +9,7 @@ const colorFilters= ["All","white","black", "Green"];
 const catagoryFilters= ["All","shirt","T-shirt","kids", ];
 const typeFilters=["All","A", "B"];
 
-const Catagories = ()=>{
+const Catagories = ({DataShop})=>{
     
  const [selectedFilter, setselectedFilter] = useState(DataShop);
   const [selectedColor, setSelectedColor] = useState("All");

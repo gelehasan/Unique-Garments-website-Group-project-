@@ -24,7 +24,7 @@ const Navbar = ()=>{
         const {isCartOpen,setIsCartOpen, isCheckoutOpen} = useContext(CartShopConext);
         const {currentUser}= useContext(UserContext);
        // let {displayName}= currentUser;
-        //  console.log("Curren user is", displayName)
+      
         const toggleMenu = ()=>{
             setshowMenu(!showMenu)
         }
@@ -35,13 +35,18 @@ const Navbar = ()=>{
         <div className="navTop"> 
 
             <div className="profile"  >  
-
-         <Link to={currentUser? "#": "/SignUp"}> 
-          <img  src={ userIcon}/>
+            <img  src={ userIcon}/>
          
-         {currentUser? `Hi ${currentUser.displayName}` : "Sign up" }
+         
+     
+         {currentUser? `Hi ${currentUser.displayName}` :
+        <span> 
+         <Link to={"/SignIn"}>  <span> Sign in/</span> </Link>
+         <Link to={"/SignUp"}>  <span> Sign Up </span> </Link>
+         </span>
+         }
         
-           </Link>
+         
           </div>
        <div    className="Logo">
        <Link to={"/"}>  <img  src={logo }/></Link>
@@ -60,17 +65,17 @@ const Navbar = ()=>{
         <div    className={ showMenu? "navLinks  ":  "navLinks  navLinkShow"} >
             <ul>
                 <li > <a href='#'> New Arrivals </a></li>
-                <li> <Link to={"/brands"}>  Brands </Link></li>
-                <li><a href='#'> Garments</a></li>
-                <li><a href='#'> Shoes</a></li>
+                <li> <Link to={"/Brands"}>  Brands </Link></li>
+                <li><Link to={"/Garments"}> Garments </Link> </li>
+                <li> <Link to={"/Shoes"}> Shoes </Link></li>
                 {/* When a user hovers over shop by its set to true and shows the drop down
                     When it leaves it set to false
                 */}
                 <li onMouseEnter={()=>setShopBY(true)}  onMouseLeave={()=> setShopBY(false)}>
-                    <a href='#'> Shop By</a>
+                    <Link to={"/ShopBy"}> Shop By </Link>
                    { <ShopBY isShopBY={isShopBY}  setShopBY={setShopBY}/>}
                     </li>
-                <li><a href='#'> Magazine</a> </li>
+                <li> <Link to={"/Magazine"}> Magazine</Link> </li>
             </ul>
         </div>
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './SignUp.css';
+import './SignUpStyle.css';
 import { signUpAuthentication } from '../../Firebase/firebase';
 import { useContext } from 'react';
 import { UserContext } from '../../Context/userContext';
