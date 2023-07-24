@@ -1,12 +1,12 @@
 
 .shopNowItems{
-    display: flex;
+   
 
     gap: 25px;
 }
 
 .ItemsContainer{
-    width: 35%;
+    width: 100%;
 
 }
 

@@ -94,6 +94,8 @@
   
 .navTop{
     width: 100%;
+   
+   
 }
 
 
@@ -140,6 +142,45 @@
 }
 
 
+@media (max-width:500px)
+{
+    .navTop{
+       
+        justify-content: space-between;
+    }
+
+    .profile{
+        
+        font-size: 15px;
+    
+    }
+
+    .profile img{
+        width: 30px;
+
+    }
+    .Cart{
+       
+        width: 30px;
+    }
+    .Cart img{
+        width: 30px;
+    }
+    .Logo{
+   
+     width: 200px;
+    }
+    .Logo img{
+        width: 200px;
+    }
+}
+
+@media (max-width:396px){
+    .profile{
+        
+        font-size: 13px;
+    }
+}
 
 
 
