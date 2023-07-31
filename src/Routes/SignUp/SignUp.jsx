@@ -57,13 +57,13 @@ if (password === comfirmPassword && password.length >=6) {
     return(
         <div class="container">
         <h1>Sign Up</h1>
-        <input type="text" placeholder="Username" id="username" required>
-        <input type="email" placeholder="Email" id="email" required>
+        <input type="text" placeholder="Username" id="username" required />
+        <input type="email" placeholder="Email" id="email" required />
         <select id="fashion-type" required> 
             <option value="">Select your fashion type</option>
             <option value="casual">Casual</option>    
         </select>
-        <input type="password" placeholder="Password" id="password" required>
+        <input type="password" placeholder="Password" id="password" required />
         <button type="button" onclick="submitForm()">Sign Up</button>
       </div>
     )
