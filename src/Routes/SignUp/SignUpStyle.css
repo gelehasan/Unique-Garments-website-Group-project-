@@ -1,36 +1,30 @@
-.signUp-Container{
-    margin: 0 auto;
- 
-    width: 50%;
-   
-    color: black;
-border: 1px solid black;
-    
-    margin: 5em auto 0 auto;
+  .container {
     display: flex;
-    justify-content: center;
-    }
-    
-.signUpbtn{
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto;
+  }
   
-    background-color: lightseagreen;
-    font-size: 1.3rem;
-}
-#fashionType{
-    text-align: center;
- 
-  width: 143px;
-  height: 23px;
-}
-    
-    
-   
-    @media(max-width: 780px){
-        .signUp-card{
-            display: none;
-        }
-        .signUp-content{
-            width: 100%;
-        }
-    
-}
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+
+  #fashion-type {
+    width: 108%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
