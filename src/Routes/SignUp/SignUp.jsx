@@ -55,48 +55,17 @@ if (password === comfirmPassword && password.length >=6) {
   };
   
     return(
-        <div>
-            <div    className="signUp-Container">
-       
-       <div    className="signUp-content">
-  
-            <form onSubmit={RegistrationHandlar}> 
- 
-       <h2>Don't have an account?</h2>
-       <h4>Sign up</h4>
-       <label>Username</label> <br/>
-       <input type='text' name='username' required onChange={changeHandlar}></input>
-       <br/>
-       <label>Email</label> <br/>
-       <input type='email' name='email'  required  onChange={changeHandlar}  ></input>
-       <br/>
-       <br/>
-    
-       <label>Fashion Type</label>
-       <br></br>
-       <select id="fashionType" name='type' required onChange={changeHandlar} >
-
-      <option value="A">A</option>
-      <option value="B">B</option>
-     
-    </select>
-    <br/>
-       <label>Password</label> <br/>
-       <input type='password' name='password'required onChange={changeHandlar}></input>
-       <br/>
-       <label>comfirmPassword</label> <br/>
-       <input type='password'  name='comfirmPassword' required onChange={changeHandlar} ></input>
-       <br/>   <br/>
-       <button className='signUpbtn' type='submit'>Submit</button>
-         </form> 
-         </div>
-       <div className="signUp-card">
-         
-      
-       </div>
-        
-       </div>
-        </div>
+        <div class="container">
+        <h1>Sign Up</h1>
+        <input type="text" placeholder="Username" id="username" required>
+        <input type="email" placeholder="Email" id="email" required>
+        <select id="fashion-type" required> 
+            <option value="">Select your fashion type</option>
+            <option value="casual">Casual</option>    
+        </select>
+        <input type="password" placeholder="Password" id="password" required>
+        <button type="button" onclick="submitForm()">Sign Up</button>
+      </div>
     )
 }
 export default SignUp;
