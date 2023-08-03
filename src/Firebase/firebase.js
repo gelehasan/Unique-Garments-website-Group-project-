@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {createUserWithEmailAndPassword, getAuth,onAuthStateChanged } from "firebase/auth"
+import {createUserWithEmailAndPassword, getAuth,onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth"
 import {doc, setDoc, getDoc, getFirestore} from 'firebase/firestore';
 import { useCallback } from 'react';
 const firebaseConfig = {
@@ -68,3 +68,12 @@ if (!userSnapshot.exists()) {
         
 
 export const AuthchangeListiner = (callback)=> onAuthStateChanged(auth,callback);
+
+
+
+export const SignInUser = async (email, password) => {
+    if (!email || !password) return;
+  
+    return await signInWithEmailAndPassword(auth, email, password);
+  };
+    
