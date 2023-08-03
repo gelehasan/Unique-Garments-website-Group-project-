@@ -23,6 +23,8 @@ const Navbar = ()=>{
         const [showMenu, setshowMenu]= useState();
         const {isCartOpen,setIsCartOpen, isCheckoutOpen} = useContext(CartShopConext);
         const {currentUser}= useContext(UserContext);
+
+       
        // let {displayName}= currentUser;
       
         const toggleMenu = ()=>{
