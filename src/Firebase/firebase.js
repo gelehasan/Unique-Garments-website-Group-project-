@@ -48,6 +48,7 @@ if (!userSnapshot.exists()) {
     try {
     
     await setDoc(userDocRef, {
+    id:user.uid,
     displayName,
     email,
     type,
@@ -63,9 +64,22 @@ if (!userSnapshot.exists()) {
     //if the create user runs successful
     // It returns the user object with updated display property
     //along with other properties like uid, email, etc.
-    return {...user, displayName:displayName, type:type};
+    return user;
     };
-        
+
+//Retrieves user information  from firebase inside our "user" catagory 
+//by passing it a valid userId
+export const getUserInformation= async (userId)=>{
+   
+        const userDocRef = doc(db, "users", userId);
+        const userSnapshot = await getDoc(userDocRef);
+        const userData = userSnapshot.data();
+         console.log(userData)
+         return userData;
+         
+         }
+   
+
 
 export const AuthchangeListiner = (callback)=> onAuthStateChanged(auth,callback);
 

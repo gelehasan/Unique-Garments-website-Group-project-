@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './SignUpStyle.css';
-import { signUpAuthentication } from '../../Firebase/firebase';
+import { signUpAuthentication, getUserInformation } from '../../Firebase/firebase';
 import { useContext } from 'react';
 import { UserContext } from '../../Context/userContext';
 import { useNavigate } from 'react-router-dom';
@@ -39,8 +39,10 @@ if (password === comfirmPassword && password.length >=6) {
    
   // Here is where we send the data we gathered from the inputs
   //And we wait for the a response back
-  const user= await signUpAuthentication({username, email, password, type})
- setCurrentUser(user)
+  const user= await signUpAuthentication({username, email, password, type});
+  const userInfo= await getUserInformation(user.uid);
+  console.log(userInfo);
+  setCurrentUser(userInfo);
 
 } catch (error) {
   if (error.code === "auth/email-already-in-use") {
@@ -58,7 +60,7 @@ if (password === comfirmPassword && password.length >=6) {
       <div>
 
         <form onSubmit={RegistrationHandlar}> 
-        <div class="container">
+        <div className="container">
         <h1>Sign Up</h1>
         <input type="text" placeholder="Username" id="username" name='username' onChange={changeHandlar} required/>
         <input type="email" placeholder="Email" id="email" name='email'  onChange={changeHandlar} required/>

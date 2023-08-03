@@ -1,7 +1,7 @@
 import './SignInStyle.css';
 import { useState, useContext } from "react";
 import {  UserContext} from "../../Context/userContext";
-import {SignInUser} from '../../Firebase/firebase';
+import {SignInUser, getUserInformation} from '../../Firebase/firebase';
 
 const SignIn = ()=>{
     const [inputFields, setInputFields]= useState();
@@ -16,9 +16,13 @@ const SignIn = ()=>{
     let {email,password}= inputFields;
     try{
         let {user}=  await SignInUser(email, password);
-       
-
-        setCurrentUser(user);
+       console.log(user)
+        if(user){
+        let userInfo = await getUserInformation(user.uid);
+        console.log(userInfo);
+    setCurrentUser(userInfo);
+        }
+      
     }catch(error){
         console.log(error)
     }
@@ -27,7 +31,7 @@ const SignIn = ()=>{
 
         <div> 
             <form onSubmit={submitHandlar}>
-        <div class="container">
+        <div className="container">
             <h1>Sign In</h1>
             <input type="email" placeholder="email" name="email" id="email" onChange={ChangeHandlar} required />
             <input type="password" placeholder="Password" name="password" id="password" onChange={ChangeHandlar} required />
