@@ -1,5 +1,32 @@
-.bottomContainer {
+.topContainer{
+  margin-top: 2em;
+}
+.topSub{
+  width: 30%;
+    max-width: 230px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom:2em ;
+    margin-left: 1.5em;
+    border-top: 1px solid black;
+}
+.topTitles{
+  margin-bottom: 0.4em;
+  margin-top: 0.2em;
+}
 
+.catagoriesSelection ul{
+list-style: none;
+display: flex;
+flex-direction: column;
+font-size: 1.13rem;
+gap: 20px;
+cursor: pointer;
+}
+
+
+
+.bottomContainer {
     width: 30%;
     max-width: 230px;
     display: flex;
@@ -16,6 +43,8 @@
     display: flex;
     align-items: center;
     padding: 8px;
+
+    font-size: 1.13rem;
   }
   
   .brandsLabel {
@@ -53,82 +82,6 @@
 
   /* Keep the rest of your styling as needed */
   
-
-
-
-
-  @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap");
-
-body {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-p {
-  margin: 0;
-  padding: 0;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(to bottom, #5b21b6, #1e40af);
-  color: black;
-}
-
-.buttons-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-
-}
-.button {
-  border: 1px solid #000;
-  background: transparent;
-  margin: 5px 5px;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  color: black;
-  transition: all 0.2s ease-in-out;
-}
-
-.button:hover {
-  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0);
-}
-
-.items-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  justify-content: center;
-  align-items: center;
-}
-
-.item {
-    color: black;
-  padding: 4px 10px;
-  min-width: 100px;
-  min-height: 50px;
-  margin: 4px 10px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.category {
-  color: #64748b;
-  font-size: 10px;
-}
 
 .active {
   background-color: #1e293b;
