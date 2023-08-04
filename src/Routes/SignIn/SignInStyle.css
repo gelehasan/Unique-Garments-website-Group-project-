@@ -5,12 +5,12 @@
     width: 300px;
     margin: 0 auto;
   }
-  input {
+  .container  input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
   }
-  button {
+  .container button {
     background-color: #007BFF;
     color: white;
     padding: 10px 20px;

@@ -1,5 +1,6 @@
 import './GarmentsStyling.css';
 import { useEffect, useState } from 'react';
+import search from '../../Assets/search.svg';
 const brandNames = ["Adidas", "Balenciaga", "Converse", "J.Crew", "Nike", "Off-white", "Rick Owens"];
 const colors = ["white", "black", "purple","blue"];
 const accessoriesNames=["Hats","Sunglass", "Belts","Socks"];
@@ -37,6 +38,16 @@ const Garments = ()=>{
     
     return(
         <div>
+<dvi className="FilterSection">
+<label className='BrandTitle'> Filter:</label> 
+
+<div className='inputSearchField'>
+  <img src={search} className="searchImg" />
+<input type='text' placeholder="Search"  />
+</div>
+</dvi>
+
+
 <div className='topContainer'> 
 <div className='topSub'>
    

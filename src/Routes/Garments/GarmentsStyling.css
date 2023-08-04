@@ -1,5 +1,5 @@
 .topContainer{
-  margin-top: 2em;
+ 
 }
 .topSub{
   width: 30%;
@@ -31,7 +31,33 @@ cursor: pointer;
   color: darkRed;
 
 }
+.FilterSection{
+  width: 30%;
+  max-width: 230px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom:2em ;
+  margin-left: 1.5em;
+  margin-top: 2.3em;
 
+}
+.inputSearchField{
+
+  position: relative;
+ width: 100%;
+}
+.searchImg{
+  position: absolute;
+  top: 1em;
+  left: 0.5em;
+}
+.inputSearchField input{
+  width: 100%;
+
+text-align: center;
+margin-top: 0.6em;
+height: 34px;
+}
 
 
 .bottomContainer {
