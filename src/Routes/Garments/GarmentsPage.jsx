@@ -3,11 +3,22 @@ import { useEffect, useState } from 'react';
 const brandNames = ["Adidas", "Balenciaga", "Converse", "J.Crew", "Nike", "Off-white", "Rick Owens"];
 const colors = ["white", "black", "purple","blue"];
 const accessoriesNames=["Hats","Sunglass", "Belts","Socks"];
+const Bags = ["BackPacks", "Fanny","Packs", "Briefcases"];
+const Clothing = ["T-shirts", "shirts", "Outerwears", "Trousers", "Jeans", "Shorts"];
 const Garments = ()=>{
     const [selectedBrand, setSelectedBrand] = useState(["All"]);
     const [selectedColor, setSelectedColor]= useState(["All"]);
     const [selectedCatagory, setselectedCatagory] = useState("All")
- 
+    const [selectedOccasion, SetselectedOccasion ] = useState("All");
+    const handleCatagory= (catagoryName)=>{
+      if(catagoryName==selectedCatagory){
+        setselectedCatagory("All");
+      }else{
+        setselectedCatagory(catagoryName)
+      }
+
+      
+    }
     const handleBrandChange = (brand) => {
         if(brand==selectedBrand){
             setSelectedBrand("")
@@ -24,7 +35,6 @@ const Garments = ()=>{
       }
 
     
-
     return(
         <div>
 <div className='topContainer'> 
@@ -34,8 +44,10 @@ const Garments = ()=>{
     <div className='BrandSelection catagoriesSelection'>
       <ul>
         <li>View All</li>
-      {accessoriesNames.map((names)=>{
-      return(<li key={names}> {names}</li>) 
+      {accessoriesNames.map((itemName)=>{
+      return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
+      className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
+      > {itemName}</li>) 
       }
       )
 
@@ -51,8 +63,10 @@ const Garments = ()=>{
     <div className='BrandSelection catagoriesSelection'>
       <ul>
         <li>View All</li>
-      {accessoriesNames.map((names)=>{
-      return(<li key={names}> {names}</li>) 
+      {Bags.map((itemName)=>{
+      return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
+      className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
+      > {itemName}</li>) 
       }
       )
 
@@ -68,8 +82,10 @@ const Garments = ()=>{
     <div className='BrandSelection catagoriesSelection'>
       <ul>
         <li>View All</li>
-      {accessoriesNames.map((names)=>{
-      return(<li key={names}> {names}</li>) 
+      {Clothing.map((itemName)=>{
+      return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
+      className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
+      > {itemName}</li>) 
       }
       )
 

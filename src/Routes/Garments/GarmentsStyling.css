@@ -23,6 +23,14 @@ font-size: 1.13rem;
 gap: 20px;
 cursor: pointer;
 }
+.selectedCatagory {
+  display: inline-block;
+  border-bottom: 2px solid darkred;
+  width: fit-content;
+  transition: border-bottom-color 0.3s ease-in-out; 
+  color: darkRed;
+
+}
 
 
 
