@@ -34,7 +34,7 @@ const Catagories = ({DataShop})=>{
   }else{
     SetselectedOccasion(occasionName);
   }
-  console.log(selectedOccasion)
+ 
   }
   const handleBrandChange = (brand) => {
       if(brand==selectedBrand){
@@ -66,10 +66,13 @@ const Catagories = ({DataShop})=>{
 
     const filterItems = () => {
       let NewfilteredItems = DataShop;
-      console.log(selectedColor);
-      if(searchInput != ""){
-        NewfilteredItems = NewfilteredItems.filter((item)=>
-        { item.name.toLocaleLowerCase().includes(searchInput.toLowerCase())});
+ 
+  
+    if(searchInput != ""){
+        NewfilteredItems = NewfilteredItems.filter((item)=>{
+       
+          return item.name.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
+        })
     
       }
        
@@ -82,7 +85,7 @@ const Catagories = ({DataShop})=>{
       if (selectedCatagory !== "All") {
         NewfilteredItems = NewfilteredItems.filter((item) => item.catagory === selectedCatagory);
       }
-      console.log(selectedCatagory)
+   
       if (selectedBrand !== "All") {
         NewfilteredItems = NewfilteredItems.filter((item) => item.brand === selectedBrand);
       }
