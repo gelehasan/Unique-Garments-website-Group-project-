@@ -18,7 +18,8 @@ const Catagories = ({DataShop})=>{
   const [selectedBrand, setSelectedBrand] = useState("All");
   const [selectedColor, setSelectedColor]= useState("All");
   const [selectedCatagory, setselectedCatagory] = useState("All")
-  const [selectedOccasion, SetselectedOccasion ] = useState("All");      
+  const [selectedOccasion, SetselectedOccasion ] = useState("All");  
+  const [searchInput, setSearchInput] = useState("");    
   const handleCatagory= (catagoryName)=>{
     if(catagoryName==selectedCatagory){
       setselectedCatagory("All");
@@ -50,14 +51,30 @@ const Catagories = ({DataShop})=>{
       }   
     }
 
-   
+    const searchHandlar = (event)=>{
+      const value= event.target.value;
+  
+      
+      setSearchInput(value);
+  
+    }
 
     useEffect(() => {
       filterItems();
-    }, [selectedBrand, selectedColor, selectedCatagory,selectedOccasion]);
+    }, [selectedBrand, selectedColor, selectedCatagory,selectedOccasion,searchInput]);
+
+
     const filterItems = () => {
       let NewfilteredItems = DataShop;
-      console.log(selectedColor)
+      console.log(selectedColor);
+      if(searchInput != ""){
+        NewfilteredItems = NewfilteredItems.filter((item)=>
+        { item.name.toLocaleLowerCase().includes(searchInput.toLowerCase())});
+    
+      }
+       
+       
+
       if(selectedColor !=="All"){
         NewfilteredItems = NewfilteredItems.filter((item) => item.color === selectedColor);
    
@@ -84,7 +101,7 @@ const Catagories = ({DataShop})=>{
 
 <div className='inputSearchField'>
 <img src={search} className="searchImg" />
-<input type='text' placeholder="Search"  />
+<input type='text' placeholder="Search" onChange={searchHandlar}  />
 </div>
 </div>
 
