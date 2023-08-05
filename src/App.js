@@ -9,7 +9,7 @@ import Garments from './Routes/Garments/GarmentsPage';
 import Magazine from './Routes/Magazine/MagazinePage';
 import Shoes from './Routes/Shoes/ShoesPage';
 import ShopBY from './Components/ShopBY-links/shopBY';
-import Brands from './Routes/Brands/Brands';
+
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
 
     <Route index element={<HomePage />} />
 
-   <Route path='/Brands' element={< Brands/>} />
+  
    <Route path='/SignUp' element={<SignUp />} />
    <Route path='/SignIn' element={<SignIn />} />
    <Route path='/checkout' element={<CheckOut />} />

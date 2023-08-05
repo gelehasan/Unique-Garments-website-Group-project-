@@ -1,99 +1,215 @@
 import Product from "../Products/Products";
-import FilterOptions from "../ProductFilters/FilterOptions";
-
+import { useEffect, useState } from 'react';
+import search from  '../../Assets/search.svg';
+import DataShop from '../../data';
 import './Categories.css';
-import { useState, useEffect } from "react";
+const brandNames = ["Adidas", "Balenciaga", "Converse", "J.Crew", "Nike", "Off-white", "Rick Owens"];
+const colors = ["white", "black", "purple","blue"];
+const accessoriesNames=["Hats","Sunglass", "Belts","Socks"];
+const Bags = ["BackPacks", "Fanny","Packs", "Briefcases"];
+const Clothing = ["T-shirts", "shirts", "Outerwears", "Trousers", "Jeans", "Shorts"];
 
-const colorFilters= ["All","white","black", "Green"];
 
-const catagoryFilters= ["All","shirt","T-shirt","kids", ];
-const typeFilters=["All","A", "B"];
+
+
 
 const Catagories = ({DataShop})=>{
-    
- const [selectedFilter, setselectedFilter] = useState(DataShop);
-  const [selectedColor, setSelectedColor] = useState("All");
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedType, setSelectedType] = useState("All");
-
-    const filterHandlar = (event) => {
-        const optionValue = event.target.value;
-        const selectedName = event.target.name;
-    
-        if (selectedName === "color") {
-          setSelectedColor(optionValue);
-        } else if (selectedName === "catagory") {
-          setSelectedCategory(optionValue);
-        } else if (selectedName === "type") {
-          setSelectedType(optionValue);
-        }
-      };
-      
-
-      useEffect(() => {
-        filterItems();
-      }, [selectedColor, selectedCategory, selectedType]);
-
-
-  const filterItems = () => {
-    let filteredItems = DataShop;
-
-    if (selectedColor !== "All") {
-      filteredItems = filteredItems.filter((item) => item.color === selectedColor);
+  const [filteredItems, setselectedFilter] = useState(DataShop);
+  const [selectedBrand, setSelectedBrand] = useState("All");
+  const [selectedColor, setSelectedColor]= useState("All");
+  const [selectedCatagory, setselectedCatagory] = useState("All")
+  const [selectedOccasion, SetselectedOccasion ] = useState("All");      
+  const handleCatagory= (catagoryName)=>{
+    if(catagoryName==selectedCatagory){
+      setselectedCatagory("All");
+    }else{
+      setselectedCatagory(catagoryName)
+    }
+  }
+  const handleOccasionChange = (occasionName)=>
+  {
+    if(occasionName==selectedOccasion){
+      SetselectedOccasion("All")
+  }else{
+    SetselectedOccasion(occasionName);
+  }
+  console.log(selectedOccasion)
+  }
+  const handleBrandChange = (brand) => {
+      if(brand==selectedBrand){
+          setSelectedBrand("All")
+      }else{
+          setSelectedBrand(brand);
+      }
+    };
+    const handleColorFiltering = (colorName)=>{ 
+      if(colorName==selectedColor){
+          setSelectedColor("All")
+      }else{
+          setSelectedColor(colorName);
+      }   
     }
 
-    if (selectedCategory !== "All") {
-      filteredItems = filteredItems.filter((item) => item.catagory === selectedCategory);
-    }
-    
-    if (selectedType !== "All") {
-      filteredItems = filteredItems.filter((item) => item.type === selectedType);
-    }
+   
 
-    setselectedFilter(filteredItems);
-  };
+    useEffect(() => {
+      filterItems();
+    }, [selectedBrand, selectedColor, selectedCatagory,selectedOccasion]);
+    const filterItems = () => {
+      let NewfilteredItems = DataShop;
+      console.log(selectedColor)
+      if(selectedColor !=="All"){
+        NewfilteredItems = NewfilteredItems.filter((item) => item.color === selectedColor);
+   
+      }
+      if (selectedCatagory !== "All") {
+        NewfilteredItems = NewfilteredItems.filter((item) => item.catagory === selectedCatagory);
+      }
+      console.log(selectedCatagory)
+      if (selectedBrand !== "All") {
+        NewfilteredItems = NewfilteredItems.filter((item) => item.brand === selectedBrand);
+      }
+      if (selectedOccasion !== "All") {
+        NewfilteredItems = NewfilteredItems.filter((item) => item.occasion === selectedOccasion);
+      }
+      setselectedFilter(NewfilteredItems);
+    };
 
 
-
-console.log(selectedFilter)
     return(
-        <div    className="catagories">
-             <h2>Colors</h2>
-     <select id="color-filter" name="color" onChange={filterHandlar}>
-    {   colorFilters.map((options,index)=>(
-        <option key={index} value={options}> {options}</option>
-        ))
-    }
-  
-  
-        </select>
-        <h2>Catagories</h2>
-        <select id="catagory-filter" name="catagory" onChange={filterHandlar}>
-    {   catagoryFilters.map((options,index)=>(
-        <option key={index} value={options}>{options}</option>
-        ))
-    }
-        </select>
+      <div className='ParentDiv'>
+      <div className='AllFilterContainer'> 
+<div className="FilterSection">
+<label className='BrandTitle'> Filter:</label> 
+
+<div className='inputSearchField'>
+<img src={search} className="searchImg" />
+<input type='text' placeholder="Search"  />
+</div>
+</div>
+
+<div className='topContainer'> 
+<div className='topSub'>
+
+<label className='BrandTitle topTitles'> Accessories</label> 
+<div className='BrandSelection catagoriesSelection'>
+  <ul>
+    <li onClick={()=> handleOccasionChange("Accessories")}  
+     className={`${ selectedOccasion == "Accessories" ? "selectedCatagory": ""}`}
+    >
+      View All</li>
+  {accessoriesNames.map((itemName)=>{
+  return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
+  className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
+  > {itemName}</li>) 
+  }
+  )
+
+  }
+
+  </ul>
+</div>
+</div>
+
+<div className='topSub'>
+
+<label className='BrandTitle topTitles'> Bags</label> 
+<div className='BrandSelection catagoriesSelection'>
+  <ul>
+    <li onClick={()=> handleOccasionChange("Bags")}  
+     className={`${ selectedOccasion == "Bags" ? "selectedCatagory": ""}`}
+    >
+      View All</li>
+  {Bags.map((itemName)=>{
+  return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
+  className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
+  > {itemName}</li>) 
+  }
+  )
+
+  }
+
+  </ul>
+</div>
+</div>
 
 
-        <h2>Type</h2>
-    <select id="type-filter" name="type" onChange={filterHandlar}>
-    {   typeFilters.map((options,index)=>(
-        <option key={index} value={options}>{options}</option>
-        ))
-    }
-        </select>
+<div className='topSub'>
+
+<label className='BrandTitle topTitles'> Clothing</label> 
+<div className='BrandSelection catagoriesSelection'>
+  <ul>
+    <li onClick={()=> handleOccasionChange("Clothing")}  
+    className={`${ selectedOccasion == "Clothing" ? "selectedCatagory": ""}`}
+    >View All</li>
+  {Clothing.map((itemName)=>{
+  return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
+  className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
+  > {itemName}</li>) 
+  }
+  )
+  }
+  </ul>
+</div>
+</div>
+</div>
+
+
+  <div className='bottomContainer'>
+
+    <label className='BrandTitle'> Brands</label> 
+       
+   
+   <div>  {brandNames.map((brand) => (
+      <div key={brand} className='BrandSelection'>
+       
+        <label className='brandsLabel'>
+          <input
+           type='checkbox'
+            name='brand'
+            value={brand}
+            checked={selectedBrand === brand}
+            onChange={() => handleBrandChange(brand)}   
+          />
+          {brand}
+        </label>
+      </div>
+    ))}
+    </div>
+  </div>
+
+  <div className='bottomContainer'>
+
+    <label className='BrandTitle'> Colors</label> 
+   <div>  {colors.map((color) => (
+      <div key={color} className={`BrandSelection ${ selectedColor == color ? "active": ""}`} 
+      onClick={()=>handleColorFiltering(color)}>
+       <div style={{ backgroundColor: color }} className={`colorsIcon ${color}`
+   }> </div>
+        <label className='brandsLabel'>
+          {color}
+        </label>
+      </div>
+    ))}
+    </div>
+  </div>
+{/** Filtering section ends  */}
+  </div>
+
+
+ 
+<div    className="catagoriesContent">
+        {
+            filteredItems.map((item)=>{
+              return(  <Product  key={item.id} item={item} />
+              )
+            })
+        }
+</div>
+
+     
     
-  
-        <div    className="catagoriesContent">
-            {
-                selectedFilter.map((item)=>{
-                  return(  <Product  key={item.id} item={item} />
-                  )
-                })
-            }
-   </div>
-        </div>
+  </div>
     )
 }
 export default Catagories;

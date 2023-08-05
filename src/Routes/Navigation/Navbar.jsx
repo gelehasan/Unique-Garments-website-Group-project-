@@ -67,7 +67,6 @@ const Navbar = ()=>{
         <div    className={ showMenu? "navLinks  ":  "navLinks  navLinkShow"} >
             <ul>
                 <li > <a href='#'> New Arrivals </a></li>
-                <li> <Link to={"/Brands"}>  Brands </Link></li>
                 <li><Link to={"/Garments"}> Garments </Link> </li>
                 <li> <Link to={"/Shoes"}> Shoes </Link></li>
                 {/* When a user hovers over shop by its set to true and shows the drop down
