@@ -1,8 +1,23 @@
-.topContainer{
- 
+.ParentDiv{
+  border: 1px solid red;
+  display: flex;
+  gap: 60px;
+  width: 100%;
+}
+.catagoriesContent{
+  margin-top: 2.3em;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 0px;
+  height: fit-content;
+}
+.AllFilterContainer{
+  margin-top: 2.3em;
+width: 20%;
 }
 .topSub{
-  width: 30%;
+  width: 100%;
     max-width: 230px;
     display: flex;
     flex-direction: column;
@@ -32,13 +47,13 @@ cursor: pointer;
 
 }
 .FilterSection{
-  width: 30%;
+  width: 100%;
   max-width: 230px;
   display: flex;
   flex-direction: column;
   padding-bottom:2em ;
   margin-left: 1.5em;
-  margin-top: 2.3em;
+  
 
 }
 .inputSearchField{
@@ -61,7 +76,7 @@ height: 34px;
 
 
 .bottomContainer {
-    width: 30%;
+    width: 100%;
     max-width: 230px;
     display: flex;
     flex-direction: column;
