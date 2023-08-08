@@ -54,3 +54,9 @@
     left: 51px;
 }
 
+
+@media (max-width:830px){
+    .bagItems{
+        right: 0;
+    }
+}

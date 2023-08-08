@@ -40,3 +40,10 @@
 .signOutbtn{
     background-color: brown;
 }
+@media (max-width:830px){
+    .profile-Container{
+        left: 0em;
+    }
+}
+
+

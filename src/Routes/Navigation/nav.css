@@ -98,19 +98,16 @@
    
 }
 
-
-  
-
     .openMenu{
         cursor: pointer;
-        z-index: 3;
+        z-index: 2;
         position: absolute;
         display: block;
         right: 0%;
     }
     .closeMenu{
         cursor: pointer;
-        z-index: 3;
+        z-index: 2;
         position: absolute;
         display: block;
         right: 10em;
@@ -157,6 +154,7 @@
         left: 2.4em;
     }
 }
+
 
 @media (max-width:500px)
 {
