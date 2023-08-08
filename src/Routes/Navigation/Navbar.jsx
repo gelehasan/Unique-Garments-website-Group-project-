@@ -14,6 +14,7 @@ import { CartShopConext } from '../../Context/cartShopContext';
 import CheckOut from '../CheckOut-for-MVP/checkout';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../Context/userContext';
+import ProfileDropDown from '../../Components/Profile/ProfileDropDown';
 const Navbar = ()=>{
         //We use usestate to determine if we show the drop down or not
         // Use state can be used to store many thing such as arrays, etcs not just boolean 
@@ -22,30 +23,24 @@ const Navbar = ()=>{
         const [isShopBY, setShopBY]= useState(false);
         const [showMenu, setshowMenu]= useState();
         const {isCartOpen,setIsCartOpen, isCheckoutOpen} = useContext(CartShopConext);
-        const {currentUser}= useContext(UserContext);
-
-       
+        const {currentUser}= useContext(UserContext);  
+        const [profileDropDown, setProfileDropDown] = useState(true); 
        // let {displayName}= currentUser;
       
         const toggleMenu = ()=>{
             setshowMenu(!showMenu)
         }
-
     return(
       <div    className="navbar">
         
         <div className="navTop"> 
 
-            <div className="profile"  >  
-            <img  src={ userIcon}/>
+            <div className="profile"  >
+            {profileDropDown && <ProfileDropDown/>}  
+            <img  src={ userIcon} onClick={()=> setProfileDropDown(!profileDropDown)}/>
+          
          
-         
-     
-         {currentUser? `Hi ${currentUser.displayName}` :
-        <span> 
-         <Link to={"/SignIn"}>  <span> Sign in/</span> </Link>
-         <Link to={"/SignUp"}>  <span> Sign Up </span> </Link>
-         </span>
+         {currentUser? `Hi ${currentUser.displayName}` : ""
          }
         
          
@@ -60,8 +55,6 @@ const Navbar = ()=>{
         
         
         </div>
-
-     
         {/** Bottom navbar for links */}
         <div    className="navBottom">
         <div    className={ showMenu? "navLinks  ":  "navLinks  navLinkShow"} >

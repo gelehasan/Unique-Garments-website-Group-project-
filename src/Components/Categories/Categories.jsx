@@ -10,9 +10,6 @@ const Bags = ["BackPacks", "Fanny","Packs", "Briefcases"];
 const Clothing = ["T-shirts", "shirts", "Outerwears", "Trousers", "Jeans", "Shorts"];
 
 
-
-
-
 const Catagories = ({DataShop})=>{
   const [filteredItems, setselectedFilter] = useState(DataShop);
   const [selectedBrand, setSelectedBrand] = useState("All");
@@ -215,8 +212,6 @@ const Catagories = ({DataShop})=>{
   </div>
 {/** Filtering section ends  */}
   </div>
-
-
  
 <div    className="catagoriesContent">
         {

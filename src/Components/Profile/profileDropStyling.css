@@ -1,0 +1,41 @@
+.profile-Container{
+    position: absolute;
+    width: 170px;
+    height: 100px;
+    left: 1.4em;
+    top: 4em;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.profile-Container button {
+   
+    border-radius: 3px;
+    font-size: 1.1rem;
+    color: white;
+    width: 140px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-Container  .signIn{
+   
+    background-color: #0056b3;
+}
+
+.profile-Container  .signUp{
+    background-color:#007BFF;
+}
+
+.profilebtn{
+    background-color: purple;
+}
+.signOutbtn{
+    background-color: brown;
+}
