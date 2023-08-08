@@ -10,7 +10,7 @@ const ProfileDropDown = ()=>{
             <button className={ currentUser ? "profilebtn": "signIn" }>
                 { currentUser? "Profile" : "Sign in" }</button>
           </Link>
-          
+
           <Link to={currentUser? "" : "/signup"} > 
             <button className={ currentUser ? "signOutbtn": "signUp" }> 
                 { currentUser? "Sign out" : "Sign up" }

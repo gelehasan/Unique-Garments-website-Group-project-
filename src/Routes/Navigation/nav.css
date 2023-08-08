@@ -1,13 +1,13 @@
 .navbar{
- 
-    width: 100%;
+
+ width: 100%;
  
 }
 
 
 /* Styling for top navigation bar*/
 .navTop{
-   
+   border-bottom: 2px solid black;
     width: 95%;
     margin: 0 auto;
     height: 60px;
@@ -142,8 +142,29 @@
 }
 
 
+.displayCurrentUser{
+  
+    position: absolute;
+    top: 1.6em;
+    left: 4.5em;
+    width: 120px;
+    
+
+}
+
+@media (max-width:830px) {
+    .displayCurrentUser{
+        left: 2.4em;
+    }
+}
+
 @media (max-width:500px)
 {
+    .displayCurrentUser{
+        top: 2em;
+        left: 2.4em;
+        font-size: 0.8rem;
+    }
     .navTop{
        
         justify-content: space-between;
@@ -152,7 +173,7 @@
     .profile{
         
         font-size: 15px;
-    
+        width: 30px;
     }
 
     .profile img{
@@ -167,7 +188,7 @@
         width: 30px;
     }
     .Logo{
-   
+    margin-left: 0.4em;
      width: 200px;
     }
     .Logo img{
@@ -175,16 +196,21 @@
     }
 }
 
-@media (max-width:396px){
-    .profile{
-        
-        font-size: 13px;
+
+
+@media (max-width:345px){
+    .displayCurrentUser{
+        display: none;
     }
-}
+} 
 
 
-
-
+@media (max-width:375px){
+    .displayCurrentUser{
+        top: 2.5em;
+        font-size: 0.7rem;
+    }
+} 
 
 
 

@@ -24,7 +24,7 @@ const Navbar = ()=>{
         const [showMenu, setshowMenu]= useState();
         const {isCartOpen,setIsCartOpen, isCheckoutOpen} = useContext(CartShopConext);
         const {currentUser}= useContext(UserContext);  
-        const [profileDropDown, setProfileDropDown] = useState(true); 
+        const [profileDropDown, setProfileDropDown] = useState(false); 
        // let {displayName}= currentUser;
       
         const toggleMenu = ()=>{
@@ -40,7 +40,8 @@ const Navbar = ()=>{
             <img  src={ userIcon} onClick={()=> setProfileDropDown(!profileDropDown)}/>
           
          
-         {currentUser? `Hi ${currentUser.displayName}` : ""
+        {currentUser? <span className='displayCurrentUser'> 
+                Hi {currentUser.displayName} </span> : ""
          }
         
          
