@@ -16,7 +16,7 @@ const categories = [
        {
         id: 2,
         title: "Oversized Shield Sunglasses",
-        price: 1,839,
+        price: 1839,
         descripton: 'Stainless steel and Nylon 100%, perfect for the Summer season.',
         category: "Sunglasses",
         image: "https://asset.cloudinary.com/dmhnsp8sj/7b47c68c36f836e2271a96ebbc38d89f",
@@ -65,7 +65,7 @@ const categories = [
        {
         id: 2,
         title: "Explorer Denim Belt Bag",
-        price: 1,090,
+        price: 1090,
         descripton: 'Washed denim bag with zip. Stand out in the streets with the classic Balenciaga logo.',
         category: "Fanny Packs",
         image: "https://asset.cloudinary.com/dmhnsp8sj/a73c12bfd35f9dabf77a8fb4e35cb378",
@@ -93,7 +93,7 @@ const categories = [
         id: 1,
         title: "Mercantile Mens Classic Fit Oxford",
         price: 80.27,
-        descripton: 'Maximum comfort and style await with the Oxford shirt's microfibers tailored to suit your needs.',
+        descripton: `Maximum comfort and style await with the Oxford shirt's microfibers tailored to suit your needs.`,
         category: "Shirts",
         image: "https://asset.cloudinary.com/dmhnsp8sj/997b940b47c664bbe4d3bb3424e33c08",
         occasions: "Formal", 
@@ -125,7 +125,7 @@ const categories = [
       {
         id: 4,
         title: "Oversized Suit Trousers",
-        price: 1,181,
+        price: 1181,
         descripton: 'Altered to an oversized fit, lunge with ease with this stylish bottom.',
         category: "Trousers",
         image: "https://asset.cloudinary.com/dmhnsp8sj/b1c712c6966b7e8ac2ef38b3bcf5ab01",
