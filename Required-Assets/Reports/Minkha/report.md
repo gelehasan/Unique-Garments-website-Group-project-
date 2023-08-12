@@ -10,7 +10,7 @@ UI/UX design
 Brand Image
 
 #### Back End 
-Items metadata development
+Items metadata development guidelines
 
 ### Testing
 UI and usability Evaluation(Heuristic)
