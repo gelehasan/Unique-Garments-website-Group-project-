@@ -1,6 +1,6 @@
-const categories = {
-  
-    Accessories: [
+const categories = [
+  {  itemName:"Accessories",
+     itemData: [
       {
         id: 1,
         title: "Bookish Dril Baseball Cap",
@@ -46,9 +46,10 @@ const categories = {
         color: "Orange",
       }
     ]
-  ,
-
-      Bags: [
+  },
+{ 
+      itemName:"Bags",
+      itemData: [
    {
         id: 1,
         title: "EDC Backpack",
@@ -82,9 +83,11 @@ const categories = {
         brand: "Off-White",
         color: "Dark Blue",
       }
-      ],
-
-      Clothing:[
+      ]
+    },
+{ 
+      itemName:"Clothing",
+      itemData:[
       {
         id: 1,
         title: "Mercantile Mens Classic Fit Oxford",
@@ -152,8 +155,8 @@ const categories = {
         color: "Green",
       }
       ]
-
-    };
+    }
+];
 
 
     export default categories;

@@ -1,7 +1,7 @@
 import Product from "../Products/Products";
 import { useEffect, useState } from 'react';
 import search from  '../../Assets/search.svg';
-import DataShop from '../../data';
+
 import './Categories.css';
 const brandNames = ["Adidas", "Balenciaga", "Converse", "J.Crew", "Nike", "Off-white", "Rick Owens"];
 const colors = ["white", "black", "purple","blue"];

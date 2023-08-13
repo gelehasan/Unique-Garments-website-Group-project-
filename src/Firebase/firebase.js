@@ -1,7 +1,10 @@
 import { initializeApp } from "firebase/app";
 import {createUserWithEmailAndPassword, getAuth,onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth"
 import {doc, setDoc, getDoc, getFirestore} from 'firebase/firestore';
+
+import { collection, writeBatch } from 'firebase/firestore'; 
 import { useCallback } from 'react';
+import categories from "../catagories-data";
 const firebaseConfig = {
     apiKey: "AIzaSyBJVmYLInO_9JMqKEKIS4lyCXEfSAxl-HU",
     authDomain: "unique-garments.firebaseapp.com",
@@ -88,4 +91,24 @@ export const SignInUser = async (email, password) => {
     return await signInWithEmailAndPassword(auth, email, password);
   };
     
-  
+  export const addCollectionAndDocumentss =async (itemToAdd)=> {
+
+     const collectioRef =  collection(db,'Catagories');
+     
+    const batch=  writeBatch(db);
+    itemToAdd.forEach((item)=>{
+    let docRef= doc(collectioRef,item.itemName.toLowerCase());
+
+      
+      batch.set(docRef,item);
+
+     })
+     
+     
+    await batch.commit()
+     
+     console.log('Done!')
+     
+     }
+ 
+   // addCollectionAndDocumentss(categories)

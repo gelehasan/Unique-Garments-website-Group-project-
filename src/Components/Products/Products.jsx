@@ -15,12 +15,12 @@ const Product = ({item})=>{
 }
 
 
-    const { name, price, ImageUrl} = item;
-    console.log(ImageUrl);
+    const { name, price, image} = item;
+
     return(
         <div    className="productItem" >
             <div    className="divImage">
-            <img className='productImage' src={ImageUrl} />
+            <img className='productImage' src={image} />
 
             <img src={heartIcon} className='heartEmoji' onClick={addCurrentItem} /> 
             </div>
