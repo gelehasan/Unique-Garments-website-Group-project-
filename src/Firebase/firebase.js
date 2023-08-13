@@ -70,7 +70,6 @@ if (!userSnapshot.exists()) {
 //Retrieves user information  from firebase inside our "user" catagory 
 //by passing it a valid userId
 export const getUserInformation= async (userId)=>{
-   
         const userDocRef = doc(db, "users", userId);
         const userSnapshot = await getDoc(userDocRef);
         const userData = userSnapshot.data();
@@ -83,11 +82,10 @@ export const getUserInformation= async (userId)=>{
 
 export const AuthchangeListiner = (callback)=> onAuthStateChanged(auth,callback);
 
-
-
 export const SignInUser = async (email, password) => {
     if (!email || !password) return;
   
     return await signInWithEmailAndPassword(auth, email, password);
   };
     
+  
