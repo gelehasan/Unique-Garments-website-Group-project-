@@ -1,0 +1,695 @@
+.account-d {
+  align-items: flex-start;
+  border: 1px none;
+  display: flex;
+  height: 971px;
+  min-width: 1257px;
+  padding: 35px 55px 0px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.account-d .div-row-fluid {
+  height: 912px;
+  margin-right: -26px;
+  position: relative;
+  width: 1228px;
+}
+
+.account-d .div-help-sm {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 138px;
+  left: 42px;
+  position: absolute;
+  top: 46px;
+  width: 49px;
+}
+
+.account-d .heading-link {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 20px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.account-d .list {
+  height: 102px;
+  margin-right: -101px;
+  position: relative;
+  width: 150px;
+}
+
+.account-d .item-link {
+  background-color: #00000038;
+  height: 14px;
+  left: 0;
+  position: absolute;
+  top: 17px;
+  width: 78px;
+}
+
+.account-d .text-wrapper {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 10px;
+  font-weight: 400;
+  height: 14px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15px;
+  position: absolute;
+  top: -1px;
+  white-space: nowrap;
+  width: 78px;
+}
+
+.account-d .item-link-addresses {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 10px;
+  font-weight: 400;
+  height: 15px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15px;
+  position: absolute;
+  top: 50px;
+  white-space: nowrap;
+}
+
+.account-d .item-link-logout {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 10px;
+  font-weight: 400;
+  height: 15px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15px;
+  position: absolute;
+  top: 84px;
+  white-space: nowrap;
+}
+
+.account-d .form {
+  height: 540px;
+  left: 500px;
+  position: absolute;
+  top: 0;
+  width: 682px;
+}
+
+.account-d .heading-account {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  height: 20px;
+  left: 289px;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: -2px;
+  white-space: nowrap;
+}
+
+.account-d .div {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 10px;
+  font-weight: 400;
+  height: 15px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15px;
+  position: absolute;
+  top: 44px;
+  white-space: nowrap;
+}
+
+.account-d .heading-account-2 {
+  color: #000000;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 12px;
+  font-weight: 500;
+  height: 20px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: absolute;
+  top: 68px;
+  white-space: nowrap;
+}
+
+.account-d .label-first-name {
+  color: #000000;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 10px;
+  font-weight: 500;
+  height: 15px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15px;
+  position: absolute;
+  top: 99px;
+  white-space: nowrap;
+}
+
+.account-d .input {
+  align-items: flex-start;
+  border: 1px solid;
+  border-color: #777777;
+  display: flex;
+  left: -2px;
+  min-height: 30px;
+  padding: 8px 7px;
+  position: absolute;
+  top: 120px;
+  width: 680px;
+}
+
+.account-d .pseudo {
+  align-items: flex-start;
+  display: flex;
+  height: 14px;
+  padding: 0px 453px 1px 0px;
+  position: relative;
+  width: 466px;
+}
+
+.account-d .text-wrapper-2 {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.account-d .label-last-name {
+  color: #000000;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 10px;
+  font-weight: 500;
+  height: 15px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15px;
+  position: absolute;
+  top: 169px;
+  white-space: nowrap;
+}
+
+.account-d .pseudo-wrapper {
+  align-items: flex-start;
+  border: 1px solid;
+  border-color: #777777;
+  display: flex;
+  left: 0;
+  min-height: 30px;
+  padding: 8px 7px;
+  position: absolute;
+  top: 190px;
+  width: 680px;
+}
+
+.account-d .div-wrapper {
+  align-items: flex-start;
+  display: flex;
+  height: 14px;
+  padding: 0px 424px 1px 0px;
+  position: relative;
+  width: 466px;
+}
+
+.account-d .label-email-address {
+  color: #000000;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 10px;
+  font-weight: 500;
+  height: 15px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15px;
+  position: absolute;
+  top: 239px;
+  white-space: nowrap;
+}
+
+.account-d .input-2 {
+  align-items: flex-start;
+  border: 1px solid;
+  border-color: #cccccc;
+  display: flex;
+  left: 0;
+  min-height: 30px;
+  padding: 8px 7px;
+  position: absolute;
+  top: 260px;
+  width: 680px;
+}
+
+.account-d .pseudo-2 {
+  align-items: flex-start;
+  display: flex;
+  height: 14px;
+  padding: 0px 330px 1px 0px;
+  position: relative;
+  width: 466px;
+}
+
+.account-d .text-wrapper-3 {
+  color: #333333;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.account-d .heading-account-3 {
+  color: #000000;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 12px;
+  font-weight: 500;
+  height: 20px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: absolute;
+  top: 318px;
+  white-space: nowrap;
+}
+
+.account-d .label-old-password {
+  color: #000000;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 10px;
+  font-weight: 500;
+  height: 15px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15px;
+  position: absolute;
+  top: 349px;
+  white-space: nowrap;
+}
+
+.account-d .input-3 {
+  border: 1px solid;
+  border-color: #777777;
+  height: 30px;
+  left: 0;
+  position: absolute;
+  top: 370px;
+  width: 682px;
+}
+
+.account-d .div-span {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  left: 0;
+  position: absolute;
+  top: 420px;
+  width: 682px;
+}
+
+.account-d .text-wrapper-4 {
+  color: #000000;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 15px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.account-d .div-password {
+  height: 50px;
+  margin-right: -1px;
+  position: relative;
+  width: 683px;
+}
+
+.account-d .overlap-group {
+  border: 1px solid;
+  border-color: #777777;
+  height: 30px;
+  position: relative;
+}
+
+.account-d .button-show {
+  color: #595959;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 10px;
+  font-weight: 700;
+  height: 13px;
+  left: 636px;
+  letter-spacing: 0;
+  line-height: 12.6px;
+  position: absolute;
+  text-align: center;
+  top: 7px;
+  white-space: nowrap;
+}
+
+.account-d .button {
+  align-items: flex-start;
+  background-color: #000000;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  left: 241px;
+  max-width: 200px;
+  padding: 7.66px 60.19px 7.65px 60.81px;
+  position: absolute;
+  top: 855px;
+  width: 200px;
+}
+
+.account-d .save-changes {
+  color: #ffffff;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 15px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.account-d .div-2 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  left: 0;
+  position: absolute;
+  top: 499px;
+  width: 904px;
+}
+
+.account-d .div-shipping-address {
+  align-items: flex-start;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #b6b6b6;
+  display: flex;
+  flex: 0 0 auto;
+  padding: 0px 605px 8px 0px;
+  position: relative;
+  width: 702px;
+}
+
+.account-d .div-hd-dccfc {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 702px;
+}
+
+.account-d .div-address-form-row {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+  width: 702px;
+}
+
+.account-d .div-address-form {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  max-width: 351px;
+  padding: 0px 20px 0px 0px;
+  position: relative;
+}
+
+.account-d .div-address-form-2 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0px 0px 20px;
+  position: relative;
+  width: 331px;
+}
+
+.account-d .label {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  padding: 0px 259px 0px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.account-d .input-4 {
+  align-items: flex-start;
+  align-self: stretch;
+  border: 1px solid;
+  border-color: #b6b6b6;
+  display: flex;
+  height: 35px;
+  padding: 10.5px 7px;
+  position: relative;
+  width: 100%;
+}
+
+.account-d .pseudo-3 {
+  align-items: flex-start;
+  display: flex;
+  height: 14px;
+  padding: 0px 97px 1px 0px;
+  position: relative;
+  width: 307px;
+}
+
+.account-d .text-wrapper-5 {
+  color: #000000;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.account-d .div-address-form-3 {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 5px;
+  padding: 0px 0px 20px;
+  position: relative;
+}
+
+.account-d .label-2 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  padding: 0px 235px 0px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.account-d .input-5 {
+  align-self: stretch;
+  border: 1px solid;
+  border-color: #b6b6b6;
+  height: 35px;
+  position: relative;
+  width: 100%;
+}
+
+.account-d .label-3 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  padding: 0px 311px 0px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.account-d .input-6 {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #b6b6b6;
+  display: flex;
+  height: 35px;
+  padding: 10.5px 7px;
+  position: relative;
+  width: 100%;
+}
+
+.account-d .pseudo-4 {
+  align-items: flex-start;
+  display: flex;
+  height: 14px;
+  padding: 0px 253px 1px 0px;
+  position: relative;
+  width: 307px;
+}
+
+.account-d .ZIP-or-postal-code-wrapper {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  padding: 0px 240px 0px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.account-d .pseudo-5 {
+  align-items: flex-start;
+  display: flex;
+  height: 14px;
+  padding: 0px 93.5px 1px 0px;
+  position: relative;
+  width: 135.5px;
+}
+
+.account-d .div-address-form-4 {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 5px;
+  position: relative;
+}
+
+.account-d .country-region-wrapper {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  padding: 0px 256px 0px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.account-d .options-wrapper {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  padding: 0px 10px 20px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.account-d .options {
+  align-items: flex-start;
+  align-self: stretch;
+  background-image: url(./options.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  border: 1px solid;
+  border-color: #b6b6b6;
+  display: flex;
+  min-height: 30px;
+  padding: 11.17px 26px 11.19px 7px;
+  position: relative;
+  width: 321px;
+}
+
+.account-d .pseudo-6 {
+  align-items: flex-start;
+  display: flex;
+  height: 12.64px;
+  padding: 0px 234px 0px 0px;
+  position: relative;
+  width: 288px;
+}
+
+.account-d .text-wrapper-6 {
+  color: #000000;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 12.6px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.account-d .div-address-form-5 {
+  flex: 1;
+  flex-grow: 1;
+  height: 75px;
+  max-width: 351px;
+  position: relative;
+}
+
+.account-d .div-address-form-6 {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0px 0px 20px;
+  position: relative;
+  width: 331px;
+}
+
+.account-d .label-4 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  padding: 0px 300px 0px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.account-d .pseudo-7 {
+  align-items: flex-start;
+  display: flex;
+  height: 14px;
+  padding: 0px 82.5px 1px 0px;
+  position: relative;
+  width: 135.5px;
+}
