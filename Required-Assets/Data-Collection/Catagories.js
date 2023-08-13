@@ -1,7 +1,6 @@
-const categories = [
-  {
-    itemsName: "Accessories",
-    Items: [
+const categories = {
+  
+    Accessories: [
       {
         id: 1,
         title: "Bookish Dril Baseball Cap",
@@ -47,10 +46,9 @@ const categories = [
         color: "Orange",
       }
     ]
-  },
-  {
-      itemsName: "Bags",
-       Items: [
+  ,
+
+      Bags: [
    {
         id: 1,
         title: "EDC Backpack",
@@ -84,11 +82,9 @@ const categories = [
         brand: "Off-White",
         color: "Dark Blue",
       }
-      ]
-  },
-  {
-      itemsName: "Clothing",
-       Items: [
+      ],
+
+      Clothing:[
       {
         id: 1,
         title: "Mercantile Mens Classic Fit Oxford",
@@ -156,5 +152,5 @@ const categories = [
         color: "Green",
       }
       ]
-  },
-];
+
+    };

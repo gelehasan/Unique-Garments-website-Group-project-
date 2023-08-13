@@ -1,7 +1,7 @@
 import './Products.css';
 import { CartShopConext } from '../../Context/cartShopContext';
 import { useContext } from 'react';
-
+import heartIcon from "../../Assets/heart.svg";
 
 
 const Product = ({item})=>{
@@ -15,17 +15,18 @@ const Product = ({item})=>{
 }
 
 
-    const { name, Price, ImageUrl} = item;
+    const { name, price, ImageUrl} = item;
+    console.log(ImageUrl);
     return(
         <div    className="productItem" >
             <div    className="divImage">
             <img className='productImage' src={ImageUrl} />
 
-            <button className='addProduct' onClick={addCurrentItem}> Add product</button>
+            <img src={heartIcon} className='heartEmoji' onClick={addCurrentItem} /> 
             </div>
             <div className="description">
                 <span>{name}</span>
-                <span>{Price}</span>
+                <span>{price}</span>
             </div>
         </div>
     )
