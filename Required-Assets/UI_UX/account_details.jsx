@@ -1,9 +1,9 @@
 import React from "react";
-import "./account_details.css";
+import "./style.css";
 
-export const WwwSsenseComBy = () => {
+export const AccountD = () => {
   return (
-    <div className="www-ssense-com-by">
+    <div className="account-d">
       <div className="div-row-fluid">
         <div className="div-help-sm">
           <div className="heading-link">Account</div>
