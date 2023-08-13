@@ -1,10 +1,11 @@
-/*.catagoriesContent{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    max-width: 80%;
-    margin: 0 auto;
-   
-}*/
+.catagoriesContent{
+  margin-top: 2.3em;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+  height: fit-content;
+}
 
 .ParentDiv{
     border: 1px solid red;
@@ -12,14 +13,7 @@
     gap: 60px;
     width: 100%;
   }
-  .catagoriesContent{
-    margin-top: 2.3em;
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 0px;
-    height: fit-content;
-  }
+
   .AllFilterContainer{
     margin-top: 2.3em;
   width: 20%;
@@ -144,4 +138,6 @@
     background-color: #1e293b;
    color: white;
   }
+
+
   

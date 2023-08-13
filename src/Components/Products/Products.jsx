@@ -25,8 +25,8 @@ const Product = ({item})=>{
             <img src={heartIcon} className='heartEmoji' onClick={addCurrentItem} /> 
             </div>
             <div className="description">
-                <span>{name}</span>
-                <span>{price}</span>
+                <h4>{name}</h4>
+                <h3>{price}</h3>
             </div>
         </div>
     )
