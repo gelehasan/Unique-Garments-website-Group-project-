@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
 import {createUserWithEmailAndPassword, getAuth,onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth"
-import {doc, setDoc, getDoc, getFirestore} from 'firebase/firestore';
+import {doc, setDoc, getDoc,getDocs, getFirestore} from 'firebase/firestore';
 
-import { collection, writeBatch } from 'firebase/firestore'; 
+import { collection, writeBatch,query } from 'firebase/firestore'; 
 import { useCallback } from 'react';
 import categories from "../catagories-data";
 const firebaseConfig = {
@@ -111,4 +111,19 @@ export const SignInUser = async (email, password) => {
      
      }
  
-   // addCollectionAndDocumentss(categories)
+     export const getCollectionData = async ()=>{
+      const collectionRef= collection(db, 'Catagories');
+      const queryRequest =  query(collectionRef);
+      
+      const response = await getDocs(queryRequest);
+      const Data = response.docs.map((item)=>{
+        
+      return item.data()
+      
+      })
+      
+  return Data;
+      
+      }
+
+getCollectionData()
