@@ -1,6 +1,6 @@
+import { userReducer } from "./UserReducer/userReducer"
 
 
-
-export const RootReducer = ()=>{
-
+export const RootReducer = {
+    user: userReducer
 }
