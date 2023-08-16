@@ -6,10 +6,13 @@ import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { CartShopProvider } from './Context/cartShopContext';
 import { UserContextProvider } from './Context/userContext';
+import { Provider } from 'react-redux';
+import { Store } from './Store/Store/Store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={Store}> 
     <BrowserRouter> 
     <CartShopProvider> 
     <UserContextProvider> 
@@ -17,6 +20,7 @@ root.render(
     </UserContextProvider>
     </CartShopProvider>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

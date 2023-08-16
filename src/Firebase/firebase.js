@@ -4,7 +4,7 @@ import {doc, setDoc, getDoc,getDocs, getFirestore} from 'firebase/firestore';
 
 import { collection, writeBatch,query } from 'firebase/firestore'; 
 import { useCallback } from 'react';
-import categories from "../catagories-data";
+
 const firebaseConfig = {
     apiKey: "AIzaSyBJVmYLInO_9JMqKEKIS4lyCXEfSAxl-HU",
     authDomain: "unique-garments.firebaseapp.com",
