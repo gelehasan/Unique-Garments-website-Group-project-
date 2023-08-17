@@ -10,9 +10,9 @@ import { cartTypes } from "./cartActionTypes"
 }
 */
 
-export const setCartVisibility = ()=>{
+export const setCartVisibility = (booleanValue)=>{
 
-    return {type:cartTypes.setIsCartOpen }
+    return {type:cartTypes.setIsCartOpen, payload:booleanValue}
 }
 
 /*export const addItemToCart = (productToAdd)=>{

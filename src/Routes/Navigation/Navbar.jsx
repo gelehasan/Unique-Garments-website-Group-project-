@@ -30,13 +30,13 @@ const Navbar = ()=>{
         const [profileDropDown, setProfileDropDown] = useState(false); 
 
         const {currentUser} = useSelector((state)=> state.user)
-        const isCartOpen = useSelector((state)=> state.cart)
+        const isCartOpen = useSelector((state)=> state.cart.isCartOpen)
 
         const dispatch = useDispatch();
         
        const setCart = ()=>{
        
-        dispatch(setCartVisibility)
+        dispatch(setCartVisibility(!isCartOpen))
      
         }
    
@@ -63,7 +63,7 @@ const Navbar = ()=>{
        <Link to={"/"}>  <img  src={logo }/></Link>
         </div>
      
-        <div   className="Cart" onClick={ ()=> setCart}>
+        <div   className="Cart" onClick={  setCart}>
         <img  src={cartIcon }/>
         </div>
         

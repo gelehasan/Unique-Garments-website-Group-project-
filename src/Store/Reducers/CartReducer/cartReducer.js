@@ -10,7 +10,7 @@ export const cartReducer = (state= initialCart, action)=>{
 
     switch(type){
         case cartTypes.setIsCartOpen:
-            return {...state, isCartOpen:!state.isCartOpen}
+            return {...state, isCartOpen:payload}
         case cartTypes.addItemToCart: 
         return {...state, cartItems: payload}
 
