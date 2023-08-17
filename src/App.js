@@ -22,9 +22,9 @@ function App() {
       let userInfo;
       if (user) {  
          userInfo=  await getUserInformation (user.uid);
-         dispatch(SetUser(userInfo))
+        
       } 
-
+      dispatch(SetUser(userInfo))
   
     });
     return unsubscribe;
