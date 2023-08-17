@@ -9,7 +9,7 @@ import { addItemToCart } from '../../Store/Reducers/CartReducer/cartActions';
 const Product = ({item})=>{
    // const {addItem,bagItem, setbagItem} = useContext(CartShopConext);
     const cartItems = useSelector((state)=> state.cart.cartItems);
-console.log(cartItems)
+
     const dispatch = useDispatch();
 
     const addCurrentItem =  async ()=>{
