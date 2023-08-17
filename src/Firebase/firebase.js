@@ -1,9 +1,9 @@
 import { initializeApp } from "firebase/app";
 import {createUserWithEmailAndPassword, getAuth,onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth"
 import {doc, setDoc, getDoc,getDocs, getFirestore} from 'firebase/firestore';
-
+import { signOut } from "firebase/auth";
 import { collection, writeBatch,query } from 'firebase/firestore'; 
-import { useCallback } from 'react';
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyBJVmYLInO_9JMqKEKIS4lyCXEfSAxl-HU",
@@ -83,7 +83,7 @@ export const getUserInformation= async (userId)=>{
    
 
 
-export const AuthchangeListiner = (callback)=> onAuthStateChanged(auth,callback);
+
 
 export const SignInUser = async (email, password) => {
     if (!email || !password) return;
@@ -126,4 +126,11 @@ export const SignInUser = async (email, password) => {
       
       }
 
-getCollectionData()
+
+  export const SignOutUser = async ()=> 
+  {
+    return await signOut(auth)
+  }
+
+  export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);

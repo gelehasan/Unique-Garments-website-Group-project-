@@ -9,9 +9,28 @@ import Garments from './Routes/Garments/GarmentsPage';
 import Magazine from './Routes/Magazine/MagazinePage';
 import Shoes from './Routes/Shoes/ShoesPage';
 import ShopBY from './Components/ShopBY-links/shopBY';
-
+import { useEffect } from 'react';
+import { onAuthStateChangedListener, getUserInformation } from './Firebase/firebase';
+import { useDispatch } from 'react-redux';
+import { SetUser } from './Store/Reducers/UserReducer/userAction';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect( () => {
+    const unsubscribe = onAuthStateChangedListener( async (user)=> {
+      let userInfo;
+      if (user) {  
+         userInfo=  await getUserInformation (user.uid);
+         dispatch(SetUser(userInfo))
+      } 
+
+  
+    });
+    return unsubscribe;
+  }, []);
+
+
   return (
     <div className="App">
 

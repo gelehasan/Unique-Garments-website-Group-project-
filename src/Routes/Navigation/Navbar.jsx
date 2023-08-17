@@ -15,6 +15,7 @@ import CheckOut from '../CheckOut-for-MVP/checkout';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../Context/userContext';
 import ProfileDropDown from '../../Components/Profile/ProfileDropDown';
+import { useSelector } from 'react-redux';
 const Navbar = ()=>{
         //We use usestate to determine if we show the drop down or not
         // Use state can be used to store many thing such as arrays, etcs not just boolean 
@@ -23,9 +24,10 @@ const Navbar = ()=>{
         const [isShopBY, setShopBY]= useState(false);
         const [showMenu, setshowMenu]= useState();
         const {isCartOpen,setIsCartOpen, isCheckoutOpen} = useContext(CartShopConext);
-        const {currentUser}= useContext(UserContext);  
+       
         const [profileDropDown, setProfileDropDown] = useState(false); 
-       // let {displayName}= currentUser;
+
+        const {currentUser} = useSelector((state)=> state.user)
       
         const toggleMenu = ()=>{
             setshowMenu(!showMenu)

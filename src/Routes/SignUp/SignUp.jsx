@@ -4,15 +4,21 @@ import { signUpAuthentication, getUserInformation } from '../../Firebase/firebas
 import { useContext } from 'react';
 import { UserContext } from '../../Context/userContext';
 import { useNavigate } from 'react-router-dom';
-const SignUp = ()=>{
+import { useSelector } from 'react-redux';
 
+const SignUp = ()=>{
+  const {currentUser}= useSelector((state)=> state.user);
   const [inputFields, setInputFields] = useState({});
   const [mounted, setMounted] = useState(true);
-  
+
   const Navigate = useNavigate();
-  const {setCurrentUser,currentUser}= useContext(UserContext)
 
 
+  if(currentUser){
+    Navigate("/")
+  }
+
+  
   useEffect(() => {
     return () => {
       // Cleanup function to be executed when the component is unmounted
@@ -39,10 +45,8 @@ if (password === comfirmPassword && password.length >=6) {
    
   // Here is where we send the data we gathered from the inputs
   //And we wait for the a response back
-  const user= await signUpAuthentication({username, email, password, type});
-  const userInfo= await getUserInformation(user.uid);
-  console.log(userInfo);
-  setCurrentUser(userInfo);
+ await signUpAuthentication({username, email, password, type});
+ window.location.reload();
 
 } catch (error) {
   if (error.code === "auth/email-already-in-use") {

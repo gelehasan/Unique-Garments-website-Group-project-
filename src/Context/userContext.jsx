@@ -7,8 +7,6 @@ export const UserContext = createContext(
     }
 )
 
-
-
 export const UserContextProvider = ({children})=>{
     let [currentUser, setCurrentUser] = useState(null);
 

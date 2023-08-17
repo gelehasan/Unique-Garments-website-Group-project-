@@ -2,10 +2,20 @@ import './SignInStyle.css';
 import { useState, useContext } from "react";
 import {  UserContext} from "../../Context/userContext";
 import {SignInUser, getUserInformation} from '../../Firebase/firebase';
-
+import { SetUser } from '../../Store/Reducers/UserReducer/userAction';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 const SignIn = ()=>{
+    const {currentUser}= useSelector((state)=> state.user);
     const [inputFields, setInputFields]= useState();
     const {setCurrentUser} = useContext(UserContext);
+
+    const Navigate = useNavigate();
+
+
+    if(currentUser){
+      Navigate("/")
+    }
     const ChangeHandlar = (event)=>{
     let  {value, name}= event.target;
    
@@ -15,13 +25,7 @@ const SignIn = ()=>{
     event.preventDefault();
     let {email,password}= inputFields;
     try{
-        let {user}=  await SignInUser(email, password);
-       console.log(user)
-        if(user){
-        let userInfo = await getUserInformation(user.uid);
-        console.log(userInfo);
-    setCurrentUser(userInfo);
-        }
+     await SignInUser(email, password);
       
     }catch(error){
         console.log(error)
