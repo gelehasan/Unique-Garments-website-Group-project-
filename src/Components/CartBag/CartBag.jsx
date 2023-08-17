@@ -20,7 +20,7 @@ const CartBag = ()=>{
                
             </div>)
         })}
-        <button className='checkoutBtn' onClick={()=>setIsCheckoutOpen(!isCheckoutOpen)}> 
+        <button className='checkoutBtn'> 
             Go to the checkout  </button>
         </div> : 
 
