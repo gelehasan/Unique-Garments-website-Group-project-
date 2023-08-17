@@ -1,6 +1,6 @@
 import { cartTypes } from "./cartActionTypes"
 
-/*const addTocartHandlar = (productToAdd, cartItems )=>{
+const addTocartHandlar = (productToAdd, cartItems )=>{
     const doesProductExist = cartItems.find((item)=> item.id == productToAdd.id);
 
     if(doesProductExist){
@@ -8,16 +8,19 @@ import { cartTypes } from "./cartActionTypes"
     }
  return [...cartItems, {...productToAdd, quantity:1}];
 }
-*/
+
+
+
+
 
 export const setCartVisibility = (booleanValue)=>{
 
     return {type:cartTypes.setIsCartOpen, payload:booleanValue}
 }
 
-/*export const addItemToCart = (productToAdd)=>{
+export const addItemToCart = ( productToAdd,cartItems)=>{
     const UpdatedCartItems = addTocartHandlar (productToAdd,cartItems);
 
     return {type:cartTypes.addItemToCart, payload:UpdatedCartItems}
 
-}*/
+}

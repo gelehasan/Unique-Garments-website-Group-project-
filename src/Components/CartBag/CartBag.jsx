@@ -1,13 +1,17 @@
 import './CartBagStyle.css';
 import { useContext } from 'react';
 import { CartShopConext } from '../../Context/cartShopContext';
+import { useSelector } from 'react-redux';
+
 const CartBag = ()=>{
     const {bagItem, isCheckoutOpen, setIsCheckoutOpen} = useContext(CartShopConext);
-   
+    const cartItems = useSelector((state)=> state.cart.cartItems);
+    
+  
     return(
         <div    className="bagItems">
 {
-    bagItem.length > 0? 
+    cartItems.length > 0? 
     <div className='item-container'>   
     {bagItem.map((item)=>{
             return(<div  key={item.id} className='items'> 

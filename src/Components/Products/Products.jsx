@@ -2,15 +2,19 @@ import './Products.css';
 import { CartShopConext } from '../../Context/cartShopContext';
 import { useContext } from 'react';
 import heartIcon from "../../Assets/heart.svg";
-
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { addItemToCart } from '../../Store/Reducers/CartReducer/cartActions';
 
 const Product = ({item})=>{
-    const {addItem,bagItem, setbagItem} = useContext(CartShopConext);
+   // const {addItem,bagItem, setbagItem} = useContext(CartShopConext);
+    const cartItems = useSelector((state)=> state.cart.cartItems);
+console.log(cartItems)
+    const dispatch = useDispatch();
 
     const addCurrentItem =  async ()=>{
-    const addedItem= await addItem(bagItem,item);
-    
-   setbagItem(addedItem)
+        
+        dispatch(addItemToCart(item, cartItems));
 
 }
 
