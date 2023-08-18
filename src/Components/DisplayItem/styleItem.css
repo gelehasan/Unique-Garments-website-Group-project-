@@ -82,12 +82,12 @@ h4{
 }
 
   .sizeGroup button {
-    background-color: white; /* Green background */
-    border: 1px solid black; /* Green border */
-    color: black; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left;  /*Float the buttons side by side */
+    background-color: white; 
+    border: 1px solid black; 
+    color: black; 
+    padding: 10px 24px; 
+    cursor: pointer;
+    float: left;  
     margin-left: 4px;
     margin-right: 4px;
   }
