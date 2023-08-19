@@ -215,8 +215,8 @@ const Catagories = ({DataShop})=>{
  
 <div    className="catagoriesContent">
         {
-            filteredItems.map((item)=>{
-              return(  <Product  key={item.id} item={item} />
+            filteredItems.map((item, index)=>{
+              return(  <Product  key={index} item={item} />
               )
             })
         }
