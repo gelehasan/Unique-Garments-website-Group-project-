@@ -4,24 +4,26 @@ import search from  '../../Assets/search.svg';
 
 import './Categories.css';
 const brandNames = ["Adidas", "Balenciaga", "Converse", "J.Crew", "Nike", "Off-white", "Rick Owens"];
-const colors = ["White", "DarkBlue", "purple","Blue", "Orange"];
-const accessoriesNames=["Hats","Sunglass", "Belts","Socks"];
-const Bags = ["BackPacks", "Fanny","Packs", "Briefcases"];
-const Clothing = ["T-shirts", "shirts", "Outerwears", "Trousers", "Jeans", "Shorts"];
+const colors = ["White","Black", "purple","Blue", "Orange"];
+const accessoriesNames=["Hat","Sunglasses", "Belt","Socks"];
+const Bags = [ "Fanny Packs","Duffel Bags", "Briefcases", "Backpacks"];
+const Clothing = ["T-shirt", "Outerwear", "Outerwears", "Trousers","Trousers", "jeans", "Shorts"];
 
 
 const Catagories = ({DataShop})=>{
   const [filteredItems, setselectedFilter] = useState(DataShop);
   const [selectedBrand, setSelectedBrand] = useState("All");
   const [selectedColor, setSelectedColor]= useState("All");
-  const [selectedCatagory, setselectedCatagory] = useState("All")
+  const [selectedItem, setselectedItem] = useState("All")
   const [selectedOccasion, SetselectedOccasion ] = useState("All");  
   const [searchInput, setSearchInput] = useState("");    
-  const handleCatagory= (catagoryName)=>{
-    if(catagoryName==selectedCatagory){
-      setselectedCatagory("All");
+  
+
+  const handleCatagory= (itemName)=>{
+    if(itemName==selectedItem){
+      setselectedItem("All");
     }else{
-      setselectedCatagory(catagoryName)
+      setselectedItem(itemName)
     }
   }
   const handleOccasionChange = (occasionName)=>
@@ -56,9 +58,11 @@ const Catagories = ({DataShop})=>{
   
     }
 
+  
+
     useEffect(() => {
       filterItems();
-    }, [selectedBrand, selectedColor, selectedCatagory,selectedOccasion,searchInput]);
+    }, [selectedBrand, selectedColor, selectedItem,selectedOccasion,searchInput]);
 
 
     const filterItems = () => {
@@ -68,7 +72,7 @@ const Catagories = ({DataShop})=>{
     if(searchInput != ""){
         NewfilteredItems = NewfilteredItems.filter((item)=>{
        
-          return item.title.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
+          return item.name.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
         })
     
       }
@@ -79,15 +83,15 @@ const Catagories = ({DataShop})=>{
         NewfilteredItems = NewfilteredItems.filter((item) => item.color === selectedColor);
    
       }
-      if (selectedCatagory !== "All") {
-        NewfilteredItems = NewfilteredItems.filter((item) => item.catagory === selectedCatagory);
+      if (selectedItem !== "All") {
+       NewfilteredItems = NewfilteredItems.filter((item) => item.name === selectedItem);
       }
    
       if (selectedBrand !== "All") {
         NewfilteredItems = NewfilteredItems.filter((item) => item.brand === selectedBrand);
       }
       if (selectedOccasion !== "All") {
-        NewfilteredItems = NewfilteredItems.filter((item) => item.occasion === selectedOccasion);
+        NewfilteredItems = NewfilteredItems.filter((item) => item.category === selectedOccasion);
       }
       setselectedFilter(NewfilteredItems);
     };
@@ -118,7 +122,7 @@ const Catagories = ({DataShop})=>{
       View All</li>
   {accessoriesNames.map((itemName)=>{
   return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
-  className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
+  className={`${ selectedItem == itemName ? "selectedCatagory": ""}`}
   > {itemName}</li>) 
   }
   )
@@ -140,7 +144,7 @@ const Catagories = ({DataShop})=>{
       View All</li>
   {Bags.map((itemName)=>{
   return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
-  className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
+  className={`${ selectedItem == itemName ? "selectedCatagory": ""}`}
   > {itemName}</li>) 
   }
   )
@@ -162,7 +166,7 @@ const Catagories = ({DataShop})=>{
     >View All</li>
   {Clothing.map((itemName)=>{
   return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
-  className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
+  className={`${ selectedItem == itemName ? "selectedCatagory": ""}`}
   > {itemName}</li>) 
   }
   )
