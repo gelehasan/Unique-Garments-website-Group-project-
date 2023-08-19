@@ -10,10 +10,9 @@ import Magazine from './Routes/Magazine/MagazinePage';
 import Shoes from './Routes/Shoes/ShoesPage';
 import ShopBY from './Components/ShopBY-links/shopBY';
 import { useEffect } from 'react';
-import { onAuthStateChangedListener, getUserInformation } from './Firebase/firebase';
+import { onAuthStateChangedListener, getUserInformation,getCollectionData } from './Firebase/firebase';
 import { useDispatch } from 'react-redux';
 import { SetUser } from './Store/Reducers/UserReducer/userAction';
-
 function App() {
   const dispatch = useDispatch();
 
@@ -29,6 +28,8 @@ function App() {
     });
     return unsubscribe;
   }, []);
+
+
 
 
   return (

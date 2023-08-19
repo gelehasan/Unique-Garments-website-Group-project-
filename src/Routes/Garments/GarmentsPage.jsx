@@ -3,34 +3,34 @@ import Catagories from '../../Components/Categories/Categories';
 import DataShop from '../../data';
 import DisplayItem from '../../Components/DisplayItem/DisplayItem';
 import { SelectCatagory } from '../../Store/Reducers/CatagoriesReducer.js/CatagorySelector';
-import { setCatagories,setCatagoryLoadError } from '../../Store/Reducers/CatagoriesReducer.js/CatagoryAction';
+import { setCatagories,setCatagoryLoadError, StartFetchingCatagory} from '../../Store/Reducers/CatagoriesReducer.js/CatagoryAction';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { getCollectionData } from '../../Firebase/firebase';
+import { useNavigate } from 'react-router-dom';
 const Garments = ()=>{  
     const Catagory = useSelector(SelectCatagory);
     const dispatch = useDispatch()
-    
-    const FetchCatagories = async ()=>{
-        try{
-            let Data = await getCollectionData();
-            dispatch(setCatagories(Data))
-        }catch(error){
-            dispatch(setCatagoryLoadError, error)
-        }
-     
-    }
 
- 
-useEffect(()=>{
-    FetchCatagories();
-},[])
+    useEffect(()=>{
+        const FetchCatagories = async ()=>{
+            try{
+                let Data = await getCollectionData();
+                dispatch(setCatagories(Data))
+            }catch(error){
+                dispatch(setCatagoryLoadError, error)
+            }}
+            FetchCatagories();
+    },[])
 
-  
+
+
+
     return(
        <div>
-        {Catagory&&    <Catagories DataShop={Catagory}/>}
+
+        { Catagory.length > 0 && <Catagories DataShop={Catagory}/> }
 
        </div>
     )
