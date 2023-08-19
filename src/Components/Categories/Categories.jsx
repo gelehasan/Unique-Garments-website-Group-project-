@@ -4,7 +4,7 @@ import search from  '../../Assets/search.svg';
 
 import './Categories.css';
 const brandNames = ["Adidas", "Balenciaga", "Converse", "J.Crew", "Nike", "Off-white", "Rick Owens"];
-const colors = ["white", "black", "purple","blue"];
+const colors = ["White", "DarkBlue", "purple","Blue", "Orange"];
 const accessoriesNames=["Hats","Sunglass", "Belts","Socks"];
 const Bags = ["BackPacks", "Fanny","Packs", "Briefcases"];
 const Clothing = ["T-shirts", "shirts", "Outerwears", "Trousers", "Jeans", "Shorts"];
@@ -68,7 +68,7 @@ const Catagories = ({DataShop})=>{
     if(searchInput != ""){
         NewfilteredItems = NewfilteredItems.filter((item)=>{
        
-          return item.name.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
+          return item.title.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
         })
     
       }
@@ -107,6 +107,7 @@ const Catagories = ({DataShop})=>{
 
 <div className='topContainer'> 
 <div className='topSub'>
+  
 
 <label className='BrandTitle topTitles'> Accessories</label> 
 <div className='BrandSelection catagoriesSelection'>
