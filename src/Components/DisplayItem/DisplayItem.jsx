@@ -4,18 +4,6 @@ const DisplayItem = ()=> {
 
     return(
     <> 
-    {<html>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="index.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
 
     <div class="divHeader">
         <header>
@@ -28,31 +16,25 @@ const DisplayItem = ()=> {
 
     <head>
         <title>Bookish Drill Baseball Cap</title>
-        <meta name="description" content="Our first page">
-        <meta name="keywords" content="html tutorial template">
+        <meta name="description" content="Our first page"/>
+        <meta name="keywords" content="html tutorial template"/>
         </head>
 
     <div class="container">
     
     <div class="itemImage">
         
-        <img id="item" src="https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691626787/Garments/BlueBalenciagaCap.jpg?_s=public-apps" >
+        <img id="item" src="https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691626787/Garments/BlueBalenciagaCap.jpg?_s=public-apps" />
     </div>
     
     <div class="itemClass">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+     
     <h1 id="title">Off-White Bookish Drill Baseball Cap</h1>
     <h4>Your everyday baseball cap, simple but elegant.</h4>
-    <br>
+    <br/>
     <p>$445.00</p>
     <p>Colour: Blue</p>
-    <br>
+    <br/>
 
     <div class="sizeGroup">
         <button>S</button>
@@ -60,12 +42,11 @@ const DisplayItem = ()=> {
         <button>L</button>
         <button>XL</button>
     </div>
-<br>
-<br>
+
 
 <button class="button-60" role="button">
     ADD TO WISHLIST&nbsp;
-    <input type="checkbox" class="heart-checkbox" id="heart-checkbox">
+    <input type="checkbox" class="heart-checkbox" id="heart-checkbox" />
     <label for="heart-checkbox" class="heart">&#10084;</label>
 </button>
 
@@ -75,29 +56,17 @@ const DisplayItem = ()=> {
 
     </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
-<footer class="footer">
+
+{/**</div><footer class="footer">
     <div class="footer__addr">
       <h1 class="footer__logo">Unique Garments</h1>
           
       <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Singapore</h2>
-      <br>
 
         <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
-      </address>
+      
     </div>
     
     <ul class="footer__nav">
@@ -171,7 +140,7 @@ const DisplayItem = ()=> {
 
   </footer>
 
-</html>}
+    */}
     
     </>
     )
