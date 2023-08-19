@@ -39,6 +39,7 @@
 
 .Cart img {
     width: 40px;
+  
 }
 
 
@@ -69,7 +70,11 @@
 }
 
 
-
+.WishlistIcon{
+    position: absolute;
+    border:1px solid red;
+    right: 8%;
+}
 
 /* For close and open buttons*/
 

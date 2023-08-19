@@ -6,8 +6,8 @@ import './Categories.css';
 const brandNames = ["Adidas", "Balenciaga", "Converse", "J.Crew", "Nike", "Off-white", "Rick Owens"];
 const colors = ["White","Black", "purple","Blue", "Orange"];
 const accessoriesNames=["Hat","Sunglasses", "Belt","Socks"];
-const Bags = [ "Fanny Packs","Duffel Bags", "Briefcases", "Backpacks"];
-const Clothing = ["T-shirt", "Outerwear", "Outerwears", "Trousers","Trousers", "jeans", "Shorts"];
+const Bags = [ "Fanny Packs","Duffel Bags", "Backpacks"];
+const Clothing = ["T-shirt", "Outerwear", "Trousers", "Jeans", "Shorts"];
 
 
 const Catagories = ({DataShop})=>{

@@ -9,6 +9,7 @@ import Garments from './Routes/Garments/GarmentsPage';
 import Magazine from './Routes/Magazine/MagazinePage';
 import Shoes from './Routes/Shoes/ShoesPage';
 import ShopBY from './Components/ShopBY-links/shopBY';
+import WishList from './Routes/WishList/WishList';
 import { useEffect } from 'react';
 import { onAuthStateChangedListener, getUserInformation,getCollectionData } from './Firebase/firebase';
 import { useDispatch } from 'react-redux';
@@ -48,6 +49,7 @@ function App() {
    <Route path='/Shoes' element={<Shoes />} />
    <Route path='/ShopBy' element={<ShopBY />} />
    <Route path='/Garments' element={<Garments/>}/>
+   <Route path='/WishList' element={<WishList/>} />
    
    </Route>
    

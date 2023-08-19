@@ -18,6 +18,8 @@ import ProfileDropDown from '../../Components/Profile/ProfileDropDown';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setCartVisibility } from '../../Store/Reducers/CartReducer/cartActions';
+import heartIcon from "../../Assets/heart.svg";
+
 const Navbar = ()=>{
         //We use usestate to determine if we show the drop down or not
         // Use state can be used to store many thing such as arrays, etcs not just boolean 
@@ -59,12 +61,19 @@ const Navbar = ()=>{
         
          
           </div>
+        
        <div    className="Logo">
        <Link to={"/"}>  <img  src={logo }/></Link>
         </div>
-     
-        <div   className="Cart" onClick={  setCart}>
-        <img  src={cartIcon }/>
+
+        <div   className="Cart" >
+   
+        <Link to={"/Wishlist"}>  <img className='WishlistIcon' src={heartIcon} /> </Link>
+        <img  src={cartIcon } onClick={  setCart}/>
+
+
+
+
         </div>
         
         

@@ -73,6 +73,7 @@ if (password === comfirmPassword && password.length >=6) {
             <option value="A">A</option>    
             <option value="B">B</option>    
         </select>
+        
         <input type="password" placeholder="Password" id="password" name ="password" onChange={changeHandlar} required />
         <input type="password" placeholder="comfirmPassword" id="Password"  name='comfirmPassword'  onChange={changeHandlar} required />
         <button type="submit" >Sign Up</button>
