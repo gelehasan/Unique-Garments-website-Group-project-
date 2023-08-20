@@ -1,10 +1,15 @@
 import "./wishListStyle.css";
+import { removeItemFromWIshList } from "../../Firebase/firebase";
+import { useSelector } from "react-redux";
 
 
 const DisplayWishListItems = ({item})=>{
     const { name, price, image} = item;
-    const removeFromWishList = ()=>{
+    const currentUser = useSelector((state)=> state.user.currentUser);
 
+    const removeFromWishList =  async ()=>{
+        await removeItemFromWIshList(currentUser.id, item);
+        window.location.reload();
     }
     console.log(item)
 

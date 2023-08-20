@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {createUserWithEmailAndPassword, getAuth,onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth"
-import {doc, setDoc, getDoc,getDocs, getFirestore, updateDoc} from 'firebase/firestore';
+import {doc, setDoc, getDoc,getDocs, getFirestore, updateDoc, arrayRemove} from 'firebase/firestore';
 import { signOut } from "firebase/auth";
 import { collection, writeBatch,query } from 'firebase/firestore'; 
 
@@ -194,3 +194,15 @@ export const getWishList= async (userId)=>{
 }
 
 
+
+export const removeItemFromWIshList= async(userId, item)=> {
+  try{
+    const docRef = doc(db,"wishList", userId);
+    await  updateDoc(docRef, {
+      wishlist:arrayRemove(item)
+    })
+    console.log("removed successfully");
+  }catch(error){
+    console.log(error)
+  }
+}

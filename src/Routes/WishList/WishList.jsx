@@ -20,12 +20,12 @@ useEffect(()=>{
        }
 
        fetchUserWishList();
-},[])
+},[currentUser])
     
     return(
         <div className="wishListContainer">
         
-           {
+           {wishListData.length > 0 ? 
             
             wishListData.map((items)=> {
                
@@ -36,7 +36,10 @@ useEffect(()=>{
                 )
                 }
             )
-        
+                :
+                <div>
+                    <h3>Nothing to display here</h3>
+                </div>
            }
           
         </div>
