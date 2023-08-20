@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {createUserWithEmailAndPassword, getAuth,onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth"
-import {doc, setDoc, getDoc,getDocs, getFirestore} from 'firebase/firestore';
+import {doc, setDoc, getDoc,getDocs, getFirestore, updateDoc} from 'firebase/firestore';
 import { signOut } from "firebase/auth";
 import { collection, writeBatch,query } from 'firebase/firestore'; 
 
@@ -137,5 +137,60 @@ export const SignInUser = async (email, password) => {
 
 
 
-  //Wishlist
+
+export const addToWishList = async (userId, product)=>{
+  try {
+    const collectionRef= collection(db, "wishList");
+    const docRef = doc(collectionRef, userId);
+    const docSnapshot = await getDoc(docRef);
+
+    if(docSnapshot.exists()){
+      const currentWishList = docSnapshot.data().wishlist || [];
+      const productIndex = currentWishList.findIndex((item)=> item.id == product.id);
+
+      if(productIndex  ===-1){
+        currentWishList.push(product);
+        console.log("item has been added to wishList")
+        await updateDoc(docRef, {
+          wishlist:currentWishList
+        });
+      
+      }else{
+        alert("Item Already exists");
+      }
+    }else{
+      await setDoc(docRef,{
+        wishlist: [product],
+      })
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
+export const getWishList= async (userId)=>{
+  try {
+      const collectionRef= collection(db, "wishList");
+      const docRef= doc(collectionRef, userId);
+      const docSnapshot= await getDoc(docRef);
+
+      if(docSnapshot.exists()){
+        const wishListData = docSnapshot.data();
+       console.log(wishListData)
+
+        return wishListData;
+      }else{
+        console.log("Nothing been added to your wishlist");
+
+        return [];
+      }
+
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+
 
