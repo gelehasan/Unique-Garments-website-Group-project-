@@ -1,0 +1,93 @@
+.accountManagementContainer{
+  border:1px solid black;
+  width: 60%;
+  margin:0 auto;
+  margin-top: 2em;
+  height:fit-content;
+}
+
+
+.accountInfoLabel{
+  text-align: center;
+  margin: 0;
+  margin-top:12px;
+}
+
+
+
+.accountInformation, .passWordDetails, .shippingAddress, .categoryChoice{
+  
+  padding:10px;
+}
+.fieldLabel{
+ margin-bottom:0.5em;
+}
+
+.accountInput{
+width: 100%;
+ font-size: 1.3rem;
+}
+
+.sectionLabels{
+  margin-bottom: 0.5em;
+}
+
+
+.categoryImage {
+  display: flex;
+  justify-content: space-around;
+}
+
+.imageRadioWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.accountManagementContainer img{
+  width: 220px;
+  height: 200px;
+}
+
+
+
+@media screen and (max-width: 800px) { /* Adjust the max-width value as needed */
+  .accountManagementContainer{ 
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) { /* Adjust the max-width value as needed */
+  .accountManagementContainer{ 
+    width: 100%;
+  }
+
+  .categoryImage {
+    display: block;
+  }
+ .accountManagementContainer img{
+    width: 120px;
+    height: 80px;
+  }
+  .imageRadioWrapper {
+    margin-bottom: 20px; /* Adding spacing between image-radio pairs on smaller screens */
+  }
+}
+
+.submitDiv{
+ width: 100%;
+  display:flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content:center;
+
+}
+.updateBtn{
+  font-size:1.3rem;
+  width:180px;
+  height:40px;
+  background-color: black;
+  color:white;
+  cursor: pointer;
+}
