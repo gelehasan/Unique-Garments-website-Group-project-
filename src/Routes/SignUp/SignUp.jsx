@@ -68,11 +68,7 @@ if (password === comfirmPassword && password.length >=6) {
         <h1>Sign Up</h1>
         <input type="text" placeholder="Username" id="username" name='username' onChange={changeHandlar} required/>
         <input type="email" placeholder="Email" id="email" name='email'  onChange={changeHandlar} required/>
-        <select id="fashion-type" name="type" onChange={changeHandlar} required> 
-            <option value="">Select your fashion type</option>
-            <option value="A">A</option>    
-            <option value="B">B</option>    
-        </select>
+     
         
         <input type="password" placeholder="Password" id="password" name ="password" onChange={changeHandlar} required />
         <input type="password" placeholder="comfirmPassword" id="Password"  name='comfirmPassword'  onChange={changeHandlar} required />

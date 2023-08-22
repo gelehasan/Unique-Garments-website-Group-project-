@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 import { onAuthStateChangedListener, getUserInformation,getCollectionData } from './Firebase/firebase';
 import { useDispatch } from 'react-redux';
 import { SetUser } from './Store/Reducers/UserReducer/userAction';
+import Profile from './Routes/Profile/Profile';
 function App() {
   const dispatch = useDispatch();
 
@@ -50,6 +51,7 @@ function App() {
    <Route path='/ShopBy' element={<ShopBY />} />
    <Route path='/Garments' element={<Garments/>}/>
    <Route path='/WishList' element={<WishList/>} />
+   <Route path='/Profile' element={<Profile/>} />
    
    </Route>
    

@@ -24,7 +24,7 @@ const db =  getFirestore();
 
 export const signUpAuthentication = async (registrationFields={}) => {
 
-    let {email, password, type}= registrationFields;
+    let {email, password}= registrationFields;
 
     if (!email || !password) return;
 
@@ -53,8 +53,12 @@ if (!userSnapshot.exists()) {
     await setDoc(userDocRef, {
     id:user.uid,
     displayName,
+    shippingAdress:"",
+    country:"",
+    phone:"",
+    fullName:"",
     email,
-    type,
+    type:"",
     createdAt,
     });
 
@@ -206,3 +210,27 @@ export const removeItemFromWIshList= async(userId, item)=> {
     console.log(error)
   }
 }
+
+
+
+
+export const updateAccount = async (userId, updatedFields) => {
+  const {userName, fullName, phone, country, shippingAddress, type} = updatedFields;
+      const userDocRef = doc(db, "users", userId);
+      try {
+        await updateDoc(userDocRef, {
+          displayName: userName,
+          fullName: fullName,
+          phone: phone,
+          country:country,
+          shippingAddress:shippingAddress,
+          type:type
+
+
+        });
+        return true;
+      } catch (error) {
+        console.log("Error updating username", error);
+        return false; 
+      }
+};
