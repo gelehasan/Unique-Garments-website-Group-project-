@@ -155,7 +155,79 @@ const categories = [
         color: "Green",
       }
       ]
+    },
+  { 
+      itemName:"Shoes",
+      itemData:[
+      {
+        id: 1,
+        title: "Converse Chuck Taylor All-Star 70 High Comme des Garcons PLAY",
+        price: 255,
+        descripton: `Your Classic All Star sneaker with a collaboration with COMME des GARÇONS in a limited colourway.`,
+        category: "Sneakers",
+        image: "https://asset.cloudinary.com/dmhnsp8sj/62d2c753da675de04f77422396deac38",
+        occasions: "Casual", 
+        brand: "Converse",
+        color: "Dark Blue",
+      },
+       {
+        id: 2,
+        title: "Balenciaga Laced Sole Leather Derby Shoes",
+        price: 951,
+        descripton: 'A classy twist to the classic Derby, a must have for the autumn.',
+        category: "Dress Shoes",
+        image: "https://asset.cloudinary.com/dmhnsp8sj/ea069716b9cfa12faeaea17c888c7ef9",
+        occasions: "Casual",
+        brand: "Balenciaga",
+        color: "Green",
+      },
+       {
+        id: 3,
+        title: "Calm Sesame Slides",
+        price: 91,
+        descripton: 'A stylish flavour to the Nike Slide, the Sesame colourway will match all of your ideal fits.',
+        category: "Slippers",
+        image: "https://asset.cloudinary.com/dmhnsp8sj/a2f1f70de1508add60e99cb4a1829290",
+        occasions: "Athleisure",
+        brand: "Nike",
+        color: "Orange",
+      },
+      {
+        id: 4,
+        title: "Out of Office Lace-Up Sneaker",
+        price: 837.53,
+        descripton: 'High-Class Blue colourway with arrows that represent the Off-White culture.',
+        category: "Sneakers",
+        image: "https://asset.cloudinary.com/dmhnsp8sj/1354835c3dee59cb3483b6547bed884d",
+        occasions: "Casual", 
+        brand: "Off-white",
+        color: "Blue",
+      },
+      {
+        id: 5,
+        title: "Beatle Bogun Boots",
+        price: 747,
+        descripton: 'Calfskin, leather, and rubber materials carefully crafted to produce this one of a kind pair.',
+        category: "Dress Shoes",
+        image: "https://asset.cloudinary.com/dmhnsp8sj/fced8c37fe217cd415d39bd569ab8c84",
+        occasions: "Casual",
+        brand: "Rick Owens",
+        color: "Green",
+      },
+      {
+        id: 6,
+        title: "Yeezy Slides Azure",
+        price: 171,
+        descripton: 'Comfort, Style, and Convenience highlight the very essence of the Yeezy Slide.',
+        category: "Slippers",
+        image: "https://asset.cloudinary.com/dmhnsp8sj/171c0d06e93bf2f80555f798597705e2",
+        occasions: "Athleisure",
+        brand: "Adidas",
+        color: "Blue",
+      }
+      ]
     }
+  
 ];
 
 
