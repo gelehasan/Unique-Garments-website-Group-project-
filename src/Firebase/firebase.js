@@ -94,7 +94,9 @@ export const SignInUser = async (email, password) => {
   
     return await signInWithEmailAndPassword(auth, email, password);
   };
-    
+  
+
+
   export const addCollectionAndDocumentss =async (itemToAdd)=> {
 
      const collectioRef =  collection(db,'Catagories');
@@ -234,3 +236,42 @@ export const updateAccount = async (userId, updatedFields) => {
         return false; 
       }
 };
+
+
+
+
+export const addArticles = async (articlesToAdd) => {
+  const collectionRef = collection(db, 'Articles');
+  const batch = writeBatch(db);
+
+  articlesToAdd.forEach((article) => {
+    const docRef = doc(collectionRef, article.id.toString());
+    batch.set(docRef, article);
+  });
+
+  await batch.commit();
+
+  console.log('Articles added successfully!');
+};
+
+
+
+
+
+
+export const getArticleData = async () => {
+  const collectionRef = collection(db, 'Articles');
+  const queryRequest = query(collectionRef);
+
+  const response = await getDocs(queryRequest);
+  const articles = response.docs.map((doc) => {
+    return doc.data();
+  });
+
+  console.log( articles);
+};
+
+getArticleData()
+
+
+
