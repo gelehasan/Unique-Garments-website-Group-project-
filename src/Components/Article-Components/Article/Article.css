@@ -45,18 +45,21 @@ body {
     margin: 15px 0;
 }
 
-.quote p {
-    font-style: italic;
-    color: #555;
-}
 
+.article-content p{
+    text-align: left;
+}
 .quote-source {
     display: block;
     margin-top: 5px;
     color: #777;
 }
-
-img {
+.quote p {
+    font-style: italic;
+    color: #555;
+    text-align: center;
+}
+.article img {
     max-width: 100%;
     height: auto;
     display: block;
