@@ -268,10 +268,10 @@ export const getArticleData = async () => {
     return doc.data();
   });
 
-  console.log( articles);
+  return articles;
 };
 
-getArticleData()
+
 
 
 

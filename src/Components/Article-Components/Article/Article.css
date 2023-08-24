@@ -1,0 +1,85 @@
+body, h1, h2, h3, p, blockquote, cite, img {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.article-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.article-author,
+.article-date {
+    color: #888;
+}
+
+.article-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.quote {
+    border-left: 4px solid #888;
+    background-color: #f2f2f2;
+    padding: 10px 15px;
+    margin: 15px 0;
+}
+
+.quote p {
+    font-style: italic;
+    color: #555;
+}
+
+.quote-source {
+    display: block;
+    margin-top: 5px;
+    color: #777;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .article-content {
+        padding: 10px;
+    }
+
+    .article-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+    }
+}

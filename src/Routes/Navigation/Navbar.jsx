@@ -92,7 +92,7 @@ const Navbar = ()=>{
                     <Link to={"/ShopBy"}> Shop By </Link>
                    { <ShopBY isShopBY={isShopBY}  setShopBY={setShopBY}/>}
                     </li>
-                <li> <Link to={"/Magazine"}> Magazine</Link> </li>
+                <li> <Link to={"/Articles"}> Magazine</Link> </li>
             </ul>
         </div>
 

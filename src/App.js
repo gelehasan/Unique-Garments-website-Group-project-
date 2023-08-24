@@ -6,7 +6,7 @@ import SignUp from './Routes/SignUp/SignUp';
 import CheckOut from './Routes/CheckOut-for-MVP/checkout';
 import SignIn from './Routes/SignIn/SignIn';
 import Garments from './Routes/Garments/GarmentsPage';
-import Magazine from './Routes/Magazine/MagazinePage';
+import Articles from './Routes/ArticlePage/articlePage';
 import Shoes from './Routes/Shoes/ShoesPage';
 import ShopBY from './Components/ShopBY-links/shopBY';
 import WishList from './Routes/WishList/WishList';
@@ -46,7 +46,7 @@ function App() {
    <Route path='/SignUp' element={<SignUp />} />
    <Route path='/SignIn' element={<SignIn />} />
    <Route path='/checkout' element={<CheckOut />} />
-   <Route path='/Magazine' element={<Magazine />} /> 
+   <Route path='/Articles/*' element={<Articles />} /> 
    <Route path='/Shoes' element={<Shoes />} />
    <Route path='/ShopBy' element={<ShopBY />} />
    <Route path='/Garments' element={<Garments/>}/>
