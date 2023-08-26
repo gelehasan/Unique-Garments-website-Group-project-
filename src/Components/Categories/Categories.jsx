@@ -1,14 +1,15 @@
 import Product from "../Products/Products";
 import { useEffect, useState } from 'react';
 import search from  '../../Assets/search.svg';
-
+import AccessoriesFiltering from "../Filters/AccessoriesFIlter/Accessories";
+import BagsFilterig from "../Filters/BagsFilter/BagsFilter";
+import ClothingFilter from "../Filters/ClothingFilter/ClothingFilter";
 import './Categories.css';
 const brandNames = ["Adidas", "Balenciaga", "Converse", "J.Crew", "Nike", "Off-white", "Rick Owens"];
 const colors = ["White","Black", "purple","Blue", "Orange"];
 const accessoriesNames=["Hat","Sunglasses", "Belt","Socks"];
 const Bags = [ "Fanny Packs","Duffel Bags", "Backpacks"];
 const Clothing = ["T-shirt", "Outerwear", "Trousers", "Jeans", "Shorts"];
-
 
 const Catagories = ({DataShop})=>{
   const [filteredItems, setselectedFilter] = useState(DataShop);
@@ -110,70 +111,40 @@ const Catagories = ({DataShop})=>{
 </div>
 
 <div className='topContainer'> 
-<div className='topSub'>
-  
 
-<label className='BrandTitle topTitles'> Accessories</label> 
-<div className='BrandSelection catagoriesSelection'>
-  <ul>
-    <li onClick={()=> handleOccasionChange("Accessories")}  
-     className={`${ selectedOccasion == "Accessories" ? "selectedCatagory": ""}`}
-    >
-      View All</li>
-  {accessoriesNames.map((itemName)=>{
-  return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
-  className={`${ selectedItem == itemName ? "selectedCatagory": ""}`}
-  > {itemName}</li>) 
-  }
-  )
+{
+  <AccessoriesFiltering 
+  accessoriesNames={accessoriesNames} 
+  selectedItem={selectedItem} 
+  handleCatagory={handleCatagory} 
+  selectedOccasion={selectedOccasion}
+  handleOccasionChange={handleOccasionChange}
+  />
+}
 
-  }
+{
+<BagsFilterig 
+Bags={Bags}  
+selectedOccasion={selectedOccasion}
+handleOccasionChange={handleOccasionChange}
+handleCatagory={handleCatagory}
+selectedItem={selectedItem}
+/>
+}
 
-  </ul>
-</div>
-</div>
+{
 
-<div className='topSub'>
+<ClothingFilter
+Clothing={Clothing}
+selectedOccasion={selectedOccasion}
+handleOccasionChange={handleOccasionChange}
+handleCatagory={handleCatagory}
+selectedItem={selectedItem}
+/>
 
-<label className='BrandTitle topTitles'> Bags</label> 
-<div className='BrandSelection catagoriesSelection'>
-  <ul>
-    <li onClick={()=> handleOccasionChange("Bags")}  
-     className={`${ selectedOccasion == "Bags" ? "selectedCatagory": ""}`}
-    >
-      View All</li>
-  {Bags.map((itemName)=>{
-  return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
-  className={`${ selectedItem == itemName ? "selectedCatagory": ""}`}
-  > {itemName}</li>) 
-  }
-  )
-
-  }
-
-  </ul>
-</div>
-</div>
+}
 
 
-<div className='topSub'>
-
-<label className='BrandTitle topTitles'> Clothing</label> 
-<div className='BrandSelection catagoriesSelection'>
-  <ul>
-    <li onClick={()=> handleOccasionChange("Clothing")}  
-    className={`${ selectedOccasion == "Clothing" ? "selectedCatagory": ""}`}
-    >View All</li>
-  {Clothing.map((itemName)=>{
-  return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
-  className={`${ selectedItem == itemName ? "selectedCatagory": ""}`}
-  > {itemName}</li>) 
-  }
-  )
-  }
-  </ul>
-</div>
-</div>
 </div>
 
 
