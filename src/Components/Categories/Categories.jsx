@@ -5,9 +5,10 @@ import AccessoriesFiltering from "../Filters/AccessoriesFIlter/Accessories";
 import BagsFilterig from "../Filters/BagsFilter/BagsFilter";
 import ClothingFilter from "../Filters/ClothingFilter/ClothingFilter";
 import BrandsFilter from "../Filters/BrandsFilter/BrandsFilter";
+import ColorFilter from "../Filters/ColorsFilter/ColorsFilter";
 import './Categories.css';
 const brandNames = ["Adidas", "Balenciaga", "Converse", "J.Crew", "Nike", "Off-white", "Rick Owens"];
-const colors = ["White","Black", "purple","Blue", "Orange"];
+const colors = ["Black", "purple","Blue", "Orange"];
 const accessoriesNames=["Hat","Sunglasses", "Belt","Socks"];
 const Bags = [ "Fanny Packs","Duffel Bags", "Backpacks"];
 const Clothing = ["T-shirt", "Outerwear", "Trousers", "Jeans", "Shorts"];
@@ -54,8 +55,6 @@ const Catagories = ({DataShop})=>{
 
     const searchHandlar = (event)=>{
       const value= event.target.value;
-  
-      
       setSearchInput(value);
   
     }
@@ -78,8 +77,6 @@ const Catagories = ({DataShop})=>{
         })
     
       }
-       
-       
 
       if(selectedColor !=="All"){
         NewfilteredItems = NewfilteredItems.filter((item) => item.color === selectedColor);
@@ -113,7 +110,7 @@ const Catagories = ({DataShop})=>{
 
 <div className='topContainer'> 
 
-{
+
   <AccessoriesFiltering 
   accessoriesNames={accessoriesNames} 
   selectedItem={selectedItem} 
@@ -121,71 +118,51 @@ const Catagories = ({DataShop})=>{
   selectedOccasion={selectedOccasion}
   handleOccasionChange={handleOccasionChange}
   />
-}
 
-{
-<BagsFilterig 
-Bags={Bags}  
-selectedOccasion={selectedOccasion}
-handleOccasionChange={handleOccasionChange}
-handleCatagory={handleCatagory}
-selectedItem={selectedItem}
-/>
-}
+  <BagsFilterig 
+  Bags={Bags}  
+  selectedOccasion={selectedOccasion}
+  handleOccasionChange={handleOccasionChange}
+  handleCatagory={handleCatagory}
+  selectedItem={selectedItem}
+  />
 
-{
 
-<ClothingFilter
-Clothing={Clothing}
-selectedOccasion={selectedOccasion}
-handleOccasionChange={handleOccasionChange}
-handleCatagory={handleCatagory}
-selectedItem={selectedItem}
-/>
-
-}
-
+  <ClothingFilter
+  Clothing={Clothing}
+  selectedOccasion={selectedOccasion}
+  handleOccasionChange={handleOccasionChange}
+  handleCatagory={handleCatagory}
+  selectedItem={selectedItem}
+  />
 
 </div>
 
 
-{
+{/* Bottom sections */}
   <BrandsFilter 
-brandNames={brandNames}
-selectedBrand={selectedBrand}
-handleBrandChange={handleBrandChange}
-/>
-}
+  brandNames={brandNames}
+  selectedBrand={selectedBrand}
+  handleBrandChange={handleBrandChange}
+  />
 
-  <div className='bottomContainer'>
+  <ColorFilter
+  colors={colors}
+  selectedColor={selectedColor}
+  handleColorFiltering={handleColorFiltering}
+    />
 
-    <label className='BrandTitle'> Colors</label> 
-   <div>  {colors.map((color) => (
-      <div key={color} className={`BrandSelection ${ selectedColor == color ? "active": ""}`} 
-      onClick={()=>handleColorFiltering(color)}>
-       <div style={{ backgroundColor: color }} className={`colorsIcon ${color}`
-   }> </div>
-        <label className='brandsLabel'>
-          {color}
-        </label>
-      </div>
-    ))}
-    </div>
-  </div>
 {/** Filtering section ends  */}
   </div>
  
-<div    className="catagoriesContent">
-        {
-            filteredItems.map((item, index)=>{
-              return(  <Product  key={index} item={item} />
-              )
-            })
-        }
-</div>
-
-     
-    
+  <div    className="catagoriesContent">
+          {
+              filteredItems.map((item, index)=>{
+                return(  <Product  key={index} item={item} />
+                )
+              })
+          }
+  </div>
   </div>
     )
 }
