@@ -4,6 +4,7 @@ import search from  '../../Assets/search.svg';
 import AccessoriesFiltering from "../Filters/AccessoriesFIlter/Accessories";
 import BagsFilterig from "../Filters/BagsFilter/BagsFilter";
 import ClothingFilter from "../Filters/ClothingFilter/ClothingFilter";
+import BrandsFilter from "../Filters/BrandsFilter/BrandsFilter";
 import './Categories.css';
 const brandNames = ["Adidas", "Balenciaga", "Converse", "J.Crew", "Nike", "Off-white", "Rick Owens"];
 const colors = ["White","Black", "purple","Blue", "Orange"];
@@ -148,28 +149,13 @@ selectedItem={selectedItem}
 </div>
 
 
-  <div className='bottomContainer'>
-
-    <label className='BrandTitle'> Brands</label> 
-       
-   
-   <div>  {brandNames.map((brand) => (
-      <div key={brand} className='BrandSelection'>
-       
-        <label className='brandsLabel'>
-          <input
-           type='checkbox'
-            name='brand'
-            value={brand}
-            checked={selectedBrand === brand}
-            onChange={() => handleBrandChange(brand)}   
-          />
-          {brand}
-        </label>
-      </div>
-    ))}
-    </div>
-  </div>
+{
+  <BrandsFilter 
+brandNames={brandNames}
+selectedBrand={selectedBrand}
+handleBrandChange={handleBrandChange}
+/>
+}
 
   <div className='bottomContainer'>
 
