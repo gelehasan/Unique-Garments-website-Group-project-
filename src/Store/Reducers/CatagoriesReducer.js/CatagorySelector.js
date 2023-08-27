@@ -43,3 +43,21 @@ export const SelectShoes = createSelector(
         return AllCatagories;
     }
 )
+
+export const SelectShopBY = createSelector(
+    [SelectcatagorySlice],
+    (catagory)=> {
+        let AllCatagories = [];
+        catagory.map((catagoryItem)=>{
+        
+
+           
+            AllCatagories.push(...catagoryItem.itemData)
+   
+        })
+
+        return AllCatagories;
+    }
+)
+
+

@@ -29,8 +29,6 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
   const [searchInput, setSearchInput] = useState("");    
   
 
-  console.log(DataShop)
-
   const handleCatagory= (itemName)=>{
  
     if(itemName==selectedCatagory){
@@ -68,7 +66,7 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
           setSelectedBrand(brand);
       }
     };
-    
+
     const handleColorFiltering = (colorName)=>{ 
       if(colorName==selectedColor){
           setSelectedColor("All")
