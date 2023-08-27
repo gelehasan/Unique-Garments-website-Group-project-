@@ -1,4 +1,4 @@
-const categories = [
+export const categories = [
   {  itemName:"Accessories",
      itemData: [
       {
@@ -7,6 +7,7 @@ const categories = [
         price: 445,
         descripton: 'Your everyday baseball cap, simple but elegant.',
         category: "Hats",
+        group:"Accessories",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691626787/Garments/BlueBalenciagaCap.jpg?_s=public-apps",
         occasions: "Casual", 
         brand: "Balenciaga",
@@ -18,6 +19,7 @@ const categories = [
         price: 1839,
         descripton: 'Stainless steel and Nylon 100%, perfect for the Summer season.',
         category: "Sunglasses",
+        group:"Accessories",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691628278/Garments/GreenRickOwensSunglasses.jpg?_s=public-apps",
         occasions: "Formal",
         brand: "Rick Owens",
@@ -29,6 +31,7 @@ const categories = [
         price: 34.57,
         descripton: 'Tech Essentials Reversible Belt, athletic weave that prioritizes comfort.',
         category: "Belts",
+        group:"Accessories",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691629469/Garments/NavyBlueBeltNikeBelt.jpg?_s=public-apps",
         occasions: "Athleisure",
         brand: "Nike",
@@ -40,8 +43,9 @@ const categories = [
         price: 93.95,
         descripton: 'Stretch design by Stella McCartney. Unlock true performance with style.',
         category: "Socks",
+        group:"Accessories",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691630275/Garments/OrangeAdidasSocks.jpg?_s=public-apps",
-        occasions: "Athleisure",
+        occasions: "Formal",
         brand: "Adidas",
         color: "Orange",
       }
@@ -56,6 +60,7 @@ const categories = [
         price: 35.20,
         descripton: 'The perfect casual/skating backpack for all of your essentials. Padded layers for extra protection.',
         category: "Backpacks",
+        group:"Bags",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691631643/Garments/GreenConverseBackpack.jpg?_s=public-apps",
         occasions: "Casual", 
         brand: "Converse",
@@ -67,6 +72,7 @@ const categories = [
         price: 1090,
         descripton: 'Washed denim bag with zip. Stand out in the streets with the classic Balenciaga logo.',
         category: "Fanny Packs",
+        group:"Bags",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691632357/Garments/BlueBalenciagaFannyPack.jpg?_s=public-apps",
         occasions: "Casual",
         brand: "Balenciaga",
@@ -78,8 +84,9 @@ const categories = [
         price: 995,
         descripton: 'Break a sweat with class using this athletic crafted bag featuring the classic logo pattern.',
         category: "Duffel Bags",
+        group:"Bags",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691638822/Garments/DarkBlueOffWhiteDuffle.jpg?_s=public-apps",
-        occasions: "Athleisure",
+        occasions: "Formal",
         brand: "Off-White",
         color: "Dark Blue",
       }
@@ -94,6 +101,7 @@ const categories = [
         price: 80.27,
         descripton: `Maximum comfort and style await with the Oxford shirt's microfibers tailored to suit your needs.`,
         category: "Shirts",
+        group:"Clothing",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691640302/Garments/GreenJ.CrewShirt.jpg?_s=public-apps",
         occasions: "Formal", 
         brand: "J.Crew",
@@ -105,6 +113,7 @@ const categories = [
         price: 135.33,
         descripton: 'Crewneck Tee meeting your essential needs, made with premium cotton pullover style.',
         category: "T-Shirts",
+        group:"Clothing",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691639749/Garments/OrangeRickOwensTShirt.jpg?_s=public-apps",
         occasions: "Casual",
         brand: "Rick Owens",
@@ -116,6 +125,7 @@ const categories = [
         price: 335.49,
         descripton: 'Arctic tested jacket, perfect for your winter wardrobe.',
         category: "Outerwear",
+        group:"Clothing",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691640667/Garments/DarkBlueConverseOuterwear.jpg?_s=public-apps",
         occasions: "Casual",
         brand: "Converse",
@@ -127,6 +137,7 @@ const categories = [
         price: 1181,
         descripton: 'Altered to an oversized fit, lunge with ease with this stylish bottom.',
         category: "Trousers",
+        group:"Clothing",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691641072/Garments/BlueOff-WhiteTrousers.jpg?_s=public-apps",
         occasions: "Formal", 
         brand: "Off-white",
@@ -138,8 +149,9 @@ const categories = [
         price: 62.99,
         descripton: 'Definitely stand out with these athletic bottoms with a 3D Classic Swoosh',
         category: "Jeans",
+        group:"Clothing",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691641560/Garments/OrangeNikeJeans.jpg?_s=public-apps",
-        occasions: "Athleisure",
+        occasions: "Casual",
         brand: "Nike",
         color: "Orange",
       },
@@ -149,14 +161,15 @@ const categories = [
         price: 60,
         descripton: 'Easy to wear drawcord waist shorts that promises comfort.',
         category: "Shorts",
+        group:"Clothing",
         image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691641963/Garments/GreenAdidasShorts.jpg?_s=public-apps",
-        occasions: "Athleisure",
+        occasions: "Casual",
         brand: "Adidas",
         color: "Green",
       }
       ]
     },
-  { 
+  {
       itemName:"Shoes",
       itemData:[
       {
@@ -166,7 +179,7 @@ const categories = [
         descripton: `Your Classic All Star sneaker with a collaboration with COMME des GARÇONS in a limited colourway.`,
         category: "Sneakers",
         image: "https://asset.cloudinary.com/dmhnsp8sj/62d2c753da675de04f77422396deac38",
-        occasions: "Casual", 
+        occasions: "Formal", 
         brand: "Converse",
         color: "Dark Blue",
       },
@@ -176,8 +189,8 @@ const categories = [
         price: 951,
         descripton: 'A classy twist to the classic Derby, a must have for the autumn.',
         category: "Dress Shoes",
-        image: "https://asset.cloudinary.com/dmhnsp8sj/ea069716b9cfa12faeaea17c888c7ef9",
-        occasions: "Casual",
+        image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1692658462/GreenBalenciagaDressShoes.jpg?_s=public-apps",
+        occasions: "Formal",
         brand: "Balenciaga",
         color: "Green",
       },
@@ -187,8 +200,8 @@ const categories = [
         price: 91,
         descripton: 'A stylish flavour to the Nike Slide, the Sesame colourway will match all of your ideal fits.',
         category: "Slippers",
-        image: "https://asset.cloudinary.com/dmhnsp8sj/a2f1f70de1508add60e99cb4a1829290",
-        occasions: "Athleisure",
+        image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1692659165/OrangeNikeSlippers.jpg?_s=public-apps",
+        occasions: "Casual",
         brand: "Nike",
         color: "Orange",
       },
@@ -198,8 +211,8 @@ const categories = [
         price: 837.53,
         descripton: 'High-Class Blue colourway with arrows that represent the Off-White culture.',
         category: "Sneakers",
-        image: "https://asset.cloudinary.com/dmhnsp8sj/1354835c3dee59cb3483b6547bed884d",
-        occasions: "Casual", 
+        image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1692659736/BlueOffWhiteSneakers.jpg?_s=public-apps",
+        occasions: "Formal", 
         brand: "Off-white",
         color: "Blue",
       },
@@ -210,7 +223,7 @@ const categories = [
         descripton: 'Calfskin, leather, and rubber materials carefully crafted to produce this one of a kind pair.',
         category: "Dress Shoes",
         image: "https://asset.cloudinary.com/dmhnsp8sj/fced8c37fe217cd415d39bd569ab8c84",
-        occasions: "Casual",
+        occasions: "Formal",
         brand: "Rick Owens",
         color: "Green",
       },
@@ -220,8 +233,8 @@ const categories = [
         price: 171,
         descripton: 'Comfort, Style, and Convenience highlight the very essence of the Yeezy Slide.',
         category: "Slippers",
-        image: "https://asset.cloudinary.com/dmhnsp8sj/171c0d06e93bf2f80555f798597705e2",
-        occasions: "Athleisure",
+        image: "https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1692663598/BlueAdidasSlippers.jpg?_s=public-apps",
+        occasions: "Casual",
         brand: "Adidas",
         color: "Blue",
       }
@@ -231,4 +244,4 @@ const categories = [
 ];
 
 
-    export default categories;
+

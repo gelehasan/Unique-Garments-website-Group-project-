@@ -27,7 +27,7 @@ const Product = ({item})=>{
 }
 
 
-    const { name, price, image} = item;
+    const { title, price, image} = item;
 
     return(
         <div    className="productItem" >
@@ -37,7 +37,7 @@ const Product = ({item})=>{
             <img src={heartIcon} className='heartEmoji' onClick={addToYourWishList} /> 
             </div>
             <div className="description">
-                <h4>{name}</h4>
+                <h4>{title}</h4>
                 <h3>{price}</h3>
             </div>
         </div>

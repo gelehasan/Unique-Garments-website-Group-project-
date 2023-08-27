@@ -7,34 +7,43 @@ import ClothingFilter from "../Filters/ClothingFilter/ClothingFilter";
 import BrandsFilter from "../Filters/BrandsFilter/BrandsFilter";
 import ColorFilter from "../Filters/ColorsFilter/ColorsFilter";
 import './Categories.css';
+import ShoesFilter from "../Filters/ShoesFilter/ShoesFilter";
 const brandNames = ["Adidas", "Balenciaga", "Converse", "J.Crew", "Nike", "Off-white", "Rick Owens"];
 const colors = ["Black", "purple","Blue", "Orange"];
-const accessoriesNames=["Hat","Sunglasses", "Belt","Socks"];
+const accessoriesNames=["Hats","Sunglasses", "Belts","Socks"];
 const Bags = [ "Fanny Packs","Duffel Bags", "Backpacks"];
-const Clothing = ["T-shirt", "Outerwear", "Trousers", "Jeans", "Shorts"];
+const Clothing = ["T-Shirts", "Outerwear", "Trousers", "Jeans", "Shorts", "Shirts"];
+const shoesNames =[ "Dress Shoes","Sneakers","Slippers",]
 
-const Catagories = ({DataShop})=>{
+
+const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
   const [filteredItems, setselectedFilter] = useState(DataShop);
   const [selectedBrand, setSelectedBrand] = useState("All");
   const [selectedColor, setSelectedColor]= useState("All");
-  const [selectedItem, setselectedItem] = useState("All")
+  const [selectedCatagory, setSelectedCatagory] = useState("All")
   const [selectedOccasion, SetselectedOccasion ] = useState("All");  
+  const [selectedGroup, setSelectedGroup] = useState("All");
   const [searchInput, setSearchInput] = useState("");    
   
 
+  console.log(DataShop)
+
   const handleCatagory= (itemName)=>{
-    if(itemName==selectedItem){
-      setselectedItem("All");
+ 
+    if(itemName==selectedCatagory){
+      setSelectedCatagory("All");
+      console.log(itemName, selectedCatagory)
     }else{
-      setselectedItem(itemName)
+      setSelectedCatagory(itemName)
+    
     }
   }
-  const handleOccasionChange = (occasionName)=>
+  const handleOccasionChange = (groupName)=>
   {
-    if(occasionName==selectedOccasion){
-      SetselectedOccasion("All")
+    if(groupName==selectedGroup){
+      setSelectedGroup("All")
   }else{
-    SetselectedOccasion(occasionName);
+    setSelectedGroup(groupName);
   }
  
   }
@@ -63,7 +72,7 @@ const Catagories = ({DataShop})=>{
 
     useEffect(() => {
       filterItems();
-    }, [selectedBrand, selectedColor, selectedItem,selectedOccasion,searchInput]);
+    }, [selectedBrand, selectedColor, selectedCatagory,selectedGroup,searchInput]);
 
 
     const filterItems = () => {
@@ -73,7 +82,7 @@ const Catagories = ({DataShop})=>{
     if(searchInput != ""){
         NewfilteredItems = NewfilteredItems.filter((item)=>{
        
-          return item.name.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
+          return item.title.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
         })
     
       }
@@ -82,15 +91,15 @@ const Catagories = ({DataShop})=>{
         NewfilteredItems = NewfilteredItems.filter((item) => item.color === selectedColor);
    
       }
-      if (selectedItem !== "All") {
-       NewfilteredItems = NewfilteredItems.filter((item) => item.name === selectedItem);
+      if (selectedCatagory !== "All") {
+       NewfilteredItems = NewfilteredItems.filter((item) => item.category === selectedCatagory);
       }
    
       if (selectedBrand !== "All") {
         NewfilteredItems = NewfilteredItems.filter((item) => item.brand === selectedBrand);
       }
-      if (selectedOccasion !== "All") {
-        NewfilteredItems = NewfilteredItems.filter((item) => item.category === selectedOccasion);
+      if (selectedGroup !== "All") {
+        NewfilteredItems = NewfilteredItems.filter((item) => item.group === selectedGroup);
       }
       setselectedFilter(NewfilteredItems);
     };
@@ -110,32 +119,43 @@ const Catagories = ({DataShop})=>{
 
 <div className='topContainer'> 
 
-
+{ isGarmentsFilterOn &&
   <AccessoriesFiltering 
   accessoriesNames={accessoriesNames} 
-  selectedItem={selectedItem} 
+  selectedCatagory={selectedCatagory} 
   handleCatagory={handleCatagory} 
-  selectedOccasion={selectedOccasion}
+  selectedGroup={selectedGroup}
   handleOccasionChange={handleOccasionChange}
   />
-
+}
+  
+{ isGarmentsFilterOn &&
   <BagsFilterig 
   Bags={Bags}  
-  selectedOccasion={selectedOccasion}
+  selectedGroup={selectedGroup}
   handleOccasionChange={handleOccasionChange}
   handleCatagory={handleCatagory}
-  selectedItem={selectedItem}
+  selectedCatagory={selectedCatagory}
   />
-
-
+}
+{ isGarmentsFilterOn &&
   <ClothingFilter
   Clothing={Clothing}
-  selectedOccasion={selectedOccasion}
+  selectedGroup={selectedGroup}
   handleOccasionChange={handleOccasionChange}
   handleCatagory={handleCatagory}
-  selectedItem={selectedItem}
+  selectedCatagory={selectedCatagory}
   />
+}
 
+{isShoesFilterOn && 
+  <ShoesFilter
+  shoesNames={shoesNames} 
+  handleCatagory={handleCatagory}
+  selectedCatagory={selectedCatagory}
+  
+  />}
+  
 </div>
 
 

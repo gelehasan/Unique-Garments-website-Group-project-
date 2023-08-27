@@ -1,6 +1,6 @@
 
 
-const ClothingFilter = ({Clothing,handleCatagory,selectedItem,selectedOccasion,handleOccasionChange})=>{
+const ClothingFilter = ({Clothing,handleCatagory,selectedCatagory,selectedGroup,handleOccasionChange})=>{
     return(
         <div className='topSub'>
 
@@ -8,11 +8,11 @@ const ClothingFilter = ({Clothing,handleCatagory,selectedItem,selectedOccasion,h
 <div className='BrandSelection catagoriesSelection'>
   <ul>
     <li onClick={()=> handleOccasionChange("Clothing")}  
-    className={`${ selectedOccasion == "Clothing" ? "selectedCatagory": ""}`}
+    className={`${ selectedGroup == "Clothing" ? "selectedCatagory": ""}`}
     >View All</li>
   {Clothing.map((itemName)=>{
   return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
-  className={`${ selectedItem == itemName ? "selectedCatagory": ""}`}
+  className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
   > {itemName}</li>) 
   }
   )

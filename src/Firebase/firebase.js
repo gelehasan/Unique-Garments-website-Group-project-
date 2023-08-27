@@ -5,6 +5,8 @@ import { signOut } from "firebase/auth";
 import { collection, writeBatch,query } from 'firebase/firestore'; 
 
 
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyBJVmYLInO_9JMqKEKIS4lyCXEfSAxl-HU",
     authDomain: "unique-garments.firebaseapp.com",
@@ -131,7 +133,6 @@ export const SignInUser = async (email, password) => {
   return Data;
       
       }
-
 
   export const SignOutUser = async ()=> 
   {

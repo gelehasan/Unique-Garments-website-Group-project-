@@ -10,12 +10,34 @@ const SelectcatagorySlice = createSelector(
 
 
 
-export const SelectCatagory = createSelector(
+export const SelectGarments = createSelector(
     [SelectcatagorySlice],
     (catagory)=> {
         let AllCatagories = [];
         catagory.map((catagoryItem)=>{
+            if(catagoryItem.itemName !=="Shoes"){
+
+           
             AllCatagories.push(...catagoryItem.itemData)
+        }
+        })
+
+        return AllCatagories;
+    }
+)
+
+
+
+export const SelectShoes = createSelector(
+    [SelectcatagorySlice],
+    (catagory)=> {
+        let AllCatagories = [];
+        catagory.map((catagoryItem)=>{
+            if(catagoryItem.itemName ==="Shoes"){
+
+           
+            AllCatagories.push(...catagoryItem.itemData)
+        }
         })
 
         return AllCatagories;

@@ -11,7 +11,7 @@ const ArticleOverView = ()=>{
             let ArticlesData = await getArticleData();
             setArticles(ArticlesData);
         }catch(error){
-           
+      
         }}
             FetchArticle();
     },[articles])
