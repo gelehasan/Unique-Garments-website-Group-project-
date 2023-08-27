@@ -1,7 +1,6 @@
 
 
 const ShoesFilter = ({shoesNames,handleCatagory,selectedCatagory})=>{
-
     return(
         <div className='topSub'>
 

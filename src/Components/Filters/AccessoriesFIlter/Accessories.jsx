@@ -1,6 +1,6 @@
 
 
-const AccessoriesFiltering = ({accessoriesNames, selectedCatagory,handleCatagory, selectedGroup,handleOccasionChange})=>{
+const AccessoriesFiltering = ({accessoriesNames, selectedCatagory,handleCatagory, selectedGroup,handleGroupChange})=>{
 
     return(
         <div className='topSub'>
@@ -9,10 +9,9 @@ const AccessoriesFiltering = ({accessoriesNames, selectedCatagory,handleCatagory
 <label className='BrandTitle topTitles'> Accessories</label> 
 <div className='BrandSelection catagoriesSelection'>
   <ul>
-    <li onClick={()=> handleOccasionChange("Accessories")}  
+    <li onClick={()=> handleGroupChange("Accessories")}  
      className={`${ selectedGroup == "Accessories" ? "selectedCatagory": ""}`}
-    >
-      View All</li>
+    > View All</li>
   {accessoriesNames.map((itemName)=>{
   return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
   className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}

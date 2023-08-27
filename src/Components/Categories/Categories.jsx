@@ -7,13 +7,16 @@ import ClothingFilter from "../Filters/ClothingFilter/ClothingFilter";
 import BrandsFilter from "../Filters/BrandsFilter/BrandsFilter";
 import ColorFilter from "../Filters/ColorsFilter/ColorsFilter";
 import './Categories.css';
+import ShopByFilter from "../Filters/ShopByFilter/ShopByFilter";
 import ShoesFilter from "../Filters/ShoesFilter/ShoesFilter";
 const brandNames = ["Adidas", "Balenciaga", "Converse", "J.Crew", "Nike", "Off-white", "Rick Owens"];
 const colors = ["Black", "purple","Blue", "Orange"];
 const accessoriesNames=["Hats","Sunglasses", "Belts","Socks"];
 const Bags = [ "Fanny Packs","Duffel Bags", "Backpacks"];
 const Clothing = ["T-Shirts", "Outerwear", "Trousers", "Jeans", "Shorts", "Shirts"];
-const shoesNames =[ "Dress Shoes","Sneakers","Slippers",]
+const shoesNames =[ "Dress Shoes","Sneakers","Slippers"]
+const shopByNames = ["Casual", "Formal"];
+
 
 
 const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
@@ -22,6 +25,7 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
   const [selectedColor, setSelectedColor]= useState("All");
   const [selectedCatagory, setSelectedCatagory] = useState("All")
   const [selectedOccasion, SetselectedOccasion ] = useState("All");  
+
   const [selectedGroup, setSelectedGroup] = useState("All");
   const [searchInput, setSearchInput] = useState("");    
   
@@ -38,6 +42,17 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
     
     }
   }
+
+  const handleGroupChange= (groupName)=>
+  {
+    if(groupName==selectedGroup){
+      setSelectedGroup("All")
+  }else{
+    setSelectedGroup(groupName);
+  }
+ 
+  }
+
   const handleOccasionChange = (groupName)=>
   {
     if(groupName==selectedGroup){
@@ -125,7 +140,7 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
   selectedCatagory={selectedCatagory} 
   handleCatagory={handleCatagory} 
   selectedGroup={selectedGroup}
-  handleOccasionChange={handleOccasionChange}
+  handleGroupChange={handleGroupChange}
   />
 }
   
@@ -133,7 +148,7 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
   <BagsFilterig 
   Bags={Bags}  
   selectedGroup={selectedGroup}
-  handleOccasionChange={handleOccasionChange}
+  handleGroupChange={handleGroupChange}
   handleCatagory={handleCatagory}
   selectedCatagory={selectedCatagory}
   />
@@ -142,7 +157,7 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
   <ClothingFilter
   Clothing={Clothing}
   selectedGroup={selectedGroup}
-  handleOccasionChange={handleOccasionChange}
+  handleGroupChange={handleGroupChange}
   handleCatagory={handleCatagory}
   selectedCatagory={selectedCatagory}
   />
@@ -155,6 +170,14 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
   selectedCatagory={selectedCatagory}
   
   />}
+
+  {
+    <ShopByFilter 
+    handleOccasionChange={handleOccasionChange}
+    shopByNames={shopByNames}
+    selectedOccasion={selectedOccasion}
+    />
+  }
   
 </div>
 

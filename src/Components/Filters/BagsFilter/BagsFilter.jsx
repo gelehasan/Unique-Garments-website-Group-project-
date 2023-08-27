@@ -1,7 +1,7 @@
 
 
 
-const BagsFilterig = ({Bags,handleCatagory,handleOccasionChange,selectedGroup,selectedCatagory})=>{
+const BagsFilterig = ({Bags,handleCatagory,handleGroupChange,selectedGroup,selectedCatagory})=>{
 
     return(
         <div className='topSub'>
@@ -9,7 +9,7 @@ const BagsFilterig = ({Bags,handleCatagory,handleOccasionChange,selectedGroup,se
 <label className='BrandTitle topTitles'> Bags</label> 
 <div className='BrandSelection catagoriesSelection'>
   <ul>
-    <li onClick={()=> handleOccasionChange("Bags")}  
+    <li onClick={()=> handleGroupChange("Bags")}  
      className={`${ selectedGroup == "Bags" ? "selectedCatagory": ""}`}
     >
       View All</li>
