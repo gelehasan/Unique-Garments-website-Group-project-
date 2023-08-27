@@ -19,7 +19,7 @@ const shopByNames = ["Casual", "Formal"];
 
 
 
-const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
+const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn, isShopByFilterOn})=>{
   const [filteredItems, setselectedFilter] = useState(DataShop);
   const [selectedBrand, setSelectedBrand] = useState("All");
   const [selectedColor, setSelectedColor]= useState("All");
@@ -52,7 +52,8 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
 
   const handleOccasionChange = (occasionName)=>
   {
-    if(occasionName== occasionName){
+ 
+    if(selectedOccasion== occasionName){
       setSelectedOccasion("All")
   }else{
     setSelectedOccasion(occasionName);
@@ -85,7 +86,7 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
 
     useEffect(() => {
       filterItems();
-    }, [selectedBrand, selectedColor, selectedCatagory,selectedGroup,searchInput]);
+    }, [selectedBrand, selectedColor, selectedCatagory,selectedOccasion,selectedGroup,searchInput]);
 
 
     const filterItems = () => {
@@ -98,6 +99,12 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
           return item.title.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
         })
     
+      }
+
+      if(selectedOccasion !=="All"){
+        
+        NewfilteredItems = NewfilteredItems.filter((item) => item.occasions === selectedOccasion);
+        console.log(NewfilteredItems)
       }
 
       if(selectedColor !=="All"){
@@ -169,7 +176,7 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
   
   />}
 
-  {
+  { isShopByFilterOn &&
     <ShopByFilter 
     handleOccasionChange={handleOccasionChange}
     shopByNames={shopByNames}

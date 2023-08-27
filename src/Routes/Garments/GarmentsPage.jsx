@@ -27,7 +27,9 @@ const Garments = ()=>{
     return(
        <div>
 
-            can you see this
+        { Catagory.length > 0 && 
+        <Catagories DataShop={Catagory} isGarmentsFilterOn={true} isShoesFilterOn={false} isShopByFilterOn={false}/>
+         }
 
        </div>
     )
