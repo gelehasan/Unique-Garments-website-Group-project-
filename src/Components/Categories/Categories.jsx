@@ -24,8 +24,7 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
   const [selectedBrand, setSelectedBrand] = useState("All");
   const [selectedColor, setSelectedColor]= useState("All");
   const [selectedCatagory, setSelectedCatagory] = useState("All")
-  const [selectedOccasion, SetselectedOccasion ] = useState("All");  
-
+  const [selectedOccasion, setSelectedOccasion ] = useState("All");  
   const [selectedGroup, setSelectedGroup] = useState("All");
   const [searchInput, setSearchInput] = useState("");    
   
@@ -53,12 +52,12 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
  
   }
 
-  const handleOccasionChange = (groupName)=>
+  const handleOccasionChange = (occasionName)=>
   {
-    if(groupName==selectedGroup){
-      setSelectedGroup("All")
+    if(occasionName== occasionName){
+      setSelectedOccasion("All")
   }else{
-    setSelectedGroup(groupName);
+    setSelectedOccasion(occasionName);
   }
  
   }
@@ -69,6 +68,7 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn})=>{
           setSelectedBrand(brand);
       }
     };
+    
     const handleColorFiltering = (colorName)=>{ 
       if(colorName==selectedColor){
           setSelectedColor("All")
