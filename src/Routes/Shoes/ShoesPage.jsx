@@ -26,7 +26,7 @@ const Shoes = ()=>{
         <div>
 
 { ShoesData.length > 0 && 
-        <Catagories DataShop={ShoesData} isGarmentsFilterOn={false} isShoesFilterOn={true} />
+        <Catagories DataShop={ShoesData} isGarmentsFilterOn={false} isShoesFilterOn={true} isShopByFilterOn={false} />
          }
         </div>
     )

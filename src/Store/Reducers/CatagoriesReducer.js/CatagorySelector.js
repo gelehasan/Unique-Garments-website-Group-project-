@@ -50,8 +50,6 @@ export const SelectShopBY = createSelector(
         let AllCatagories = [];
         catagory.map((catagoryItem)=>{
         
-
-           
             AllCatagories.push(...catagoryItem.itemData)
    
         })
