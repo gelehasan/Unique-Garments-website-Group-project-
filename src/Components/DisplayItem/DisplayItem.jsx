@@ -13,24 +13,26 @@ const DisplayItem = ()=> {
     setselectedItem(item)
   },[])
 
-  console.log(selectedItem)
+
 
 
     return(
+      <> { 
+        selectedItem &&
     <div class="container">
-    
-    <div class="itemImage">
+
+   <div class="itemImage">
         
-        <img id="item" src="https://res.cloudinary.com/dmhnsp8sj/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1691626787/Garments/BlueBalenciagaCap.jpg?_s=public-apps" />
+        <img id="item" src={selectedItem.image}/>
     </div>
-    
+
     <div class="itemClass">
      
-    <h1 id="title">Off-White Bookish Drill Baseball Cap</h1>
-    <h4>Your everyday baseball cap, simple but elegant.</h4>
+    <h1 id="title">{selectedItem.title}</h1>
+    <h4>{selectedItem.descripton}</h4>
     <br/>
-    <p>$445.00</p>
-    <p>Colour: Blue</p>
+    <p>${selectedItem.price}</p>
+    <p>Colour: {selectedItem.color}</p>
     <br/>
 
     <div class="sizeGroup">
@@ -39,6 +41,7 @@ const DisplayItem = ()=> {
         <button>L</button>
         <button>XL</button>
     </div>
+
 
 <div className="itembtns">
 <button className="addItemToWishList" >
@@ -49,10 +52,13 @@ const DisplayItem = ()=> {
     Add to shopping cart
 </button>
 </div>
+
 </div>
 
-    
+
     </div>
+  }
+    </>
     )
 }
 
