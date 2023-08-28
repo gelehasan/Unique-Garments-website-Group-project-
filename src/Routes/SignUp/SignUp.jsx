@@ -64,7 +64,7 @@ if (password === comfirmPassword && password.length >=6) {
       <div>
 
         <form onSubmit={RegistrationHandlar}> 
-        <div className="container">
+        <div className="SignUpcontainer">
         <h1>Sign Up</h1>
         <input type="text" placeholder="Username" id="username" name='username' onChange={changeHandlar} required/>
         <input type="email" placeholder="Email" id="email" name='email'  onChange={changeHandlar} required/>

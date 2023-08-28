@@ -11,6 +11,7 @@ import Shoes from './Routes/Shoes/ShoesPage';
 import ShopBY from './Components/ShopBY-links/shopBY';
 import WishList from './Routes/WishList/WishList';
 import ShopBy from './Routes/ShopBy/ShopByPage';
+import DisplayItem from './Components/DisplayItem/DisplayItem';
 import { useEffect } from 'react';
 import { onAuthStateChangedListener, getUserInformation,getCollectionData } from './Firebase/firebase';
 import { useDispatch } from 'react-redux';
@@ -49,11 +50,12 @@ function App() {
    <Route path='/SignIn' element={<SignIn />} />
    <Route path='/checkout' element={<CheckOut />} />
    <Route path='/Articles/*' element={<Articles />} /> 
-   <Route path='/Shoes' element={<Shoes />} />
+   <Route path='/Shoes/*' element={<Shoes />} />
    <Route path='/ShopBy' element={<ShopBy />} />
-   <Route path='/Garments' element={<Garments/>}/>
+   <Route path='/Garments/*' element={<Garments/>}/>
    <Route path='/WishList' element={<WishList/>} />
    <Route path='/Profile' element={<Profile/>} />
+   <Route path='/item' element={<DisplayItem/>}/>
    
    </Route>
    

@@ -1,24 +1,23 @@
-#header{
-  font-family: Arial, Helvetica, sans-serif;
-
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  text-align: center;
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
-  
-
+.container {
+  display: flex;
+ 
+  border: 1px solid red;
+  width: 80%;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 2em;
 }
 
-.cart{
+
+/*.cart{
+  border: 1px solid red;
   float: right;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   color: #000;
   margin-right: 5%;
   font-size: 1rem;
-}
+}*/
 
 
 
@@ -26,53 +25,43 @@
   background-color: #dbdbdb;
 }
 
-#item {
-  width:400; 
-  height:500; 
-  float: left;
+
+
+.itemImage {
+ 
+  width: 50%;
+  height: 100%;
+}
+.itemImage img {
+  width: 100%;
+  border: 1px solid red;
+  max-height: 600px;
+}
+
+.itemClass {
+ 
+  width: 50%;
+  padding: 5px;
 }
 
 
-
-.container {
-  display: flex;
-  justify-content: center;
-}
-
-p{
+.itemClass p{
   font-size: 18px;
 }
 
-h1 {
+.itemClass h1 {
   font-family: 'Abel', sans-serif;
   font-size: 40px;
 
 }
 
-h4{
+.itemClass h4{
   font-family: 'Cormorant Garamond', serif;
   font-size: 21.5px;
 
 }
 
 
-.itemImage {
-  width: 400px;
-  height: 500px;
-  
-  display: inline-block;
-  vertical-align: middle;
-  
-}
-.itemClass{
-  
-  width: 500px;
-  height: 500px;
-  
-  display: inline-block;
-  vertical-align: middle;
-  
-}
 
   .sizeGroup button {
     background-color: white; 
@@ -80,9 +69,9 @@ h4{
     color: black; 
     padding: 10px 24px; 
     cursor: pointer;
+
     float: left;  
-    margin-left: 4px;
-    margin-right: 4px;
+   
   }
   
 
@@ -97,17 +86,43 @@ h4{
     background-color: black;
   }
 
-    .sizeGroup button:hover,
-    .sizeGroup button:focus,
-    .sizeGroup button:active {
+.sizeGroup button:hover,
+.sizeGroup button:focus,
+.sizeGroup button:active {
       cursor: pointer;
       background-color: black;
       color: white;
     }
 
+.addItemToWishList ,.addItemTocart{
+
+cursor: pointer;
+height: 40px;
+width: 220px;
+font-size: 1.3rem;
+background-color: black;
+color: white;
+border: none;
+text-align: center;
+
+}
+
+.itembtns{
+
+margin-top: 1.5em;
+display:flex ;
+gap: 10px;
+}
 
 
-/*.button-60 {
+@media (max-width: 1000px){
+  .itembtns{
+  flex-direction: column;
+  }
+}
+
+/*
+.button-60 {
   align-items: center;
   appearance: none;
   background-color: #fff;

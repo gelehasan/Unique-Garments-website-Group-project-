@@ -1,25 +1,22 @@
 import "./styleItem.css";
-
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { SelectAllCatagories } from "../../Store/Reducers/CatagoriesReducer.js/CatagorySelector";
+import { useSelector } from "react-redux";
 const DisplayItem = ()=> {
+  const {itemId} = useParams();
+  const [selectedItem, setselectedItem] = useState();
+  const AllCatagories = useSelector(SelectAllCatagories);
+
+  useEffect(()=>{
+    const item= AllCatagories.find((item) => item.id == itemId);
+    setselectedItem(item)
+  },[])
+
+  console.log(selectedItem)
+
 
     return(
-    <> 
-
-    <div class="divHeader">
-        <header>
-            <a class="signUp" href="url">Sign Up / Login</a>
-            <a class="cart" href="url">Cart &#128722; </a>
-            <h1 id="header">Unique Garments</h1>
-        </header>
-    </div>
-
-
-    <head>
-        <title>Bookish Drill Baseball Cap</title>
-        <meta name="description" content="Our first page"/>
-        <meta name="keywords" content="html tutorial template"/>
-        </head>
-
     <div class="container">
     
     <div class="itemImage">
@@ -43,106 +40,19 @@ const DisplayItem = ()=> {
         <button>XL</button>
     </div>
 
-
-<button class="button-60" role="button">
-    ADD TO WISHLIST&nbsp;
-    <input type="checkbox" class="heart-checkbox" id="heart-checkbox" />
-    <label for="heart-checkbox" class="heart">&#10084;</label>
+<div className="itembtns">
+<button className="addItemToWishList" >
+    Add to Wishlist
 </button>
 
-<button class="button-61" role="button">
-    ADD TO SHOPPING CART
+<button className="addItemTocart">
+    Add to shopping cart
 </button>
-
-    </div>
+</div>
 </div>
 
-
-
-{/**</div><footer class="footer">
-    <div class="footer__addr">
-      <h1 class="footer__logo">Unique Garments</h1>
-          
-      <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Singapore</h2>
-
-        <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
-      
+    
     </div>
-    
-    <ul class="footer__nav">
-      <li class="nav__item">
-        <h2 class="nav__title">Quick Links</h2>
-  
-        <ul class="nav__ul">
-          <li>
-            <a href="#">My Account</a>
-          </li>
-  
-          <li>
-            <a href="#">Wishlist</a>
-          </li>
-              
-          <li>
-            <a href="#">Articles</a>
-          </li>
-        </ul>
-      </li>
-      
-      <li class="nav__item nav__item--extra">
-        <h2 class="nav__title">Relevant Links</h2>
-        
-        <ul class="nav__ul nav__ul--extra">
-          <li>
-            <a href="#">About the Website</a>
-          </li>
-          
-          <li>
-            <a href="#">Feedback</a>
-          </li>
-          
-          <li>
-            <a href="#">Customer Care</a>
-          </li>
-          
-          <li>
-            <a href="#">Careers</a>
-          </li>
-          
-          <li>
-            <a href="#">Newsletter Signup</a>
-          </li>
-          
-          <li>
-            <a href="#">Country / Region</a>
-          </li>
-        </ul>
-      </li>
-      
-      <li class="nav__item">
-        <h2 class="nav__title">Legal</h2>
-        
-        <ul class="nav__ul">
-          <li>
-            <a href="#">Privacy Policy</a>
-          </li>
-          
-          <li>
-            <a href="#">Terms of Use</a>
-          </li>
-          
-          <li>
-            <a href="#">Sitemap</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    
-
-  </footer>
-
-    */}
-    
-    </>
     )
 }
 

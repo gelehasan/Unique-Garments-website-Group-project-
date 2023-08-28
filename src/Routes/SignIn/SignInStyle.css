@@ -1,16 +1,16 @@
-  .container {
+  .SignIncontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 300px;
     margin: 0 auto;
   }
-  .container  input {
+  .SignIncontainer  input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
   }
-  .container button {
+  .SignIncontainer button {
     background-color: #007BFF;
     color: white;
     padding: 10px 20px;

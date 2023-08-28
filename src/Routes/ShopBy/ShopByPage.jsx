@@ -1,5 +1,5 @@
 import './ShopByStyling.css';
-import { SelectShopBY } from "../../Store/Reducers/CatagoriesReducer.js/CatagorySelector";
+import { SelectAllCatagories } from "../../Store/Reducers/CatagoriesReducer.js/CatagorySelector";
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { getCollectionData } from '../../Firebase/firebase';
@@ -7,7 +7,7 @@ import { setCatagories, setCatagoryLoadError } from '../../Store/Reducers/Catago
 import { useEffect } from 'react';
 import Catagories from '../../Components/Categories/Categories';
 const ShopBy = ()=>{
-    const ShopBYData = useSelector(SelectShopBY)
+    const ShopBYData = useSelector(SelectAllCatagories)
     const dispatch = useDispatch()
 
     useEffect(()=>{

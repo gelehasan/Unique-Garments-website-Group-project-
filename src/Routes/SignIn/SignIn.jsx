@@ -35,7 +35,7 @@ const SignIn = ()=>{
 
         <div> 
             <form onSubmit={submitHandlar}>
-        <div className="container">
+        <div className="SignIncontainer">
             <h1>Sign In</h1>
             <input type="email" placeholder="email" name="email" id="email" onChange={ChangeHandlar} required />
             <input type="password" placeholder="Password" name="password" id="password" onChange={ChangeHandlar} required />

@@ -44,7 +44,7 @@ export const SelectShoes = createSelector(
     }
 )
 
-export const SelectShopBY = createSelector(
+export const SelectAllCatagories = createSelector(
     [SelectcatagorySlice],
     (catagory)=> {
         let AllCatagories = [];
