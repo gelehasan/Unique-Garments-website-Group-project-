@@ -13,7 +13,7 @@ const Product = ({item})=>{
     const cartItems = useSelector((state)=> state.cart.cartItems);
     const currentUser = useSelector((state)=> state.user.currentUser);
    
-    console.log(item)
+
     const dispatch = useDispatch();
 
     const addToYourWishList =  async ()=>{

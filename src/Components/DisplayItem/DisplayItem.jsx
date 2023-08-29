@@ -8,25 +8,29 @@ const DisplayItem = ()=> {
   const [selectedItem, setselectedItem] = useState();
   const AllCatagories = useSelector(SelectAllCatagories);
 
-  useEffect(()=>{
-    const item= AllCatagories.find((item) => item.id == itemId);
-    setselectedItem(item)
+
+  useEffect( ()=>{
+    const findSelectedItem = async() => {
+      const item= await AllCatagories.find((item) => item.id == itemId);
+      setselectedItem(item)
+
+    }
+    findSelectedItem();
+ 
   },[])
-
-
 
 
     return(
       <> { 
-        selectedItem &&
-    <div class="container">
+       selectedItem &&
+    <div className="container">
 
-   <div class="itemImage">
+   <div className="itemImage">
         
         <img id="item" src={selectedItem.image}/>
     </div>
 
-    <div class="itemClass">
+    <div className="itemclassName">
      
     <h1 id="title">{selectedItem.title}</h1>
     <h4>{selectedItem.descripton}</h4>
@@ -35,7 +39,7 @@ const DisplayItem = ()=> {
     <p>Colour: {selectedItem.color}</p>
     <br/>
 
-    <div class="sizeGroup">
+    <div className="sizeGroup">
         <button>S</button>
         <button>M</button>
         <button>L</button>
