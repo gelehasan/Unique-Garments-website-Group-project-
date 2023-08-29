@@ -10,7 +10,9 @@ import "./Article.css"
         const FetchArticle = async ()=>{
             try{
                 let ArticlesData = await getArticleData();
-                setselectedArticle(ArticlesData[articleID]);
+                //Array starts at 0 and our article id starts with 1, 
+                //there fore we subtract 1 to display the correct data
+                setselectedArticle(ArticlesData[articleID-1]);
             }catch(error){
                
             }}
