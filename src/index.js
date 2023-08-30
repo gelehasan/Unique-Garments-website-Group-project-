@@ -4,15 +4,15 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import { CartShopProvider } from './Context/cartShopContext';
-import { UserContextProvider } from './Context/userContext';
+import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
-import { Store } from './Store/Store/Store';
+import { Store, persistedStore } from './Store/Store/Store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={Store}> 
+    <PersistGate persistor={persistedStore}> 
     <BrowserRouter> 
 
   
@@ -20,6 +20,7 @@ root.render(
 
 
     </BrowserRouter>
+    </PersistGate>
     </Provider>
   </React.StrictMode>
 );
