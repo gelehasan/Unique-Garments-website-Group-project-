@@ -1,6 +1,6 @@
 import "./styleItem.css";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import { SelectAllCatagories } from "../../Store/Reducers/CatagoriesReducer.js/CatagorySelector";
 import { useSelector } from "react-redux";
 import { addToWishList } from "../../Firebase/firebase";
@@ -12,7 +12,8 @@ const DisplayItem = ()=> {
   const AllCatagories = useSelector(SelectAllCatagories);
   const currentUser = useSelector((state)=> state.user.currentUser);
   const cartItems = useSelector((state)=> state.cart.cartItems);
-  
+  const [selectedSize, setSelectedSize] = useState("M")
+
   const dispatch =useDispatch();
   const addItemtoWish = async ()=> {
     if(currentUser){
@@ -55,10 +56,18 @@ const DisplayItem = ()=> {
     <br/>
 
     <div className="sizeGroup">
-        <button>S</button>
-        <button>M</button>
-        <button>L</button>
-        <button>XL</button>
+    <button className={` ${selectedSize === "S" ? "selectedSizebtn" : "sizebtn"} `}>
+        S
+    </button>
+    <button className={` ${selectedSize === "M" ? "selectedSizebtn" : "sizebtn"} `}>
+        M
+    </button>
+    <button className={` ${selectedSize === "L" ? "selectedSizebtn" : "sizebtn"} `}>
+        L
+    </button>
+    <button className={` ${selectedSize === "XL" ? "selectedSizebtn" : "sizebtn"} `}>
+        XL
+    </button>
     </div>
 
 

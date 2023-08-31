@@ -57,14 +57,19 @@ border: 1px solid black;
 
 
   .sizeGroup button {
-    background-color: white; 
-    border: 1px solid black; 
-    color: black; 
+ 
     padding: 10px 24px; 
-    cursor: pointer;
-
-    float: left;  
+   border: 1px solid black;
+  }
+  .sizebtn{
+    background-color: white;
+    color: black;
    
+  }
+  .selectedSizebtn{
+    cursor: pointer;
+    background-color: black;
+    color: white;
   }
   
 
@@ -75,17 +80,10 @@ border: 1px solid black;
   }
   
 
-  .sizeGroup button:hover {
+  /*.sizeGroup button:hover {
     background-color: black;
   }
-
-.sizeGroup button:hover,
-.sizeGroup button:focus,
-.sizeGroup button:active {
-      cursor: pointer;
-      background-color: black;
-      color: white;
-    }
+*/
 
 .addItemToWishList ,.addItemTocart{
 
@@ -106,6 +104,7 @@ margin-top: 1.5em;
 display:flex ;
 gap: 10px;
 }
+
 
 
 @media (max-width: 1000px){

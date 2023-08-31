@@ -1,5 +1,5 @@
 import './CartBagStyle.css';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CartShopConext } from '../../Context/cartShopContext';
 import { useSelector } from 'react-redux';
 import { addItemToCart, decreaseItemQuanity } from '../../Store/Reducers/CartReducer/cartActions';
@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 const CartBag = ()=>{
    // const {bagItem, isCheckoutOpen, setIsCheckoutOpen} = useContext(CartShopConext);
     const cartItems = useSelector((state)=> state.cart.cartItems);
-    
+ 
     const dispatch= useDispatch();
 
     
