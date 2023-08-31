@@ -3,11 +3,27 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { SelectAllCatagories } from "../../Store/Reducers/CatagoriesReducer.js/CatagorySelector";
 import { useSelector } from "react-redux";
+import { addToWishList } from "../../Firebase/firebase";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../../Store/Reducers/CartReducer/cartActions";
 const DisplayItem = ()=> {
   const {itemId} = useParams();
   const [selectedItem, setselectedItem] = useState();
   const AllCatagories = useSelector(SelectAllCatagories);
-
+  const currentUser = useSelector((state)=> state.user.currentUser);
+  const cartItems = useSelector((state)=> state.cart.cartItems);
+  
+  const dispatch =useDispatch();
+  const addItemtoWish = async ()=> {
+    if(currentUser){
+      await addToWishList(currentUser.id, selectedItem);
+      
+    }
+  }
+  const addSelectedItemToCart = ()=>{
+    
+    dispatch(addItemToCart(selectedItem,cartItems ))
+  }
 
   useEffect( ()=>{
     const findSelectedItem = async() => {
@@ -16,7 +32,6 @@ const DisplayItem = ()=> {
 
     }
     findSelectedItem();
- 
   },[])
 
 
@@ -48,11 +63,11 @@ const DisplayItem = ()=> {
 
 
 <div className="itembtns">
-<button className="addItemToWishList" >
+<button className="addItemToWishList"  onClick={addItemtoWish}>
     Add to Wishlist
 </button>
 
-<button className="addItemTocart">
+<button className="addItemTocart" onClick={addSelectedItemToCart}>
     Add to shopping cart
 </button>
 </div>

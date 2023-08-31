@@ -4,7 +4,6 @@ import {RootReducer} from "../Reducers/RootReducer"
 import { persistStore, persistReducer } from 'redux-persist';
 import  storage  from 'redux-persist/lib/storage';
 
-
 const middleLogger = [logger];
 
 const persistConfigiration= {
