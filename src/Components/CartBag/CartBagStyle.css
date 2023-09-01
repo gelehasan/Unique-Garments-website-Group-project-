@@ -2,22 +2,72 @@
 
 .bagItems{
     position: absolute;
-    width: 300px;
-    height: 340px;
+    width: 400px;
+    height: 440px;
     background-color: white;
     right: 1.4em;
     top: 4em;
     border: 1px solid black;
 
-    z-index: 2;
+    z-index: 4;
+}
+
+.item-container{
+    width: 100%;
+   margin: 0 auto;
+    height: 78%;
+    border-bottom: 1px solid black;
+   
+
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    scrollbar-width:thin;
+    gap: 15px;
 }
 
 .items{
  
     background-color: white;
-    border: 1px solid red;
-  
    
+    display: flex;
+ 
+  width: 100%;
+  height: 120px;
+  border-bottom: 1px solid black ;
+
+
+   
+}
+
+
+
+.cartItemImage img{
+   width: 100%;
+    height: 100%;
+ 
+}
+.cartDescription{
+   
+position: relative;
+width: 50%;
+}
+.cartDescription img {
+    width: 30px;
+    height:20px ;
+    cursor: pointer;
+    position: absolute;
+}
+.quantity{
+    margin-left: 2.4em;
+    
+    padding: 4px;
+}
+.price{
+    margin-left: 2.4em;
+}
+.plusIcon{
+    margin-left: 0.4em;
 }
 .items h2{
     font-size: 17px;
@@ -27,19 +77,11 @@
 .controlQuantity{
     font-size: 38px;
 }
-.item-container{
-    width: 100%;
-   margin: 0 auto;
-    height: 87%;
-    border-bottom: 1px solid black;
-    border: 1px solid red;
+.cartItemImage{
+    width: 30% ;
+    border-right: 1px solid black;
+    }
 
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
-    scrollbar-width:thin;
-    gap: 15px;
-}
 
 .emptyBag{
   
@@ -53,18 +95,40 @@
 
 .checkoutBtn{
     position: absolute;
-    background-color:  #036bfc;
+    background-color:  black;
+    color: white;
     width: 200px;
     padding: 7px;
     font-size: 1.2rem;
     cursor: pointer;
     bottom: 0;
-    left: 51px;
+    left: 5em;
+border-top: 1px solid black;
+}
+
+.totalPrice{
+    position: absolute;
+    bottom: 10%;
+    left: 7.8em;
+    border: 1px solid black;
+
+    padding: 5px;
 }
 
 
 @media (max-width:830px){
     .bagItems{
         right: 0;
+        width:300px
     }
+
+    .checkoutBtn{
+        left: 3em;
+
+    }
+
+    .totalPrice{
+        left: 5.5em;
+    }
+
 }
