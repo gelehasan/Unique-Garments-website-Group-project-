@@ -16,6 +16,7 @@ import { useEffect } from 'react';
 import { onAuthStateChangedListener, getUserInformation,getCollectionData } from './Firebase/firebase';
 import { useDispatch } from 'react-redux';
 import { SetUser } from './Store/Reducers/UserReducer/userAction';
+import CheckoutPage from './Routes/CheckoutPage/checkout';
 import Profile from './Routes/Profile/Profile';
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
   
    <Route path='/SignUp' element={<SignUp />} />
    <Route path='/SignIn' element={<SignIn />} />
-   <Route path='/checkout' element={<CheckOut />} />
+   <Route path='/checkout' element={<CheckoutPage />} />
    <Route path='/Articles/*' element={<Articles />} /> 
    <Route path='/Shoes/*' element={<Shoes />} />
    <Route path='/ShopBy' element={<ShopBy />} />

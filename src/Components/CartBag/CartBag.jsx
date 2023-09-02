@@ -4,6 +4,7 @@ import { CartShopConext } from '../../Context/cartShopContext';
 import { useSelector } from 'react-redux';
 import { addItemToCart, decreaseItemQuanity } from '../../Store/Reducers/CartReducer/cartActions';
 import { getTotalPrice } from '../../Store/Reducers/CartReducer/cartSelector';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import MinusIcon from "../../Assets/minus.svg"
 import PlusIcon from "../../Assets/plus.svg"
@@ -48,8 +49,9 @@ const CartBag = ()=>{
             </div>)
         })}
         <h3 className='totalPrice'> Total: ${getTotal} </h3>
-        <button className='checkoutBtn'> 
+        <Link to={"/checkout"}><button className='checkoutBtn'> 
             Go to the checkout  </button>
+            </Link> 
         </div> : 
 
        <div    className='emptyBag'>

@@ -11,7 +11,7 @@ import { useState } from 'react';
 import CartBag from '../../Components/CartBag/CartBag';
 import { useContext } from 'react';
 import { CartShopConext } from '../../Context/cartShopContext';
-import CheckOut from '../CheckOut-for-MVP/checkout';
+
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../Context/userContext';
 import ProfileDropDown from '../../Components/Profile/ProfileDropDown';
@@ -117,9 +117,7 @@ const Navbar = ()=>{
 
            
         }  
-        {
-           // isCheckoutOpen && <CheckOut />
-        }
+       
         <Outlet></Outlet>
         </div>
     )

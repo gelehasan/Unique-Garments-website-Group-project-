@@ -2,7 +2,7 @@ import  './checkout.css';
 import { useContext } from 'react';
 import { CartShopConext } from '../../Context/cartShopContext';
 
-const CheckOut= ()=>{
+const CheckOutOld= ()=>{
     const {bagItem, setIsCheckoutOpen} = useContext(CartShopConext);
   
     const handleVisbility = ()=>{
@@ -39,4 +39,4 @@ const CheckOut= ()=>{
     )
 }
 
-export default CheckOut;
+export default CheckOutOld;
