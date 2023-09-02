@@ -113,8 +113,7 @@ const Navbar = ()=>{
 
         </div>
         {
-            isCartOpen &&<CartBag />
-
+            isCartOpen &&<CartBag isCheckOutPage={false}/>
            
         }  
        

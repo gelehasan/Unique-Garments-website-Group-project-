@@ -9,12 +9,13 @@ import { useDispatch } from 'react-redux';
 import MinusIcon from "../../Assets/minus.svg"
 import PlusIcon from "../../Assets/plus.svg"
 
-const CartBag = ()=>{
+
+const CartBag = ({isCheckOutPage})=>{
    // const {bagItem, isCheckoutOpen, setIsCheckoutOpen} = useContext(CartShopConext);
     const cartItems = useSelector((state)=> state.cart.cartItems);
     const getTotal = useSelector(getTotalPrice)
     const dispatch= useDispatch();
-
+   
     
     const increaseQuantity = (itemId)=>{
         const selectedItem = cartItems.find((item)=> item.id == itemId);
@@ -28,13 +29,13 @@ const CartBag = ()=>{
     }
   
     return(
-        <div    className="bagItems">
+        <div    className={`${isCheckOutPage ? "checkOutItems" : "bagItems"}`}>
 {
     cartItems.length > 0? 
-    <div className='item-container'>   
+    <div className={`${isCheckOutPage ? "item-container checkoutItemContainer" : "item-container"}`} >   
     {cartItems.map((item)=>{
-            return(<div  key={item.id} className='items'> 
-              <div className='cartItemImage'> 
+            return(<div  key={item.id} className={`${isCheckOutPage ? "items checkOutItemDiv" : "items"}`}> 
+              <div className={`${isCheckOutPage ? "checkOutCartImage" : "cartItemImage"}`} > 
                <img src={item.image} /> </div>
                
                <div className='cartDescription'>  
@@ -48,10 +49,18 @@ const CartBag = ()=>{
                </div>
             </div>)
         })}
-        <h3 className='totalPrice'> Total: ${getTotal} </h3>
-        <Link to={"/checkout"}><button className='checkoutBtn'> 
+       {!isCheckOutPage && <h3 className='totalPrice'> Total: ${getTotal} </h3> } 
+
+        {isCheckOutPage ?  
+         <Link to={"/payment"}><button className='paymentbtn'> 
+         Proceed to payment  </button>
+     </Link> 
+            :
+            <Link to={"/checkout"}><button className='checkoutBtn'> 
             Go to the checkout  </button>
             </Link> 
+        }
+       
         </div> : 
 
        <div    className='emptyBag'>
