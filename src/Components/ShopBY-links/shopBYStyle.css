@@ -12,6 +12,7 @@
     top: 14.8em;
     transform: translate(-50%, -50%);
     display: none;
+  
 }
 
 
@@ -37,6 +38,7 @@
     gap: 10px;
     list-style: none;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 
@@ -109,4 +111,5 @@
     }
       
 }
+
 

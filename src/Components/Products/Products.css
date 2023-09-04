@@ -31,7 +31,7 @@ max-height: 280px;
 .heartEmoji{
     cursor: pointer;
     position: absolute;
-    z-index: 3;
+  
     top: 0em;
     right: 0;
     width: 30px;
