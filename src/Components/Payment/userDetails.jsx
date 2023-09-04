@@ -2,37 +2,31 @@ import "./userDetailsStyle.css";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import {getTotalPrice} from "../../Store/Reducers/CartReducer/cartSelector"
-let inputFieldsValue  = {
-    userName:"",
-    fullName: "",
-    phone: "",
-    country: "",
-    shippingAddress: "",
-    email: "",
-};
-const PaymentUserDetails = ()=>{
+
+const PaymentUserDetails = ({inputValues, setInputValues,inputFieldsValue })=>{
     const currentUser = useSelector((state)=>state.user.currentUser);
     const TotalPrice = useSelector(getTotalPrice);
-    const [inputValues, setInputValues] = useState(inputFieldsValue);
+    
 
     useEffect(()=>{
         if(currentUser){
-            setInputValues( {
+            inputFieldsValue=  {
                 userName:currentUser.displayName,
                 fullName: currentUser.fullName,
                 phone: currentUser.phone,
                 country: currentUser.country,
                 shippingAddress: currentUser.shippingAddress,
                 email: currentUser.email
-            })
+            }
+            setInputValues( inputFieldsValue)
 
         }
      },[currentUser])
 
-     const ChangeHandlar = (event)=>{
+     const ChangeHandlar = async (event)=>{
         let  {value, name}= event.target;
        
-    
+        
         setInputValues((prevValues) => ({
             ...prevValues,
             [name]: value,
@@ -43,16 +37,16 @@ const PaymentUserDetails = ()=>{
     return(
         <div>
 
-<form > 
+
   <h3 className="paymentAccountInfoLabel"> Payment </h3>
   <div className="PaymentaccountInformation">
     <h3 className="PaymentsectionLabels"> Account information </h3>
 
     <h5 className="fieldLabel"> Full name </h5>
-    <input className="accountInput" type="text"name="fullName" value={fullName} onChange={ChangeHandlar}/>
+    <input className="accountInput" type="text"name="fullName" value={fullName} onChange={ChangeHandlar} required/>
 
     <h5 className="fieldLabel"> Email</h5>
-    <input className="accountInput" type="text"  name="email" value={email} required onChange={ChangeHandlar}/>
+    <input className="accountInput" type="text"  name="email" value={email}  onChange={ChangeHandlar}  required />
 
     <h5 className="fieldLabel"> Phone Number</h5>
     <input className="accountInput" type="number"  name="phone" value={phone} onChange={ChangeHandlar} />
@@ -69,7 +63,7 @@ const PaymentUserDetails = ()=>{
   </div>
 
  
-</form>
+
         </div>
     )
 }
