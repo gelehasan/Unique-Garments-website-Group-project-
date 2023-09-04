@@ -17,7 +17,11 @@
   .fieldLabel{
     margin-bottom:0.5em;
    }
-   
+  .creditCardInfo{
+    margin: 0;
+    padding: 0;
+    color: red;
+  }
    .accountInput{
    width: 100%;
     font-size: 1.3rem;

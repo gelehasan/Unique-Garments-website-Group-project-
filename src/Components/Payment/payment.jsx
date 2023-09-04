@@ -9,6 +9,7 @@ import { inputFieldsValue } from "./userInput";
 const Payment = ()=>{
     const TotalPrice = useSelector(getTotalPrice);
     const [inputValues, setInputValues] = useState(inputFieldsValue);
+    const [isPaymentLoading, setIsPaymentLoading ]= useState(false)
     const stripe = useStripe();
     const elements = useElements();
 
@@ -18,18 +19,19 @@ const Payment = ()=>{
         event.preventDefault();
      
         if(!stripe || !elements) return;
-        
+        setIsPaymentLoading(true)
         const getResponse = await fetch("/.netlify/functions/create-payment", 
         {
             method:"post",
             headers:{
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({amount:TotalPrice}),
+            //Values are stored as whole dollars so we have to multiply by 100
+            //to get the real price
+            body: JSON.stringify({amount:TotalPrice * 100}),
         }
         ).then((respone) => respone.json())
 
-        console.log(getResponse)
       const clientSecret =getResponse.paymentIntent.client_secret;
    
        const confirmPayment = await stripe.confirmCardPayment(clientSecret,
@@ -41,6 +43,8 @@ const Payment = ()=>{
                 }
             }
             )
+
+        setIsPaymentLoading(false)
             if(confirmPayment.error){
                 alert(confirmPayment.error)
                 console.log(confirmPayment.error)
@@ -56,15 +60,25 @@ const Payment = ()=>{
     <div className="paymentContainer">
     <form onSubmit={paymentHandlar}>
     <PaymentUserDetails  inputValues={inputValues} setInputValues={setInputValues}/>
-
+    
+   
     <div className="creditCard">
+    <h3 className="creditCardInfo"> please use stripe test credit card </h3>
+    <h3 className="creditCardInfo">4242 4242 4242 4242, 04/24,  424, 24242</h3>
     <CardElement />
     </div>
   
     <div className="paymentConfirmation">
      <h3> Total: ${TotalPrice} </h3> 
         
-    <button className="updateBtn" type="submit"> Pay Now</button>
+    <button disabled={isPaymentLoading} className="updateBtn" type="submit">
+   { isPaymentLoading ?
+    "Payment loading..."
+    :
+    "Pay Now"
+}
+        
+    </button>
     </div>
     </form>
     </div>
