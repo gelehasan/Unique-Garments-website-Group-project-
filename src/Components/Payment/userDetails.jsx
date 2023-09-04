@@ -68,10 +68,7 @@ const PaymentUserDetails = ()=>{
 
   </div>
 
-  <div className="totalPayment">
-   <h3> Total: ${TotalPrice} </h3> 
-  
-  </div>
+ 
 </form>
         </div>
     )
