@@ -18,6 +18,7 @@ import { useDispatch } from 'react-redux';
 import { SetUser } from './Store/Reducers/UserReducer/userAction';
 import CheckoutPage from './Routes/CheckoutPage/checkout';
 import Profile from './Routes/Profile/Profile';
+import PaymentPage from './Routes/PaymentPage/PaymentPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -57,6 +58,7 @@ function App() {
    <Route path='/WishList' element={<WishList/>} />
    <Route path='/Profile' element={<Profile/>} />
    <Route path='/item' element={<DisplayItem/>}/>
+   <Route path='/payment' element={<PaymentPage />}/>
    
    </Route>
    

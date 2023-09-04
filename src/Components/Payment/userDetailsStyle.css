@@ -1,0 +1,42 @@
+.accountManagementContainer{
+    position: relative;
+    border:1px solid black;
+    width: 60%;
+    margin:0 auto;
+    margin-top: 2em;
+    height:fit-content;
+  }
+  
+  
+  .paymentAccountInfoLabel{
+    text-align: center;
+    margin: 0;
+    margin-top:12px;
+  }
+  
+  .fieldLabel{
+    margin-bottom:0.5em;
+   }
+   
+   .accountInput{
+   width: 100%;
+    font-size: 1.3rem;
+   }
+   
+   .PaymentsectionLabels{
+     margin-bottom: 0.5em;
+   }
+
+   .PaymentaccountInformation,.shippingAddress{
+  
+    padding:10px;
+  }
+
+  .totalPayment{
+    width: 100%;
+     display:flex;
+     margin-top: 10px;
+     align-items: center;
+     justify-content:center;
+   
+   }

@@ -28,7 +28,6 @@ const AccountManagement = ()=>{
                 type: currentUser.type
             })
 
-
         }
    
      },[currentUser])
