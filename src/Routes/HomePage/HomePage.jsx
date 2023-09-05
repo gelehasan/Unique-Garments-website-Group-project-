@@ -14,6 +14,16 @@ const HomePage = ()=>{
     const [randomArticles, setRandomArticles] = useState();
     const [latestRelease, setLatestRelease] = useState();
     useEffect(()=>{
+
+      const allItems = [...AllCataogires];
+      const sortedAllItems = allItems.sort(
+        (a, b) => new Date(b.addedDate) - new Date(a.addedDate)
+      );
+      const latest3Items = sortedAllItems.slice(0, 3);
+      
+      setLatestRelease(latest3Items);
+
+
       if(currentUser){
         const filteredItems=  AllCataogires.filter((items)=> {
             return items.occasions.toLowerCase() == currentUser.type.toLowerCase()
@@ -26,7 +36,7 @@ const HomePage = ()=>{
         const selectedItems = shuffledItems.slice(0, 3);
         setForYouItems(selectedItems)
       }
-    },[currentUser])
+    },[currentUser, AllCataogires])
 
    useEffect(()=>{
         const FetchArticle = async ()=>{
@@ -50,7 +60,7 @@ const HomePage = ()=>{
         <Discovery/>
         <ForYouItems contentTitle={"Items for you"} forYouItems={forYouItems}/>
        {randomArticles&& <ArticleDiscovery randomArticles={randomArticles}/>} 
-        <Discount contentTitle={"Latest release"} />
+       {latestRelease &&  <Discount contentTitle={"Latest release"} latestRelease={latestRelease}/>}
         </div>  
       
     )

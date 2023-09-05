@@ -1,9 +1,9 @@
 import ForYouItems from "../ForYouItems/forYouItems"
 
-const Discount = ({contentTitle})=>{
+const Discount = ({contentTitle, latestRelease})=>{
 
     return(
-    <ForYouItems contentTitle={contentTitle}/>
+    <ForYouItems contentTitle={contentTitle} forYouItems={latestRelease}/>
     )
 }
 export default Discount;
