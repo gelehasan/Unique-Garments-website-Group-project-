@@ -16,9 +16,9 @@ const DisplayWishListItems = ({item})=>{
     return(
         <div    className="wishListItem" >
             <div    className="divImage">¨
-         
+            <Link to={`/${urlLink}/${id}`}> 
             <img className='productImage' src={image} />    
-         
+            </Link>
             <span className="removebtn" onClick={removeFromWishList}>Remove </span>
             </div>
             <div className="description">
