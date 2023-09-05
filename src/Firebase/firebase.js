@@ -82,7 +82,7 @@ export const getUserInformation= async (userId)=>{
         const userDocRef = doc(db, "users", userId);
         const userSnapshot = await getDoc(userDocRef);
         const userData = userSnapshot.data();
-         console.log(userData)
+      
          return userData;
          
          }

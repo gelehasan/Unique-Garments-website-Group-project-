@@ -13,16 +13,15 @@ const ShopBy = ()=>{
     useEffect(()=>{
         const FetchCatagories = async ()=>{
             try{
-                if(!ShopBYData){
+             
                     let Data = await getCollectionData();
                     dispatch(setCatagories(Data))
-                }
                
             }catch(error){
                 dispatch(setCatagoryLoadError, error)
             }}
             FetchCatagories();
-    },[])
+    },[ dispatch])
 
     return(
         <div>

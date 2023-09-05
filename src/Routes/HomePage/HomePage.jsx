@@ -3,9 +3,12 @@ import ForYouItems from "../../Components/ForYouItems/forYouItems"
 import ArticleDiscovery from "../../Components/ArticleDiscovery/articleDiscovery"
 import Discount from "../../Components/Discounts/discount"
 import { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { SelectAllCatagories } from "../../Store/Reducers/CatagoriesReducer.js/CatagorySelector"
+import { getCollectionData } from "../../Firebase/firebase"
+import { setCatagories, setCatagoryLoadError } from "../../Store/Reducers/CatagoriesReducer.js/CatagoryAction"
 import { getArticleData } from "../../Firebase/firebase"
+
 
 const HomePage = ()=>{
     const currentUser= useSelector((state)=> state.user.currentUser);
@@ -13,16 +16,37 @@ const HomePage = ()=>{
     const [forYouItems, setForYouItems] = useState();
     const [randomArticles, setRandomArticles] = useState();
     const [latestRelease, setLatestRelease] = useState();
+   
+  const dispatch=useDispatch();
     useEffect(()=>{
+        
+    
+      const FetchCatagories = async ()=>{
+     
+          try{
+                  let Data = await getCollectionData();
+                  console.log(Data)
+                  dispatch(setCatagories(Data))
+              
+        
+          }catch(error){
+              dispatch(setCatagoryLoadError, error)
+          }}
+          FetchCatagories();
+  },[dispatch])
 
-      const allItems = [...AllCataogires];
-      const sortedAllItems = allItems.sort(
-        (a, b) => new Date(b.addedDate) - new Date(a.addedDate)
-      );
+    useEffect(()=>{
+      const allItems = [...AllCataogires]; // Make a copy of the original array
+      const sortedAllItems = allItems.slice().sort((a, b) => {
+        const dateA = new Date(a.addedDate);
+        const dateB = new Date(b.addedDate);
+        return dateB - dateA; // Sort in descending order (latest first)
+      });
+      
       const latest3Items = sortedAllItems.slice(0, 3);
       
       setLatestRelease(latest3Items);
-
+      console.log(latestRelease)
 
       if(currentUser){
         const filteredItems=  AllCataogires.filter((items)=> {
@@ -41,18 +65,15 @@ const HomePage = ()=>{
    useEffect(()=>{
         const FetchArticle = async ()=>{
             try{
-              if(!randomArticles){ 
+    
                 let ArticlesData = await getArticleData();
                 setRandomArticles(ArticlesData[Math.floor(Math.random() * 10)]);
-              }
+              
             }catch(error){
           
             }}
                 FetchArticle();
         },[])
-
-  
-       
         
 
     return(

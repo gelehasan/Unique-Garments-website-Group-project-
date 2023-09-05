@@ -15,17 +15,17 @@ const ShoesOverView = ()=> {
         const FetchCatagories = async ()=>{
     
             try{
-                if(!ShoesData){
+                
                     let Data = await getCollectionData();
                     dispatch(setCatagories(Data))
-                }
+       
              
             }catch(error){
                 dispatch(setCatagoryLoadError, error)
             }}
             FetchCatagories();
-    },[])
-
+    },[dispatch])
+    console.log(ShoesData)
     return(
         <div>
 

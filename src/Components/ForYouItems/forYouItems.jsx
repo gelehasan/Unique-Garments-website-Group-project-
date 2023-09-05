@@ -2,7 +2,7 @@ import ShopNow from "../ShopNow/shopNow";
 import './forYouStyle.css';
 
 const ForYouItems = ({contentTitle, forYouItems})=>{
-    console.log(forYouItems)
+
 
     return(
         <div    className="shopNowContainer">
