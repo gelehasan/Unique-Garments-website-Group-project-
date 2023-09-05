@@ -1,6 +1,6 @@
 import Discovery from "../../Components/MainPageDiscovery/discovery"
 import ForYouItems from "../../Components/ForYouItems/forYouItems"
-import Magazine from "../../Components/ArticleDiscovery/articleDiscovery"
+import ArticleDiscovery from "../../Components/ArticleDiscovery/articleDiscovery"
 import Discount from "../../Components/Discounts/discount"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
@@ -27,19 +27,8 @@ const HomePage = ()=>{
       }
     },[currentUser])
 
-  /*  useEffect(()=>{
-        const FetchArticle = async ()=>{
-            try{
-                let ArticlesData = await getArticleData();
-        
-                setRandomArticles(ArticlesData[Math.floor(Math.random() * 10)]);
-            }catch(error){
-          
-            }}
-                FetchArticle();
-        },[])
-*/
-        console.log(randomArticles)
+  
+  
        
         
 
@@ -47,7 +36,7 @@ const HomePage = ()=>{
      <div> 
         <Discovery/>
         <ForYouItems contentTitle={"Items for you"} forYouItems={forYouItems}/>
-        <Magazine />
+        <ArticleDiscovery randomArticles={randomArticles}/>
         <Discount />
         </div>  
       

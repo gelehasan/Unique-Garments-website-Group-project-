@@ -16,8 +16,11 @@ const GarmentsOverView = ()=>{
     useEffect(()=>{
         const FetchCatagories = async ()=>{
             try{
-                let Data = await getCollectionData();
-                dispatch(setCatagories(Data))
+                if(!Catagory){
+                    let Data = await getCollectionData();
+                    dispatch(setCatagories(Data))
+                }
+              
             }catch(error){
                 dispatch(setCatagoryLoadError, error)
             }}
