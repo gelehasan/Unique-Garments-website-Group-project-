@@ -16,6 +16,7 @@ const ShopNow= ({items})=>{
 
                     <div className="shopTitle">
                      <h4>{title}</h4>   
+                     
                      </div>
 
                      </div>

@@ -1,9 +1,9 @@
-import NewRelease from "../ForYouItems/forYouItems"
+import ForYouItems from "../ForYouItems/forYouItems"
 
-const Discount = ()=>{
+const Discount = ({contentTitle})=>{
 
     return(
-    <NewRelease />
+    <ForYouItems contentTitle={contentTitle}/>
     )
 }
 export default Discount;

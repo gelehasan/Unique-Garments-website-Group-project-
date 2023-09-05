@@ -12,6 +12,7 @@ const HomePage = ()=>{
     const AllCataogires = useSelector(SelectAllCatagories)
     const [forYouItems, setForYouItems] = useState();
     const [randomArticles, setRandomArticles] = useState();
+    const [latestRelease, setLatestRelease] = useState();
     useEffect(()=>{
       if(currentUser){
         const filteredItems=  AllCataogires.filter((items)=> {
@@ -27,7 +28,19 @@ const HomePage = ()=>{
       }
     },[currentUser])
 
-  
+   useEffect(()=>{
+        const FetchArticle = async ()=>{
+            try{
+              if(!randomArticles){ 
+                let ArticlesData = await getArticleData();
+                setRandomArticles(ArticlesData[Math.floor(Math.random() * 10)]);
+              }
+            }catch(error){
+          
+            }}
+                FetchArticle();
+        },[])
+
   
        
         
@@ -36,8 +49,8 @@ const HomePage = ()=>{
      <div> 
         <Discovery/>
         <ForYouItems contentTitle={"Items for you"} forYouItems={forYouItems}/>
-        <ArticleDiscovery randomArticles={randomArticles}/>
-        <Discount />
+       {randomArticles&& <ArticleDiscovery randomArticles={randomArticles}/>} 
+        <Discount contentTitle={"Latest release"} />
         </div>  
       
     )
