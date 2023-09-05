@@ -1,4 +1,4 @@
-import NewRelease from "../NewRelease/newRelease"
+import NewRelease from "../ForYouItems/forYouItems"
 
 const Discount = ()=>{
 

@@ -1,20 +1,21 @@
 import './shopNowStyle.css';
-
+import { Link } from 'react-router-dom';
 const ShopNow= ({items})=>{
 
     return(
         <div    className='shopNowItems'>
             {
                 items.map((item,index)=>{
-                    const {title, imageUrl}= item;
+                    const {id,urlLink,title, image}= item;
                     return( 
                     <div className='ItemsContainer' key={index}>
                     <div className="shopImage">
-                       <img src={imageUrl}  /> 
+                    <Link to={`/${urlLink}/${id}`}>    <img src={image}  /> 
+                    </Link>  
                     </div>
 
                     <div className="shopTitle">
-                           <h4>{title}</h4>
+                     <h4>{title}</h4>   
                      </div>
 
                      </div>
