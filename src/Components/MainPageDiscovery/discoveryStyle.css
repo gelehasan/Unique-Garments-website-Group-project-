@@ -1,11 +1,11 @@
-.shopByContainer{
+.shopByContainer {
     position: relative;
     border: 1px solid;
     z-index: 1;
-    height: 500px;
-    width: 95%;
+    max-width: 95%; /* Use max-width instead of width */
     margin: 0 auto;
-    margin-top:1.9em ;
+    margin-top: 1.9em;
+    box-sizing: border-box; /* Ensures padding and border are included in max-width */
 }
 
 .shopByTitle{
