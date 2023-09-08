@@ -89,6 +89,10 @@
 .navLinks ul li a:hover {
     background-color: #f2f2f2; /* Change to a subtle background color */
 }
+/* Remove background color for the Logo link */
+#Logo-link {
+    background-color: transparent; /* Set the background to transparent for the Logo link */
+}
 
 .WishlistIcon{
     position: absolute;
