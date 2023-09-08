@@ -185,12 +185,15 @@
 }
 
 
-@media (max-width:500px)
+@media (max-width:540px)
 {
+    .WishlistIcon{
+        right: 10%;
+    }
     .displayCurrentUser{
-        top: 2em;
-        left: 2.4em;
-        font-size: 0.8rem;
+        top: 1.3em;
+        left: 2.2em;
+        font-size: 1rem;
     }
     .navTop{
        
@@ -215,11 +218,12 @@
         width: 30px;
     }
     .Logo{
-    margin-left: 0.4em;
-     width: 200px;
+    position: relative;
+     width: 160px;
     }
     .Logo img{
-        width: 200px;
+       
+        width: 100%;
     }
 }
 
@@ -232,12 +236,7 @@
 } 
 
 
-@media (max-width:375px){
-    .displayCurrentUser{
-        top: 2.5em;
-        font-size: 0.7rem;
-    }
-} 
+
 
 
 
