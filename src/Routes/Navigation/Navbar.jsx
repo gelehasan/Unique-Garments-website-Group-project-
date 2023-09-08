@@ -13,6 +13,7 @@ import { useContext } from 'react';
 import { CartShopConext } from '../../Context/cartShopContext';
 
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { UserContext } from '../../Context/userContext';
 import ProfileDropDown from '../../Components/Profile/ProfileDropDown';
 import { useSelector } from 'react-redux';
