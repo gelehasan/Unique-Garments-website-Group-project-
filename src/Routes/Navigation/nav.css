@@ -63,12 +63,32 @@
     list-style: none;
 }
 
+/* Improve usability by making links more obvious */
 .navLinks ul li a {
     color: black;
     font-size: 1.2rem;
     text-decoration: none;
+    transition: color 0.3s; /* Add a smooth color transition */
+    padding: 5px 10px; /* Add padding to make links easier to click */
+    border-radius: 5px; /* Add rounded corners for buttons */
 }
 
+/* Change the color when a link is active (e.g., on the current page) */
+.navLinks ul li a.active {
+    color: blue; /* Change the color for active links */
+    background-color: #f2f2f2; /* Add a subtle background color for active links */
+}
+
+/* Add a hover effect to the navigation links */
+.navLinks ul li a:hover {
+    color: blue; /* Change the color to your desired hover color */
+    transition: color 0.3s; /* Add a smooth transition effect */
+}
+
+/* Add a background color change on hover for better usability */
+.navLinks ul li a:hover {
+    background-color: #f2f2f2; /* Change to a subtle background color */
+}
 
 .WishlistIcon{
     position: absolute;
