@@ -16,13 +16,19 @@ import heartIcon from "../../Assets/heart.svg";
 import { NavLink } from 'react-router-dom'; // Import NavLink from React Router
 import ProfileDropDown from '../../Components/Profile/ProfileDropDown';
 
+//please review if they are used or not
 import { useContext } from 'react';
 import { CartShopConext } from '../../Context/cartShopContext';
 import { UserContext } from '../../Context/userContext';
 
 const Navbar = () => {
+        //We use usestate to determine if we show the drop down or not
+        //Use state can be used to store many thing such as arrays, etcs not just boolean 
+        //In this case see it as a variable with boolean expersion 
+        //which changes based on the action performed
   const [isShopBY, setShopBY] = useState(false);
   const [showMenu, setshowMenu] = useState();
+//const {isCartOpen,setIsCartOpen, isCheckoutOpen} = useContext(CartShopConext);
   const [profileDropDown, setProfileDropDown] = useState(false);
   
   const { currentUser } = useSelector((state) => state.user);
@@ -58,7 +64,7 @@ const Navbar = () => {
           <img src={cartIcon} onClick={setCart} alt="Cart" />
         </div>
       </div>
-
+        {/** Bottom navbar for links */}
       <div className="navBottom">
         <div className={showMenu ? "navLinks" : "navLinks navLinkShow"}>
           <ul>
@@ -77,6 +83,9 @@ const Navbar = () => {
                 Shoes
               </NavLink>
             </li>
+            {/* When a user hovers over shop by its set to true and shows the drop down
+                When it leaves it set to false
+            */}
             <li
               onMouseEnter={() => setShopBY(true)}
               onMouseLeave={() => setShopBY(false)}
@@ -93,7 +102,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-
+        {/* For closing and opening menu*/}
         <div className='closeOpenBtn'>
           {showMenu ? (
             <img className='closeMenu' src={closeBtn} onClick={toggleMenu} alt="Close Menu" />
