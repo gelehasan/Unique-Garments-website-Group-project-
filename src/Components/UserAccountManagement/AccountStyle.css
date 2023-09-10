@@ -1,10 +1,13 @@
 .accountManagementContainer{
   position: relative;
-  border:1px solid black;
-  width: 60%;
+ 
+  width: 70%;
   margin:0 auto;
-  margin-top: 2em;
+  border: 1px solid black;
+  max-width: 800px;
+  margin-top: 3em;
   height:fit-content;
+
 }
 
 
@@ -64,43 +67,46 @@ width: 100%;
   cursor: pointer;
 }
 
+.submitDiv{
+  width: 100%;
+   display:flex;
+   margin-top: 10px;
+   align-items: center;
+   justify-content:center;
+ 
+ }
+ .updateBtn{
+   font-size:1.3rem;
+   width:180px;
+   height:40px;
+   background-color: black;
+   color:white;
+   cursor: pointer;
+ }
 
-@media screen and (max-width: 800px) { /* Adjust the max-width value as needed */
-  .accountManagementContainer{ 
-    width: 80%;
-  }
-}
 
-@media screen and (max-width: 600px) { /* Adjust the max-width value as needed */
+@media  (max-width: 772px) {
   .accountManagementContainer{ 
-    width: 100%;
+    border: 1px solid black;
+    width: 85%;
   }
 
   .categoryImage {
     display: block;
   }
  .accountManagementContainer img{
-    width: 120px;
-    height: 80px;
+    width: 150px;
+    height: 120px;
   }
   .imageRadioWrapper {
-    margin-bottom: 20px; /* Adding spacing between image-radio pairs on smaller screens */
+    margin-bottom: 20px; 
   }
 }
 
-.submitDiv{
- width: 100%;
-  display:flex;
-  margin-top: 10px;
-  align-items: center;
-  justify-content:center;
 
-}
-.updateBtn{
-  font-size:1.3rem;
-  width:180px;
-  height:40px;
-  background-color: black;
-  color:white;
-  cursor: pointer;
+
+@media  (max-width: 500px){
+  .accountManagementContainer{ 
+    width: 90%;
+  }
 }

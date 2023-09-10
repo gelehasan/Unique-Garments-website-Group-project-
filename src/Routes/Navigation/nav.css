@@ -174,7 +174,7 @@ max-width: 1230px;
 .displayCurrentUser{
   
     position: absolute;
-    top: 1.6em;
+    top: 1em;
     left: 4.5em;
     width: 120px;
     
@@ -194,8 +194,8 @@ max-width: 1230px;
         right: 10%;
     }
     .displayCurrentUser{
-        top: 1.3em;
-        left: 2.2em;
+        top: 0.6em;
+        left: 1.9em;
         font-size: 1rem;
     }
     .navTop{
@@ -212,6 +212,7 @@ max-width: 1230px;
     .profile img{
         width: 30px;
 
+
     }
     .Cart{
        
@@ -227,6 +228,7 @@ max-width: 1230px;
     .Logo img{
        
         width: 100%;
+        height: 30px;
     }
 }
 

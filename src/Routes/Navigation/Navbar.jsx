@@ -53,7 +53,7 @@ const Navbar = () => {
           {currentUser ? (
             <span className='displayCurrentUser'>Hi {currentUser.displayName}</span>
           ) : (
-            "Guest"
+            <span className='displayCurrentUser'>Guest </span>
           )}
         </div>
         <div className="Logo">
