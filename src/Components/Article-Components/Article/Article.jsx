@@ -18,37 +18,37 @@ import "./Article.css"
             }}
                 FetchArticle();
         },[])
-        console.log(selectedArticle)
+  
         
     return(
         <div>
-      {  selectedArticle && <div class="article">
+      {  selectedArticle && <div className="article">
        
-        <header class="article-header">
+        <header className="article-header">
             
-            <h1 class="article-title">{selectedArticle.articleTitle}</h1>
-            <p class="article-author">{selectedArticle.author}</p>
-            <p class="article-date">{selectedArticle.publishedDate}</p>
+            <h1 className="article-title">{selectedArticle.articleTitle}</h1>
+            <p className="article-author">{selectedArticle.author}</p>
+            <p className="article-date">{selectedArticle.publishedDate}</p>
             <img src={selectedArticle.articlePicture} />
         </header>
 
-        <article class="article-content">
+        <article className="article-content">
             <p> {selectedArticle.introPassage}</p>
 
             <p>{selectedArticle.firstPassage}</p>
 
-            <blockquote class="quote">
+            <blockquote className="quote">
                 <p>{selectedArticle.firstQuote}</p>
             </blockquote>
 
            <p>  {selectedArticle.secondPassage} </p>
 
-            <blockquote class="quote">
+            <blockquote className="quote">
                 <p>{selectedArticle.secondQuote}</p>
             </blockquote>
 
             <p>{selectedArticle.thirdPassage}</p>            
-            <blockquote class="quote">
+            <blockquote className="quote">
                 <p>{selectedArticle.thirdQuote}</p>
             </blockquote>
             <p>{selectedArticle.finalPassage}</p>

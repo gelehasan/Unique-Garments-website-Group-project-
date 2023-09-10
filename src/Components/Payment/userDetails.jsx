@@ -5,7 +5,7 @@ import {getTotalPrice} from "../../Store/Reducers/CartReducer/cartSelector"
 
 const PaymentUserDetails = ({inputValues, setInputValues,inputFieldsValue })=>{
     const currentUser = useSelector((state)=>state.user.currentUser);
-    const TotalPrice = useSelector(getTotalPrice);
+  
     
 
     useEffect(()=>{
@@ -61,9 +61,6 @@ const PaymentUserDetails = ({inputValues, setInputValues,inputFieldsValue })=>{
     <input className="accountInput" type="text"  name="country"  value={country} onChange={ChangeHandlar} />
 
   </div>
-
- 
-
         </div>
     )
 }

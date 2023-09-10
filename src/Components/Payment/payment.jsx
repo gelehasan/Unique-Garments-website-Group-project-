@@ -38,12 +38,10 @@ const Payment = ()=>{
             {
                 payment_method:{
                 card: elements.getElement(CardElement),
-                billing_details:{
-                    name:"ahmed"}
+                billing_details:inputValues
                 }
             }
             )
-
         setIsPaymentLoading(false)
             if(confirmPayment.error){
                 alert(confirmPayment.error)
@@ -60,24 +58,19 @@ const Payment = ()=>{
     <div className="paymentContainer">
     <form onSubmit={paymentHandlar}>
     <PaymentUserDetails  inputValues={inputValues} setInputValues={setInputValues}/>
-    
-   
     <div className="creditCard">
     <h3 className="creditCardInfo"> please use stripe test credit card </h3>
     <h3 className="creditCardInfo">4242 4242 4242 4242, 04/24,  424, 24242</h3>
     <CardElement />
     </div>
-  
     <div className="paymentConfirmation">
-     <h3> Total: ${TotalPrice} </h3> 
-        
+     <h3> Total: ${TotalPrice} </h3>       
     <button disabled={isPaymentLoading} className="updateBtn" type="submit">
    { isPaymentLoading ?
     "Payment loading..."
     :
     "Pay Now"
-}
-        
+}   
     </button>
     </div>
     </form>

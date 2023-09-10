@@ -46,9 +46,8 @@ const HomePage = ()=>{
       const latest3Items = sortedAllItems.slice(0, 3);
       
       setLatestRelease(latest3Items);
-      console.log(latestRelease)
-
-      if(currentUser){
+      
+      if(currentUser && currentUser.type){
         const filteredItems=  AllCataogires.filter((items)=> {
             return items.occasions.toLowerCase() == currentUser.type.toLowerCase()
            })
