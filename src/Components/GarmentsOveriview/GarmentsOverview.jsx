@@ -9,7 +9,6 @@ import { SelectGarments } from "../../Store/Reducers/CatagoriesReducer.js/Catago
 
 
 const GarmentsOverView = ()=>{
-
     const Catagory = useSelector(SelectGarments);
     const dispatch = useDispatch()
 

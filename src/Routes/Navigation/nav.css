@@ -1,7 +1,9 @@
 .navbar{
-
- width: 100%;
- 
+    position: relative;
+ width: 98%;
+max-width: 1230px;
+ margin: 0 auto;
+ margin-top: 1.2em;
 }
 
 
@@ -10,7 +12,7 @@
    border-bottom: 2px solid black;
     width: 95%;
     margin: 0 auto;
-    height: 60px;
+    height: 45px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,6 +57,7 @@
     margin: 0 auto;
     justify-content: center;
    
+   
 }
 
 .navLinks ul{
@@ -75,7 +78,7 @@
 
 /* Change the color when a link is active (e.g., on the current page) */
 .navLinks ul li a.active {
-    color: blue; /* Change the color for active links */
+    color: #245f96; /* Change the color for active links */
     background-color: #f2f2f2; /* Add a subtle background color for active links */
 }
 

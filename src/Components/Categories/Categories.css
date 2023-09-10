@@ -1,5 +1,6 @@
 .catagoriesContent{
   margin-top: 2.3em;
+  
   width: 80%;
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -8,13 +9,14 @@
 }
 
 .ParentDiv{
-    border: 1px solid red;
+  
     display: flex;
     gap: 60px;
-    width: 100%;
+    width: 98%;
+    
   }
 
-  .AllFilterContainer{
+.AllFilterContainer{
     margin-top: 2.3em;
   width: 20%;
   }
@@ -138,6 +140,15 @@
     background-color: #1e293b;
    color: white;
   }
+
+
+  @media (max-width: 1200px){
+
+    .catagoriesContent{
+      grid-template-columns: repeat(3,1fr)
+    }
+  }
+
 
 
   
