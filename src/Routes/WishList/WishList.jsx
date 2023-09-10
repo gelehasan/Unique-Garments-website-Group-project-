@@ -25,7 +25,7 @@ useEffect(()=>{
     return(
         <div className="wishListContainer">
         
-           {wishListData.length > 0 ? 
+           {wishListData ?  
             
             wishListData.map((items)=> {
                

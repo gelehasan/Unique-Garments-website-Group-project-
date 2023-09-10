@@ -36,7 +36,7 @@ const ArticleOverView = ()=>{
                             const {id,articlePicture, articleTitle, author}= article;
 
                           return( 
-                         <div className="article">
+                         <div className="article" key={id}>
                             <Link className="Links" to={`/articles/${id}`}> 
                             <img src={articlePicture} alt="Article 1 Image" />
                             <h2 className="article-title">{articleTitle}</h2>

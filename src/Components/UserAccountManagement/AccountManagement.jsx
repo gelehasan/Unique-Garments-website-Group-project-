@@ -8,7 +8,7 @@ let inputFieldsValue  = {
     fullName: "",
     phone: "",
     country: "",
-    shippingAddress: "",
+    shippingAdress: "",
     type: "",
 };
 const AccountManagement = ()=>{
@@ -24,19 +24,20 @@ const AccountManagement = ()=>{
                 fullName: currentUser.fullName,
                 phone: currentUser.phone,
                 country: currentUser.country,
-                shippingAddress: currentUser.shippingAddress,
+                shippingAdress: currentUser.shippingAdress,
                 type: currentUser.type
             })
 
         }
+
    
      },[currentUser])
-    const {userName, fullName, phone, country, shippingAddress, type} = inputValues;
+    const {userName, fullName, phone, country, shippingAdress, type} = inputValues;
 
     const ChangeHandlar = (event)=>{
         let  {value, name}= event.target;
        
-    
+      
         setInputValues((prevValues) => ({
             ...prevValues,
             [name]: value,
@@ -45,10 +46,9 @@ const AccountManagement = ()=>{
 
     const updateAccountDetails = async (event)=>{
         event.preventDefault();
-       let result=     await updateAccount (currentUser.id,inputValues)
-       
-        console.log(result)
-        window.location.reload();
+        await updateAccount (currentUser.id,inputValues)
+        window.location.reload()
+      
     }
  
  
@@ -86,7 +86,7 @@ const AccountManagement = ()=>{
     <h3 className="sectionLabels"> Shipping </h3>
     <h5 className="fieldLabel"> Shipping Address </h5>
 
-    <input className="accountInput" type="text"  disabled={isEdit} name="shippingAddress" value={shippingAddress} onChange={ChangeHandlar} />
+    <input className="accountInput" type="text"  disabled={isEdit} name="shippingAdress" value={shippingAdress} onChange={ChangeHandlar} />
     <h5 className="fieldLabel"> Country </h5>
     <input className="accountInput" type="text"   disabled={isEdit} name="country"  value={country} onChange={ChangeHandlar} />
 

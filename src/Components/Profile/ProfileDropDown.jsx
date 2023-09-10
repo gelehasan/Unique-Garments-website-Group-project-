@@ -10,7 +10,7 @@ const ProfileDropDown = ()=>{
   const signOutHandlar = ()=>{
     if(currentUser != null){
         SignOutUser();
-        window.location.reload();
+        
     }
   }
     return(

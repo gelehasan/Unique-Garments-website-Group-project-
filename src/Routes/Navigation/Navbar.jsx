@@ -69,17 +69,17 @@ const Navbar = () => {
         <div className={showMenu ? "navLinks" : "navLinks navLinkShow"}>
           <ul>
             <li>
-              <NavLink exact to="/" activeClassName="active-link">
+              <NavLink  to="/" className="active-link">
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="/Garments" activeClassName="active-link">
+              <NavLink to="/Garments" className="active-link">
                 Garments
               </NavLink>
             </li>
             <li>
-              <NavLink to="/Shoes" activeClassName="active-link">
+              <NavLink to="/Shoes" className="active-link">
                 Shoes
               </NavLink>
             </li>
@@ -90,13 +90,13 @@ const Navbar = () => {
               onMouseEnter={() => setShopBY(true)}
               onMouseLeave={() => setShopBY(false)}
             >
-              <NavLink to="/ShopBy" activeClassName="active-link">
+              <NavLink to="/ShopBy" className="active-link">
                 Shop By
               </NavLink>
               {isShopBY && <ShopBY isShopBY={isShopBY} setShopBY={setShopBY} />}
             </li>
             <li>
-              <NavLink to="/Articles" activeClassName="active-link">
+              <NavLink to="/Articles" className="active-link">
                 Magazine
               </NavLink>
             </li>

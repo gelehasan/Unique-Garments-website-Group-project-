@@ -14,18 +14,15 @@ const SignUp = ()=>{
   const Navigate = useNavigate();
 
 
-  if(currentUser){
-    Navigate("/")
-  }
-
+  useEffect(()=>{
+    if(currentUser){
+      Navigate("/")
+    
+    }
+  },[Navigate,currentUser])
   
-  useEffect(() => {
-    return () => {
-      // Cleanup function to be executed when the component is unmounted
-      setMounted(false); // Update state to indicate that the component is unmounted
-      // Cancel any subscriptions or asynchronous tasks here
-    };
-  }, []);
+
+
 
 const changeHandlar = (event)=>{
  let {value, name}=event.target;
@@ -36,17 +33,17 @@ const changeHandlar = (event)=>{
 
 const RegistrationHandlar = async (event)=>{
   event.preventDefault();
- let {username,  email, password, comfirmPassword, type} = inputFields;
+ let {username,  email, password, comfirmPassword} = inputFields;
 
  //We check if the validity of the password
 if (password === comfirmPassword && password.length >=6) {
   try {
-    if(!type) type="A"
+  
    
   // Here is where we send the data we gathered from the inputs
   //And we wait for the a response back
- await signUpAuthentication({username, email, password, type});
- window.location.reload();
+ await signUpAuthentication({username, email, password});
+  window.location.reload()
 
 } catch (error) {
   if (error.code === "auth/email-already-in-use") {

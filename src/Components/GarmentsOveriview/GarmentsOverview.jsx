@@ -28,7 +28,7 @@ const GarmentsOverView = ()=>{
                 dispatch(setCatagoryLoadError, error)
             }}
             FetchCatagories();
-    },[Catagory,dispatch])
+    },[dispatch])
 
     return(
        <div>

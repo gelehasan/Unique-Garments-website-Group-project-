@@ -218,7 +218,8 @@ export const removeItemFromWIshList= async(userId, item)=> {
 
 
 export const updateAccount = async (userId, updatedFields) => {
-  const {userName, fullName, phone, country, shippingAddress, type} = updatedFields;
+  
+  const {userName, fullName, phone, country, shippingAdress, type} = updatedFields;
       const userDocRef = doc(db, "users", userId);
       try {
         await updateDoc(userDocRef, {
@@ -226,7 +227,7 @@ export const updateAccount = async (userId, updatedFields) => {
           fullName: fullName,
           phone: phone,
           country:country,
-          shippingAddress:shippingAddress,
+          shippingAdress:shippingAdress,
           type:type
 
 
