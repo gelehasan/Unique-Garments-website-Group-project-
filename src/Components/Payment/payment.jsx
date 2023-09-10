@@ -38,7 +38,9 @@ const Payment = ()=>{
             {
                 payment_method:{
                 card: elements.getElement(CardElement),
-                billing_details:inputValues
+                billing_details:{
+                    name:inputValues.userName
+                }
                 }
             }
             )

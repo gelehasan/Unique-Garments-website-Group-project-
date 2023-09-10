@@ -23,7 +23,9 @@ const DisplayItem = ()=> {
   }
   const addSelectedItemToCart = ()=>{
     
-    dispatch(addItemToCart(selectedItem,cartItems ))
+    dispatch(addItemToCart({...selectedItem, size:selectedSize},cartItems ))
+
+    console.log(cartItems)
   }
 
   useEffect( ()=>{
@@ -56,16 +58,24 @@ const DisplayItem = ()=> {
     <br/>
 
     <div className="sizeGroup">
-    <button className={` ${selectedSize === "S" ? "selectedSizebtn" : "sizebtn"} `}>
+    <button className={` ${selectedSize === "S" ? "selectedSizebtn" : "sizebtn"} `}
+      onClick={()=> setSelectedSize("S")}
+    >
         S
     </button>
-    <button className={` ${selectedSize === "M" ? "selectedSizebtn" : "sizebtn"} `}>
+    <button className={` ${selectedSize === "M" ? "selectedSizebtn" : "sizebtn"} `}
+    onClick={()=> setSelectedSize("M")}
+    >
         M
     </button>
-    <button className={` ${selectedSize === "L" ? "selectedSizebtn" : "sizebtn"} `}>
+    <button className={` ${selectedSize === "L" ? "selectedSizebtn" : "sizebtn"} `}
+    onClick={()=> setSelectedSize("L")}
+    >
         L
     </button>
-    <button className={` ${selectedSize === "XL" ? "selectedSizebtn" : "sizebtn"} `}>
+    <button className={` ${selectedSize === "XL" ? "selectedSizebtn" : "sizebtn"} `}
+    onClick={()=> setSelectedSize("XL")}
+    >
         XL
     </button>
     </div>

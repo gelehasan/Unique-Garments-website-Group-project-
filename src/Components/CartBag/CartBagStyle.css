@@ -6,7 +6,7 @@
     height: 440px;
     background-color: white;
     right: 1.4em;
-    top: 4em;
+    top: 3em;
     border: 1px solid black;
 
     z-index: 4;
@@ -33,9 +33,6 @@
     gap: 15px;
 }
 
-.checkoutItemContainer{
-    height: 92%;
-}
 
 .items{
  
@@ -50,9 +47,8 @@
 
    
 }
-.checkOutItemDiv{
-    height: 183px;
-}
+
+
 
 .cartItemImage img{
    width: 100%;
@@ -95,15 +91,7 @@ width: 50%;
     border-right: 1px solid black;
 
     }
-.checkOutCartImage{
-width: 20%; 
-height: 180px;   
 
-}
-.checkOutCartImage img{
-    width: 100%;
-    height: 100%;
-}
 
 .emptyBag{
   
@@ -116,7 +104,7 @@ height: 180px;
 }
 
 .checkoutBtn, .paymentbtn{
-    position: absolute;
+   
     background-color:  black;
     color: white;
     width: 200px;
@@ -124,15 +112,15 @@ height: 180px;
     font-size: 1.2rem;
     cursor: pointer;
     bottom: 0;
-    left: 5em;
+   
 border-top: 1px solid black;
 }
-
-
-.paymentbtn{
-    left:  21em;
-padding: 10px;
+.checkoutBtn{
+    position: absolute;
+    left: 5em;
 }
+
+
 .totalPrice{
     position: absolute;
     bottom: 10%;
@@ -143,7 +131,49 @@ padding: 10px;
 }
 
 
+/* Checkout page styles*/
+.checkOutItems{
+    margin-top: 2em;
+    max-width: 800px;
+}
+
+
+.checkOutItemDiv{
+    height: 183px;
+    position: relative;
+}
+
+.checkoutItemContainer{
+  
+    height: 92%;
+}
+.checkOutCartImage{
+width: 20%; 
+height: 180px;   
+
+}
+.checkOutCartImage img{
+    width: 100%;
+    height: 100%;
+}
+
+.checkOutPageDiv{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+  
+    justify-content: center;
+
+}
+
 @media (max-width:830px){
+    .checkOutCartImage{
+        width: 25%;
+    }
+    .checkOutItems{
+        width: 85%;
+    }
     .bagItems{
         right: 0;
         width:300px
@@ -158,4 +188,13 @@ padding: 10px;
         left: 5.5em;
     }
 
+}
+
+@media (max-width:550px){
+    .checkOutCartImage{
+        width: 30%;
+    }
+   .checkOutItems {
+    width: 90%;
+}
 }

@@ -8,14 +8,18 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import MinusIcon from "../../Assets/minus.svg"
 import PlusIcon from "../../Assets/plus.svg"
-
+import { setCartVisibility } from '../../Store/Reducers/CartReducer/cartActions';
 
 const CartBag = ({isCheckOutPage})=>{
    // const {bagItem, isCheckoutOpen, setIsCheckoutOpen} = useContext(CartShopConext);
     const cartItems = useSelector((state)=> state.cart.cartItems);
+    const isCartOpen = useSelector((state)=> state.cart.isCartOpen);
     const getTotal = useSelector(getTotalPrice)
     const dispatch= useDispatch();
-   
+
+    const setCart = () => {
+        dispatch(setCartVisibility(!isCartOpen));
+      };
     
     const increaseQuantity = (itemId)=>{
         const selectedItem = cartItems.find((item)=> item.id == itemId);
@@ -43,24 +47,34 @@ const CartBag = ({isCheckOutPage})=>{
 
             <img src={MinusIcon} onClick={()=> decreaseQuantity(item.id)}/>   
             <span className='quantity'>{item.quantity}</span>
+
             <img className='plusIcon' src={PlusIcon} onClick={()=> increaseQuantity(item.id)} />  
 
                 <span className='price'> ${item.price} </span>
                </div>
-            </div>)
+
+            </div>
+            )
         })}
+
        {!isCheckOutPage && <h3 className='totalPrice'> Total: ${getTotal} </h3> } 
 
+   
+             
         {isCheckOutPage ?  
+                 <div className='checkOutPageDiv'> 
          <Link to={"/payment"}><button className='paymentbtn'> 
          Proceed to payment  </button>
      </Link> 
+     </div>
             :
-            <Link to={"/checkout"}><button className='checkoutBtn'> 
+
+         <Link to={"/checkout"}><button className='checkoutBtn' onClick={setCart}> 
             Go to the checkout  </button>
             </Link> 
+      
         }
-       
+
         </div> : 
 
        <div    className='emptyBag'>
