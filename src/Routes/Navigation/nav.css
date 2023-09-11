@@ -50,7 +50,6 @@ position: relative;
 }
 /* 0.5*/
 .numberOfItems{
-
     position: absolute;
     font-size: 0.95em;
     top: 0.4em;
@@ -66,10 +65,12 @@ right:0.5em;
 position: absolute;
 
 right: 8%;  
-
+z-index: 99;
 
 }
 .WishlistIcon img{
+   
+ 
     width: 40px;
 }
 /* Styling bottom navbar */
@@ -123,6 +124,12 @@ right: 8%;
 #Logo-link {
     background-color: transparent; /* Set the background to transparent for the Logo link */
 }
+
+
+.WishlistIcon {
+    background-color: transparent !important; 
+}
+
 
 
 

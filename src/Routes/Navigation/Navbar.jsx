@@ -57,7 +57,8 @@ console.log(numberOfItems)
         <div className="Logo">
           <NavLink to={"/"} id="Logo-link"><img src={logo} alt="Logo" /></NavLink>
         </div>
-        <NavLink to={"/Wishlist"} className='WishlistIcon'><img src={heartIcon} alt="Wishlist" /></NavLink> 
+
+        <NavLink to={"/Wishlist"}  className='WishlistIcon trsn'><img src={heartIcon} /></NavLink> 
 
         <div className="Cart">      
         <span className={numberOfItems > 9 ? "numberOfItems adjustItems" : "numberOfItems"}>
