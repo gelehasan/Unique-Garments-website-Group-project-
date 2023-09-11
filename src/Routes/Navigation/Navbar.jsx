@@ -15,25 +15,23 @@ import { setCartVisibility } from '../../Store/Reducers/CartReducer/cartActions'
 import heartIcon from "../../Assets/heart.svg";
 import { NavLink } from 'react-router-dom'; // Import NavLink from React Router
 import ProfileDropDown from '../../Components/Profile/ProfileDropDown';
-
+import { getNumberOfItems } from '../../Store/Reducers/CartReducer/cartSelector';
 //please review if they are used or not
 import { useContext } from 'react';
 import { CartShopConext } from '../../Context/cartShopContext';
 import { UserContext } from '../../Context/userContext';
 
 const Navbar = () => {
-        //We use usestate to determine if we show the drop down or not
-        //Use state can be used to store many thing such as arrays, etcs not just boolean 
-        //In this case see it as a variable with boolean expersion 
-        //which changes based on the action performed
   const [isShopBY, setShopBY] = useState(false);
   const [showMenu, setshowMenu] = useState();
-//const {isCartOpen,setIsCartOpen, isCheckoutOpen} = useContext(CartShopConext);
+
   const [profileDropDown, setProfileDropDown] = useState(false);
   
   const { currentUser } = useSelector((state) => state.user);
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
-
+  const numberOfItems = useSelector(getNumberOfItems);
+ 
+console.log(numberOfItems)
   const dispatch = useDispatch();
 
   const setCart = () => {
@@ -59,10 +57,15 @@ const Navbar = () => {
         <div className="Logo">
           <NavLink to={"/"} id="Logo-link"><img src={logo} alt="Logo" /></NavLink>
         </div>
-        <div className="Cart">
-          <NavLink to={"/Wishlist"}><img className='WishlistIcon' src={heartIcon} alt="Wishlist" /></NavLink>
-          <img src={cartIcon} onClick={setCart} alt="Cart" />
+
+        <NavLink to={"/Wishlist"}  className='WishlistIcon trsn'><img src={heartIcon} /></NavLink> 
+
+        <div className="Cart">      
+        <span className={numberOfItems > 9 ? "numberOfItems adjustItems" : "numberOfItems"}>
+          {numberOfItems}</span>
+         <img src={cartIcon} onClick={setCart} alt="Cart" />
         </div>
+        
       </div>
         {/** Bottom navbar for links */}
       <div className="navBottom">

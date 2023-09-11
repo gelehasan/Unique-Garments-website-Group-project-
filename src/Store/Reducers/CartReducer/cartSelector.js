@@ -21,3 +21,18 @@ export const getTotalPrice = createSelector(
         return Total;
     }
 )
+
+
+export const getNumberOfItems = createSelector(
+    [SelectCartSlice],
+    (cartItems)=>{
+        let totalQuantity=0;
+    
+        cartItems.forEach((item)=>{
+            totalQuantity+=item.quantity
+        })
+    
+        return totalQuantity;
+        
+    }
+)

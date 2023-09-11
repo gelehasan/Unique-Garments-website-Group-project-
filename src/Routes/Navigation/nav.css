@@ -43,8 +43,36 @@ max-width: 1230px;
     width: 40px;
   
 }
+.Cart{
+position: relative;
 
 
+}
+/* 0.5*/
+.numberOfItems{
+    position: absolute;
+    font-size: 0.95em;
+    top: 0.4em;
+    right: 0.66em;
+    z-index: -1;
+    
+}
+
+.adjustItems{
+right:0.5em;
+}
+.WishlistIcon{
+position: absolute;
+
+right: 8%;  
+z-index: 99;
+
+}
+.WishlistIcon img{
+   
+ 
+    width: 40px;
+}
 /* Styling bottom navbar */
 
 .navLinks{
@@ -97,11 +125,13 @@ max-width: 1230px;
     background-color: transparent; /* Set the background to transparent for the Logo link */
 }
 
-.WishlistIcon{
-    position: absolute;
-   
-    right: 8%;
+
+.WishlistIcon {
+    background-color: transparent !important; 
 }
+
+
+
 
 /* For close and open buttons*/
 
@@ -190,9 +220,7 @@ max-width: 1230px;
 
 @media (max-width:540px)
 {
-    .WishlistIcon{
-        right: 10%;
-    }
+  
     .displayCurrentUser{
         top: 0.6em;
         left: 1.9em;
@@ -216,11 +244,28 @@ max-width: 1230px;
     }
     .Cart{
        
-        width: 30px;
+        width: 35px;
     }
     .Cart img{
-        width: 30px;
+        width: 35px;
     }
+    .WishlistIcon{
+        right: 10%;
+    }
+    .WishlistIcon img{
+        width: 35px;
+    }
+    /*0.45*/
+    .numberOfItems{
+        font-size: 0.8rem;
+       top: 0.45em;
+       right: 0.66em;
+    }
+
+    .adjustItems{
+        right: 0.45em;
+    }
+
     .Logo{
     position: relative;
      width: 160px;
