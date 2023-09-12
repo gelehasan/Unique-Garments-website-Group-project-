@@ -1,7 +1,7 @@
 .wishListItem{
-    position: relative;
+    position: relative ;
     border: 1px solid black;
-    width: 220px;
+    width: 100%;
     height: 340px;
    
 }
@@ -31,7 +31,9 @@ max-height: 280px;
     font-size: 1.3rem;
     font-weight: bold;
     bottom: 20%;
-    right: 6em;
-    width: 30px;
+text-align: center;
+
+    width: 100%;
+  
    
 }

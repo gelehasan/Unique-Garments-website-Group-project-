@@ -127,7 +127,8 @@ z-index: 99;
 
 
 .WishlistIcon {
-    background-color: transparent !important; 
+    background-color: transparent !important
+    ; 
 }
 
 
@@ -153,10 +154,11 @@ z-index: 99;
 
 
 @media (max-width:830px) {
-  
+    .navbar{
+width: 100%;
+    }
 .navTop{
     width: 100%;
-   
    
 }
 

@@ -1,9 +1,14 @@
+.allProductContainer{
+
+}
+
 .productItem{
-    position: relative;
-    border: 1px solid black;
-    width: 220px;
-    height: 370px;
    
+    position: relative;
+    width: 100% ;
+    border: 1px solid black;
+    height: 370px;
+    box-sizing: border-box;
 }
 
 
@@ -36,4 +41,11 @@ max-height: 280px;
     right: 0;
     width: 30px;
    
+}
+
+
+@media (max-width:947px){
+    .productItem{
+        width: 100%;
+    }
 }
