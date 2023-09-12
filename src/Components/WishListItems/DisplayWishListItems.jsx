@@ -15,15 +15,17 @@ const DisplayWishListItems = ({item})=>{
 
     return(
         <div    className="wishListItem" >
+
+<span className="removebtn" onClick={removeFromWishList}>Remove </span>
             <div    className="divImage">¨
             <Link to={`/${urlLink}/${id}`}> 
             <img className='productImage' src={image} />    
-            </Link>
-            <span className="removebtn" onClick={removeFromWishList}>Remove </span>
+            </Link>            
             </div>
+
             <div className="description">
                 <h4>{name}</h4>
-                <h3>{price}</h3>
+                <h3>${price}</h3>
             </div>
         </div>
     )
