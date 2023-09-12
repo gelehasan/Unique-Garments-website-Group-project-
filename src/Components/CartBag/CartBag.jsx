@@ -11,7 +11,6 @@ import PlusIcon from "../../Assets/plus.svg"
 import { setCartVisibility } from '../../Store/Reducers/CartReducer/cartActions';
 
 const CartBag = ({isCheckOutPage})=>{
-   // const {bagItem, isCheckoutOpen, setIsCheckoutOpen} = useContext(CartShopConext);
     const cartItems = useSelector((state)=> state.cart.cartItems);
     const isCartOpen = useSelector((state)=> state.cart.isCartOpen);
     const getTotal = useSelector(getTotalPrice)
@@ -22,14 +21,14 @@ const CartBag = ({isCheckOutPage})=>{
       };
     
     const increaseQuantity = (itemId)=>{
-        const selectedItem = cartItems.find((item)=> item.id == itemId);
+        const selectedItemUpated= cartItems.find((item)=> item.id == itemId);
        
-        dispatch(addItemToCart(selectedItem, cartItems))
+        dispatch(addItemToCart(selectedItemUpated, cartItems))
     }
 
     const decreaseQuantity = (itemId)=>{
-     const selectedItem = cartItems.find((item)=> item.id == itemId);
-        dispatch(decreaseItemQuanity(selectedItem, cartItems))
+     const selectedItemUpated = cartItems.find((item)=> item.id == itemId);
+        dispatch(decreaseItemQuanity(selectedItemUpated, cartItems))
     }
   
     return(

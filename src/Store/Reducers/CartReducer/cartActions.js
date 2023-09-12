@@ -9,6 +9,14 @@ const addTocartHandlar = (productToAdd, cartItems )=>{
  return [...cartItems, {...productToAdd, quantity:1}];
 }
 
+export const addItemToCart = ( productToAdd,cartItems)=>{
+    const UpdatedCartItems = addTocartHandlar (productToAdd,cartItems);
+
+    return {type:cartTypes.updateCartItems, payload:UpdatedCartItems}
+
+}
+
+
 const descreaseItemHandlar = (productToAdd, cartItems)=>{
     const findProduct = cartItems.find((item)=> item.id == productToAdd.id);
 
@@ -23,22 +31,18 @@ const descreaseItemHandlar = (productToAdd, cartItems)=>{
     }
 }
 
-export const setCartVisibility = (booleanValue)=>{
-
-    return {type:cartTypes.setIsCartOpen, payload:booleanValue}
-}
-
-export const addItemToCart = ( productToAdd,cartItems)=>{
-    const UpdatedCartItems = addTocartHandlar (productToAdd,cartItems);
-
-    return {type:cartTypes.updateCartItems, payload:UpdatedCartItems}
-
-}
-
-
 export const decreaseItemQuanity = (productToAdd, cartItems)=> {
     const UpdatedCartItems = descreaseItemHandlar (productToAdd, cartItems);
 
     return {type:cartTypes.updateCartItems, payload:UpdatedCartItems}
 
 }
+
+export const setCartVisibility = (booleanValue)=>{
+
+    return {type:cartTypes.setIsCartOpen, payload:booleanValue}
+}
+
+
+
+
