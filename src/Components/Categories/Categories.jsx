@@ -26,9 +26,12 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn, isShopByFilte
   const [selectedCatagory, setSelectedCatagory] = useState("All")
   const [selectedOccasion, setSelectedOccasion ] = useState("All");  
   const [selectedGroup, setSelectedGroup] = useState("All");
-  const [searchInput, setSearchInput] = useState("");    
+  const [searchInput, setSearchInput] = useState("");   
+  const [filterMenu, setFilterMenu] = useState(false); 
   
-
+  const setFilerMenu = ()=>{
+    setFilterMenu(!filterMenu)
+  }
   const handleCatagory= (itemName)=>{
  
     if(itemName==selectedCatagory){
@@ -127,17 +130,21 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn, isShopByFilte
 
     return(
       <div className='ParentDiv'>
-      <div className='AllFilterContainer'> 
+<div className='AllFilterContainer'> 
+
 <div className="FilterSection">
-<label className='BrandTitle'> Filter:</label> 
+<label className='BrandTitle filtertitle'> Filter:</label> 
 
 <div className='inputSearchField'>
 <img src={search} className="searchImg" />
 <input type='text' placeholder="Search" onChange={searchHandlar}  />
 </div>
+
+<button className="btnFilterSmallScreen" onClick={setFilerMenu}
+>Filter</button>
 </div>
 
-<div className='topContainer'> 
+<div className={filterMenu ? " topContainer " : "topContainer closeFilter"}> 
 
 { isGarmentsFilterOn &&
   <AccessoriesFiltering 
@@ -184,7 +191,6 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn, isShopByFilte
     />
   }
   
-</div>
 
 
 {/* Bottom sections */}
@@ -199,6 +205,11 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn, isShopByFilte
   selectedColor={selectedColor}
   handleColorFiltering={handleColorFiltering}
     />
+  <div className="viewItemBtnDiv">
+  <button className="viewAllItemsBtn" onClick={setFilerMenu}>
+     View All {filteredItems.length} Items</button>
+  </div>
+</div>
 
 {/** Filtering section ends  */}
   </div>

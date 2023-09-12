@@ -30,6 +30,7 @@ const Product = ({item})=>{
     const { id,title, price, image, urlLink} = item;
 
     return(
+
         <div    className="productItem" >
              <Link to={`/${urlLink}/${id}`}> 
             <div    className="divImage">
@@ -42,7 +43,7 @@ const Product = ({item})=>{
              <img src={heartIcon} className='heartEmoji' onClick={addToYourWishList} /> 
             <div className="description">
                 <h4>{title}</h4>
-                <h3>{price}</h3>
+                <h3>${price}</h3>
             </div>
         </div>
     )
