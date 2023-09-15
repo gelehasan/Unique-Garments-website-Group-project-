@@ -19,6 +19,8 @@ const DisplayItem = ()=> {
     if(currentUser){
       await addToWishList(currentUser.id, selectedItem);
       
+    }else{
+      alert("Log in to add items to your wishlist!")
     }
   }
   const addSelectedItemToCart = ()=>{

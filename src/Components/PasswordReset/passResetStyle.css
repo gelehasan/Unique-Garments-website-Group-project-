@@ -1,0 +1,47 @@
+
+
+.resetPassContainer{
+    border: 1px solid black;
+    position: absolute;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 280px;
+    z-index: 1;
+}
+
+.resetPassContainer input{
+    width: 320px;
+    height: 30px;
+}
+
+.resetPassContainer button{
+
+    background-color: black;
+    width:150px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 0.3em;
+}
+
+.closeResetPage{
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: -0%;
+    right:2%;
+}
+
+.failReset{
+    border: 1px solid red;
+    color: red;
+}
+
+.successReset{
+    border: 1px solid green;
+    color: blue;
+}
+

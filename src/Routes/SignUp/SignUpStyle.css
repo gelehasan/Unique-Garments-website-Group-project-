@@ -1,30 +1,48 @@
-  .SignUpcontainer {
+  .authContainer{
+
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 300px;
-    margin: 0 auto;
+    justify-content: center;
+    margin-top: 3em;
+
   }
+  .SignUpcontainer {
+    position: relative;
   
-  .containerinput {
-    width: 100%;
+    margin: 0 auto;
+
+  
+    align-items: center;
+    width: fit-content;
+  
+    height: 400px;
+
+   
+  }
+  .SignUpcontainer h1{
+ 
+    text-align: center;
+  }
+
+
+
+  .SignUpcontainer  input {
+    width: 300px;
+   
     padding: 10px;
     margin-bottom: 10px;
   }
   
   .SignUpcontainer button {
-    background-color: #007BFF;
+    
+    background-color: black;
+    width:330px;
     color: white;
     padding: 10px 20px;
-    border: none;
     cursor: pointer;
+    margin-top: 0.3em;
   }
   
-
-  #fashion-type {
-    width: 108%;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    border-radius: 4px;
-  }
+.SignUpcontainer label{
+  text-align: left;
+}

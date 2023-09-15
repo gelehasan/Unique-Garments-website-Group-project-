@@ -103,6 +103,15 @@ width: 100%;
   }
 }
 
+.requestPasswordReset{
+
+  background-color: darkblue;
+  width:180px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 0.3em;
+}
 
 
 @media  (max-width: 500px){

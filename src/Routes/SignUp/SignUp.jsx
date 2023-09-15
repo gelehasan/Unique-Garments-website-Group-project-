@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 const SignUp = ()=>{
   const {currentUser}= useSelector((state)=> state.user);
   const [inputFields, setInputFields] = useState({});
-  const [mounted, setMounted] = useState(true);
+  const [errorMessage, setErrorMesage]= useState();
 
   const Navigate = useNavigate();
 
@@ -47,28 +47,44 @@ if (password === comfirmPassword && password.length >=6) {
 
 } catch (error) {
   if (error.code === "auth/email-already-in-use") {
+    setErrorMesage("Email is already in use")
 
-  alert("email already in use");
   } else {
-  console.log("encountered an error", error);
+  setErrorMesage(error.message);
+
   }
   }}else{
-  alert("Your password doesn't meet the criteria")
+ 
+  setErrorMesage("Your password doesn't meet the criteria")
   }
   };
   
     return(
-      <div>
+      <div className='authContainer'>
 
         <form onSubmit={RegistrationHandlar}> 
+      
         <div className="SignUpcontainer">
-        <h1>Sign Up</h1>
-        <input type="text" placeholder="Username" id="username" name='username' onChange={changeHandlar} required/>
-        <input type="email" placeholder="Email" id="email" name='email'  onChange={changeHandlar} required/>
-     
+        {errorMessage ? <p className='errorSignIn'>{errorMessage}</p> : ""}
         
-        <input type="password" placeholder="Password" id="password" name ="password" onChange={changeHandlar} required />
-        <input type="password" placeholder="comfirmPassword" id="Password"  name='comfirmPassword'  onChange={changeHandlar} required />
+        <h1>Sign Up</h1>
+        
+        <label >Username</label>  <br/>
+        <input type="text" id="username" name='username' onChange={changeHandlar} required maxLength="6"/>
+       
+        <br/> 
+        <label >Email</label> <br/>
+        <input type="email"  id="email" name='email'  onChange={changeHandlar} required/>
+        <br/> 
+        
+        <label >Password</label><br/>
+        <input type="password" id="password" name ="password" onChange={changeHandlar} required />
+        <br/>
+        
+        <label >Comfirm Password</label><br/>
+        <input type="password"  id="Password"  name='comfirmPassword'  onChange={changeHandlar} required />
+        <br/>
+       
         <button type="submit" >Sign Up</button>
       </div>
       </form>
