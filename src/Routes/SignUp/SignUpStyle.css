@@ -32,8 +32,8 @@
     padding: 10px;
     margin-bottom: 10px;
   }
-  .SignIncontainer input{
-    outline: 2px solid dodgerblue;
+  .SignUpcontainer input:focus{
+    outline: 1px solid black;
   }
   .SignUpcontainer button {
     

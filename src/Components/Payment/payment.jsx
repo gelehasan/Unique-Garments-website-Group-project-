@@ -67,7 +67,7 @@ const Payment = ()=>{
     <CardElement />
     </div>
     <div className="paymentConfirmation">
-     <h3> Total: ${TotalPrice} </h3>       
+     <h3 tabIndex="0"> Total: ${TotalPrice} </h3>       
     <button disabled={isPaymentLoading} className="updateBtn" type="submit" role="button" aria-label="Purchase your items" >
    { isPaymentLoading ?
     "Payment loading..."

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 const Profile = ()=>{
     return(
         <>
-          <Helmet>
+      <Helmet>
         <title>Profile page</title>
         <meta name='description' content='Here you can change your profile setting ' /> 
       </Helmet>

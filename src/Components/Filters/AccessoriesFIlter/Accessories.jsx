@@ -29,7 +29,6 @@ const AccessoriesFiltering = ({accessoriesNames, selectedCatagory,handleCatagory
     > 
     {itemName}
     </li>
-  
     ) 
   }
   )

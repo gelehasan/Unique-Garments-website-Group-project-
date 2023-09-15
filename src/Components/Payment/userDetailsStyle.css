@@ -20,7 +20,7 @@
    }
 
    .accountInput:focus{
-    outline: 2px solid dodgerblue;
+    outline: 1px solid black;
   }
    
    .PaymentsectionLabels{
