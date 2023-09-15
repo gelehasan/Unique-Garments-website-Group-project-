@@ -16,10 +16,7 @@ import heartIcon from "../../Assets/heart.svg";
 import { NavLink } from 'react-router-dom'; // Import NavLink from React Router
 import ProfileDropDown from '../../Components/Profile/ProfileDropDown';
 import { getNumberOfItems } from '../../Store/Reducers/CartReducer/cartSelector';
-//please review if they are used or not
-import { useContext } from 'react';
-import { CartShopConext } from '../../Context/cartShopContext';
-import { UserContext } from '../../Context/userContext';
+import { Helmet } from 'react-helmet';
 
 const Navbar = () => {
   const [isShopBY, setShopBY] = useState(false);
@@ -43,7 +40,12 @@ console.log(numberOfItems)
   };
 
   return (
+  
     <div className="navbar">
+      <Helmet>
+        <title>Home page</title>
+        <meta name='description' content='This is the home page' /> 
+      </Helmet>
       <div className="navTop">
         <div className="profile">
           {profileDropDown && <ProfileDropDown />}

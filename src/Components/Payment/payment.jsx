@@ -57,6 +57,7 @@ const Payment = ()=>{
 
 
     return(
+ 
     <div className="paymentContainer">
     <form onSubmit={paymentHandlar}>
     <PaymentUserDetails  inputValues={inputValues} setInputValues={setInputValues}/>
@@ -77,6 +78,7 @@ const Payment = ()=>{
     </div>
     </form>
     </div>
+ 
     )
 }
 

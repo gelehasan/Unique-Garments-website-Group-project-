@@ -10,6 +10,7 @@ import MinusIcon from "../../Assets/minus.svg"
 import PlusIcon from "../../Assets/plus.svg"
 import { setCartVisibility } from '../../Store/Reducers/CartReducer/cartActions';
 
+
 const CartBag = ({isCheckOutPage})=>{
     const cartItems = useSelector((state)=> state.cart.cartItems);
     const isCartOpen = useSelector((state)=> state.cart.isCartOpen);
@@ -33,6 +34,7 @@ const CartBag = ({isCheckOutPage})=>{
   
     return(
         <div    className={`${isCheckOutPage ? "checkOutItems" : "bagItems"}`}>
+
 {
     cartItems.length > 0? 
     <div className={`${isCheckOutPage ? "item-container checkoutItemContainer" : "item-container"}`} >   

@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { UserContext } from '../../Context/userContext';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 const SignUp = ()=>{
   const {currentUser}= useSelector((state)=> state.user);
@@ -61,7 +62,10 @@ if (password === comfirmPassword && password.length >=6) {
   
     return(
       <div className='authContainer'>
-
+      <Helmet>
+        <title>Sign up page</title>
+        <meta name='description' content='Sing up  if you  dont have an account' /> 
+      </Helmet>
         <form onSubmit={RegistrationHandlar}> 
       
         <div className="SignUpcontainer">

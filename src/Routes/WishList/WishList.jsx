@@ -2,6 +2,7 @@ import { getWishList } from "../../Firebase/firebase";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import DisplayWishListItems from "../../Components/WishListItems/DisplayWishListItems";
+import { Helmet } from "react-helmet";
 import "./wishListStyle.css"
 const WishList = ()=>{
     const currentUser = useSelector((state )=> state.user.currentUser);
@@ -24,7 +25,10 @@ useEffect(()=>{
     
     return(
         <div className="wishListContainer">
-        
+         <Helmet>
+        <title>Wish list page</title>
+        <meta name='description' content='Log in if you have an account' /> 
+      </Helmet>
            {wishListData && wishListData.length > 0 ?  
             
             wishListData.map((items)=> {

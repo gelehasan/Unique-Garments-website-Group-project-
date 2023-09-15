@@ -6,6 +6,7 @@ import { SetUser } from '../../Store/Reducers/UserReducer/userAction';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PasswordReset from '../../Components/PasswordReset/passwordReset';
+import { Helmet } from 'react-helmet';
 
 const SignIn = ()=>{
     const {currentUser}= useSelector((state)=> state.user);
@@ -43,7 +44,10 @@ const SignIn = ()=>{
 }
     return(   
         <div className='authContainer'> 
-
+        <Helmet>
+        <title>Sign in page</title>
+        <meta name='description' content='Log in if you have an account' /> 
+      </Helmet>
         {isResetPassOn && <PasswordReset setIsResetPassOn={setIsResetPassOn}  /> } 
         <form onSubmit={submitHandlar}>
          <div className="SignIncontainer">
