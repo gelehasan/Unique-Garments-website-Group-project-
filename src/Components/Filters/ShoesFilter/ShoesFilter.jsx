@@ -4,14 +4,15 @@ const ShoesFilter = ({shoesNames,handleCatagory,selectedCatagory})=>{
     return(
         <div className='topSub'>
 
-        <label className='BrandTitle topTitles'> Shoes Catagory</label> 
+        <legend className='BrandTitle topTitles'> Shoes Catagory</legend> 
         <div className='BrandSelection catagoriesSelection'>
           <ul>
     
           {shoesNames.map((itemName)=>{
-          return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
-        
+          return(
+          <li key={itemName} onClick={()=> handleCatagory(itemName)}
           className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
+          tabIndex="0"
           > {itemName}</li>) 
           }
           )

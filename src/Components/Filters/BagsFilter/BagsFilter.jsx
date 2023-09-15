@@ -6,16 +6,18 @@ const BagsFilterig = ({Bags,handleCatagory,handleGroupChange,selectedGroup,selec
     return(
         <div className='topSub'>
 
-<label className='BrandTitle topTitles'> Bags</label> 
+<legend className='BrandTitle topTitles'> Bags</legend> 
 <div className='BrandSelection catagoriesSelection'>
   <ul>
     <li onClick={()=> handleGroupChange("Bags")}  
      className={`${ selectedGroup == "Bags" ? "selectedCatagory": ""}`}
+     tabIndex="0"
     >
       View All</li>
   {Bags.map((itemName)=>{
   return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
   className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
+  tabIndex="0"
   > {itemName}</li>) 
   }
   )

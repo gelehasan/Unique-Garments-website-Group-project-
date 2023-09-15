@@ -10,10 +10,9 @@ const ShopNow= ({items})=>{
                     return( 
                     <div className='ItemsContainer' key={index}>
                     <div className="shopImage">
-                    <Link to={`/${urlLink}/${id}`}>    <img src={image}  /> 
+                    <Link to={`/${urlLink}/${id}`}>    <img src={image} alt={`an image of ${title}`} /> 
                     </Link>  
                     </div>
-
                     <div className="shopTitle">
                      <h4>{title}</h4>   
                      

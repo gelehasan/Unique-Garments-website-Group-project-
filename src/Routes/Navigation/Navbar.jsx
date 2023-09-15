@@ -47,7 +47,7 @@ console.log(numberOfItems)
       <div className="navTop">
         <div className="profile">
           {profileDropDown && <ProfileDropDown />}
-            <NavLink className="removeBground"> <img src={userIcon} onClick={() => setProfileDropDown(!profileDropDown)} /></NavLink>
+            <img src={userIcon} onClick={() => setProfileDropDown(!profileDropDown)} tabIndex="0" alt='Profile icon'/>
           {currentUser ? (
             <span className='displayCurrentUser'>Hi {currentUser.displayName}</span>
           ) : (

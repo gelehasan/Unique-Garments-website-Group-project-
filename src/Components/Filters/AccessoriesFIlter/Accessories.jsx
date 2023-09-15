@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 const AccessoriesFiltering = ({accessoriesNames, selectedCatagory,handleCatagory, selectedGroup,handleGroupChange})=>{
 
@@ -6,16 +6,31 @@ const AccessoriesFiltering = ({accessoriesNames, selectedCatagory,handleCatagory
         <div className='topSub'>
   
 
-<label className='BrandTitle topTitles'> Accessories</label> 
+<legend className='BrandTitle topTitles'> Accessories</legend> 
 <div className='BrandSelection catagoriesSelection'>
   <ul>
-    <li onClick={()=> handleGroupChange("Accessories")}  
-     className={`${ selectedGroup == "Accessories" ? "selectedCatagory": ""}`}
-    > View All</li>
+ <li 
+  onClick={()=> 
+  handleGroupChange("Accessories")}  
+  className={`${ selectedGroup == "Accessories" ? "selectedCatagory": ""}`}
+  tabIndex="0"
+  > 
+  View All
+</li>
+
   {accessoriesNames.map((itemName)=>{
-  return(<li key={itemName} onClick={()=> handleCatagory(itemName)}
-  className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
-  > {itemName}</li>) 
+  return(
+  
+  <li  
+    key={itemName} 
+    onClick={()=> handleCatagory(itemName)}
+    className={`${ selectedCatagory == itemName ? "selectedCatagory": ""}`}
+    tabIndex="0"
+    > 
+    {itemName}
+    </li>
+  
+    ) 
   }
   )
   }

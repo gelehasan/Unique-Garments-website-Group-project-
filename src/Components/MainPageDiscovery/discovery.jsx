@@ -11,15 +11,20 @@ const Discovery = ()=>{
         </div>
 
         <div    className="shopByobj">
-        <img src={"https://res.cloudinary.com/ddeif6hmk/image/upload/v1693861908/research-jpg-data_1_koqfar.png"} />
+        <img src={"https://res.cloudinary.com/ddeif6hmk/image/upload/v1693861908/research-jpg-data_1_koqfar.png"} alt='A man sitting on chair browsing clothes on the internet'/>
         </div>
 
         <div className='discoveryContainer'>
         <h3>  Craft Your Signature Style- Where Timeless Meets Contemporary
         </h3>
-       <div className='discoverbtn'> 
+       <div className='discoverbtnDiv'> 
        <Link to={"/ShopBy"}> 
-       <button >SHOP NOW</button>
+        <button 
+        role='button' 
+        aria-label="This will take you the shop by page"
+        >
+           SHOP NOW
+        </button>
        </Link>
        </div>
         </div>

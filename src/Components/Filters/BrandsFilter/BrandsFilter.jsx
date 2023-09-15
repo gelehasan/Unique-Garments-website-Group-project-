@@ -5,7 +5,7 @@ const BrandsFilter = ({brandNames,selectedBrand, handleBrandChange })=>{
     return(
         <div className='bottomContainer'>
 
-        <label className='BrandTitle'> Brands</label> 
+        <legend className='BrandTitle'> Brands</legend> 
            
        
        <div>  {brandNames.map((brand) => (

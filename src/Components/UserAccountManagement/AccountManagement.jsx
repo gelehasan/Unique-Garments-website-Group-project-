@@ -118,7 +118,7 @@ const AccountManagement = ()=>{
 
     <div className="categoryImage">
       <div className="imageRadioWrapper">
-        <img id="casualImage" src="https://th.bing.com/th/id/OIP.InJ8RWrYRZuUfT6PW3nvuQHaHa?pid=ImgDet&rs=1" alt="Casual Image" />
+        <img id="casualImage" src="https://th.bing.com/th/id/OIP.InJ8RWrYRZuUfT6PW3nvuQHaHa?pid=ImgDet&rs=1" alt="Casual clothing image" />
         <label htmlFor="casualRadio">
           <input type="radio" name="type" value="casual" disabled={isEdit} onChange={ChangeHandlar}  checked={type === "casual"}/> Casual
         </label>
@@ -126,7 +126,7 @@ const AccountManagement = ()=>{
       
 
       <div className="imageRadioWrapper">
-        <img id="formalImage" src="https://th.bing.com/th/id/OIP.nhoCniy0PQn_UPv54ACbVwHaE8?spid=ImgDet&rs=1" alt="Formal Image" />
+        <img id="formalImage" src="https://th.bing.com/th/id/OIP.nhoCniy0PQn_UPv54ACbVwHaE8?spid=ImgDet&rs=1" alt="Formal clothing image" />
         <label htmlFor="formRadio">
           <input type="radio" name="type" value="formal" disabled={isEdit} onChange={ChangeHandlar}  checked={type === "formal"}/> Formal
         </label>

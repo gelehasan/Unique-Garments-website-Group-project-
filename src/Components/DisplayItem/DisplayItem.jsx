@@ -47,7 +47,7 @@ const DisplayItem = ()=> {
 
    <div className="itemImage">
         
-        <img id="item" src={selectedItem.image}/>
+        <img id="item" src={selectedItem.image} alt={`an image of ${selectedItem.title} `}/>
     </div>
 
     <div className="itemclassName">
