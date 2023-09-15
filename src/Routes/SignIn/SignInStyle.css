@@ -31,6 +31,10 @@
     padding: 10px;
     margin-bottom: 10px;
   }
+  
+  .SignIncontainer input:focus {
+    outline: 2px solid dodgerblue;
+  }
 
 
   

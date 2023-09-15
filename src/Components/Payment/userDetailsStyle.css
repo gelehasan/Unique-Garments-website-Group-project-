@@ -18,6 +18,10 @@
    width: 100%;
     font-size: 1.3rem;
    }
+
+   .accountInput:focus{
+    outline: 2px solid dodgerblue;
+  }
    
    .PaymentsectionLabels{
      margin-bottom: 0.5em;

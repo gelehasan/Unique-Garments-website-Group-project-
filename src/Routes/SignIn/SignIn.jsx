@@ -48,21 +48,21 @@ const SignIn = ()=>{
         <form onSubmit={submitHandlar}>
          <div className="SignIncontainer">
        
-            {errorMessage ? <p className='errorSignIn'>{errorMessage}</p> : ""}
+            {errorMessage ? <p className='errorSignIn' aria-label='Error section'>{errorMessage}</p> : ""}
 
             <h1>Sign In</h1>
 
-            <label >Email</label>  <br/>
+            <label htmlFor="email">Email</label>  <br/>
             <input type="email" name="email" id="email" onChange={ChangeHandlar} required />
             <br/>
 
-            <label >Password</label>  <br/>
+            <label htmlFor="password">Password</label>  <br/>
             <input type="password" name="password" id="password" onChange={ChangeHandlar} required />
        
             <p  onClick={()=> setIsResetPassOn(!isResetPassOn)}>
             Forgot password?</p>
         <br/>
-        <button type="submit">Log In</button>
+        <button type="submit" aria-label="Sign In to your account" role="button">Log In</button>
     </div>
     </form>
     </div>

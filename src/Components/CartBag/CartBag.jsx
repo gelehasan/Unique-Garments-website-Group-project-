@@ -62,15 +62,22 @@ const CartBag = ({isCheckOutPage})=>{
              
         {isCheckOutPage ?  
                  <div className='checkOutPageDiv'> 
-         <Link to={"/payment"}><button className='paymentbtn'> 
+         <Link to={"/payment"}>
+        <button className='paymentbtn' role="button" aria-label="The button takes you to the payment page"> 
          Proceed to payment  </button>
      </Link> 
      </div>
             :
 
-         <Link to={"/checkout"}><button className='checkoutBtn' onClick={setCart}> 
-            Go to the checkout  </button>
-            </Link> 
+         <Link to={"/checkout"}>
+            <button
+            className='checkoutBtn'
+            onClick={setCart} 
+            role="button" 
+            aria-label="The button takes you to check out page">  
+            Go to the checkout 
+            </button>
+        </Link> 
       
         }
 

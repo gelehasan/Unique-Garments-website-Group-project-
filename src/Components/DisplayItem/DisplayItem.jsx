@@ -84,11 +84,11 @@ const DisplayItem = ()=> {
 
 
 <div className="itembtns">
-<button className="addItemToWishList"  onClick={addItemtoWish}>
+<button className="addItemToWishList"  onClick={addItemtoWish} role="button" aria-label="Add item to your wishlist">
     Add to Wishlist
 </button>
 
-<button className="addItemTocart" onClick={addSelectedItemToCart}>
+<button className="addItemTocart" onClick={addSelectedItemToCart} role="button" aria-label="Add items to your cart bag">
     Add to shopping cart
 </button>
 </div>

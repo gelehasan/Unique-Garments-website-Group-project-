@@ -42,22 +42,22 @@ const PaymentUserDetails = ({inputValues, setInputValues,inputFieldsValue })=>{
   <div className="PaymentaccountInformation">
     <h3 className="PaymentsectionLabels"> Account information </h3>
 
-    <h5 className="fieldLabel"> Full name </h5>
+    <label className="fieldLabel" htmlFor="fullName"> Full name </label>
     <input className="accountInput" type="text"name="fullName" value={fullName} onChange={ChangeHandlar} required/>
 
-    <h5 className="fieldLabel"> Email</h5>
+    <label className="fieldLabel" htmlFor="email"> Email</label>
     <input className="accountInput" type="text"  name="email" value={email}  onChange={ChangeHandlar}  required />
 
-    <h5 className="fieldLabel"> Phone Number</h5>
+    <label className="fieldLabel" html="phone"> Phone Number</label>
     <input className="accountInput" type="number"  name="phone" value={phone} onChange={ChangeHandlar} />
   </div>
 
   <div className="shippingAddress">
     <h3 className="PaymentsectionLabels"> Shipping </h3>
-    <h5 className="fieldLabel"> Shipping Address </h5>
-
+    <label className="fieldLabel" htmlFor="shippingAddress"> Shipping Address </label>
     <input className="accountInput" type="text"  name="shippingAddress" value={shippingAddress} onChange={ChangeHandlar} />
-    <h5 className="fieldLabel"> Country </h5>
+
+    <label className="fieldLabel" htmlFor="country"> Country </label>
     <input className="accountInput" type="text"  name="country"  value={country} onChange={ChangeHandlar} />
 
   </div>

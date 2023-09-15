@@ -47,7 +47,7 @@ console.log(numberOfItems)
       <div className="navTop">
         <div className="profile">
           {profileDropDown && <ProfileDropDown />}
-          <img src={userIcon} onClick={() => setProfileDropDown(!profileDropDown)} />
+            <NavLink className="removeBground"> <img src={userIcon} onClick={() => setProfileDropDown(!profileDropDown)} /></NavLink>
           {currentUser ? (
             <span className='displayCurrentUser'>Hi {currentUser.displayName}</span>
           ) : (
@@ -58,12 +58,12 @@ console.log(numberOfItems)
           <NavLink to={"/"} id="Logo-link"><img src={logo} alt="Logo" /></NavLink>
         </div>
 
-        <NavLink to={"/Wishlist"}  className='WishlistIcon trsn'><img src={heartIcon} /></NavLink> 
+        <NavLink to={"/Wishlist"}  className='WishlistIcon removeBground'><img src={heartIcon} /></NavLink> 
 
         <div className="Cart">      
         <span className={numberOfItems > 9 ? "numberOfItems adjustItems" : "numberOfItems"}>
           {numberOfItems}</span>
-         <img src={cartIcon} onClick={setCart} alt="Cart" />
+          <NavLink className="removeBground">  <img src={cartIcon} onClick={setCart} alt="Cart" /> </NavLink>
         </div>
         
       </div>
