@@ -2,10 +2,27 @@ import './articleDiscovery.css';
 import { Link } from 'react-router-dom';
 
 const ArticleDiscovery = ({randomArticles})=>{
-    const {id,articlePicture}=randomArticles;
+    let {id,articlePicture,articleTitle,introPassage}=randomArticles;
+    introPassage = introPassage.split(' ').slice(0, 30).join(' ');
+console.log(randomArticles)
     return(
-        <div className='magazineContainer'>
-          <Link to={`/articles/${id}`}>  <img src={articlePicture}/></Link> 
+        <div className='articleDiscoveryContainer'>
+         
+          <img 
+          src={articlePicture} 
+          alt={`an article picture of ${articleTitle}`}
+          /> 
+
+        <div className="articleDiscoveryTtitle">
+          <h4>{articleTitle}</h4>   
+          <label>
+    {introPassage}...
+          </label>
+          <Link to={`/articles/${id}`}>  
+              <button className='articleDiscoveryTtitlebtn'>Read Article</button> 
+              </Link>  
+           </div>
+
         </div>
     )
 }

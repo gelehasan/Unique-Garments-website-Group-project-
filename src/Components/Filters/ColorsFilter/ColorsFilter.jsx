@@ -5,10 +5,11 @@ const ColorFilter = ({colors,selectedColor,handleColorFiltering})=>{
 
   <div className='bottomContainer'>
 
-  <label className='BrandTitle'> Colors</label> 
+  <legend className='BrandTitle'> Colors</legend> 
  <div>  {colors.map((color) => (
     <div key={color} className={`BrandSelection ${ selectedColor == color ? "active": ""}`} 
-    onClick={()=>handleColorFiltering(color)}>
+    onClick={()=>handleColorFiltering(color)}
+    tabIndex="0">
      <div style={{ backgroundColor: color }} className={`colorsIcon ${color}`
  }> </div>
       <label className='brandsLabel'>

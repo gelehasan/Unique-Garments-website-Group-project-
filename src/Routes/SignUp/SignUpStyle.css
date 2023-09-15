@@ -32,7 +32,9 @@
     padding: 10px;
     margin-bottom: 10px;
   }
-  
+  .SignUpcontainer input:focus{
+    outline: 1px solid black;
+  }
   .SignUpcontainer button {
     
     background-color: black;

@@ -36,12 +36,23 @@ const Product = ({item})=>{
              <Link to={`/${urlLink}/${id}`}> 
             <div    className="divImage">
             
-            <img className='productImage' src={image} />
+            <img
+                className='productImage' 
+                src={image} 
+                alt={title}
+                />
            
            
             </div>
             </Link>
-             <img src={heartIcon} className='heartEmoji' onClick={addToYourWishList} /> 
+            
+            <img src={heartIcon}  
+            className='heartEmoji' 
+            onClick={addToYourWishList} 
+             alt='Click  to add the item to your wishlist' 
+            tabIndex="0"
+             /> 
+
             <div className="description">
                 <h4>{title}</h4>
                 <h3>${price}</h3>

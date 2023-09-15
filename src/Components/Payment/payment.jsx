@@ -57,6 +57,7 @@ const Payment = ()=>{
 
 
     return(
+ 
     <div className="paymentContainer">
     <form onSubmit={paymentHandlar}>
     <PaymentUserDetails  inputValues={inputValues} setInputValues={setInputValues}/>
@@ -66,8 +67,8 @@ const Payment = ()=>{
     <CardElement />
     </div>
     <div className="paymentConfirmation">
-     <h3> Total: ${TotalPrice} </h3>       
-    <button disabled={isPaymentLoading} className="updateBtn" type="submit">
+     <h3 tabIndex="0"> Total: ${TotalPrice} </h3>       
+    <button disabled={isPaymentLoading} className="updateBtn" type="submit" role="button" aria-label="Purchase your items" >
    { isPaymentLoading ?
     "Payment loading..."
     :
@@ -77,6 +78,7 @@ const Payment = ()=>{
     </div>
     </form>
     </div>
+ 
     )
 }
 

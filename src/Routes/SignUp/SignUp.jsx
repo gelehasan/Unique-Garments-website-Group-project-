@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { UserContext } from '../../Context/userContext';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 const SignUp = ()=>{
   const {currentUser}= useSelector((state)=> state.user);
@@ -61,31 +62,34 @@ if (password === comfirmPassword && password.length >=6) {
   
     return(
       <div className='authContainer'>
-
+      <Helmet>
+        <title>Sign up page</title>
+        <meta name='description' content='Sing up  if you  dont have an account' /> 
+      </Helmet>
         <form onSubmit={RegistrationHandlar}> 
       
         <div className="SignUpcontainer">
-        {errorMessage ? <p className='errorSignIn'>{errorMessage}</p> : ""}
+        {errorMessage ? <p className='errorSignIn' aria-label='Error section'>{errorMessage}</p> : ""}
         
         <h1>Sign Up</h1>
         
-        <label >Username</label>  <br/>
-        <input type="text" id="username" name='username' onChange={changeHandlar} required maxLength="6"/>
+        <label htmlFor="username" >Username</label>  <br/>
+        <input type="text" id="username" name='username' onChange={changeHandlar} required maxLength="7"/>
        
         <br/> 
-        <label >Email</label> <br/>
+        <label htmlFor="email" >Email</label> <br/>
         <input type="email"  id="email" name='email'  onChange={changeHandlar} required/>
         <br/> 
         
-        <label >Password</label><br/>
+        <label htmlFor="password" >Password</label><br/>
         <input type="password" id="password" name ="password" onChange={changeHandlar} required />
         <br/>
         
-        <label >Comfirm Password</label><br/>
+        <label htmlFor="comfirmPassword">Comfirm Password</label><br/>
         <input type="password"  id="Password"  name='comfirmPassword'  onChange={changeHandlar} required />
         <br/>
        
-        <button type="submit" >Sign Up</button>
+        <button type="submit" aria-label="Sign Up for an Account" role="button"> Sign Up</button>
       </div>
       </form>
       </div>

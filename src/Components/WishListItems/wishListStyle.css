@@ -16,12 +16,11 @@ height: 85%;
 width: 100%;
 max-height: 280px;
 }
-.description{
+.WishListdescription{
  
     display: block;
     justify-content: space-between;
-    height: 15%;
-    border-top: 1px solid black;
+   
 }
 
 .removebtn{
@@ -32,6 +31,8 @@ max-height: 280px;
     font-weight: bold;
     bottom: 20%;
 text-align: center;
+color: black;
+background-color: white;
 
     width: 100%;
   

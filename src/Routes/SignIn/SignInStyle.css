@@ -32,6 +32,10 @@
     margin-bottom: 10px;
   }
 
+  .SignIncontainer input:focus {
+    outline: 1px solid black;
+  }
+
 
   
   .SignIncontainer button {

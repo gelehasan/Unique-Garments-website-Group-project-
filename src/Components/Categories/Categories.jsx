@@ -133,11 +133,11 @@ const Catagories = ({DataShop,isGarmentsFilterOn, isShoesFilterOn, isShopByFilte
 <div className='AllFilterContainer'> 
 
 <div className="FilterSection">
-<label className='BrandTitle filtertitle'> Filter:</label> 
+<label className='BrandTitle filtertitle' htmlFor="searchInput"> Filter:</label> 
 
 <div className='inputSearchField'>
-<img src={search} className="searchImg" />
-<input type='text' placeholder="Search" onChange={searchHandlar}  />
+<img src={search} className="searchImg"  alt="Image showing this is search input field"/>
+<input type='text' placeholder="Search" name="searchInput" onChange={searchHandlar}  />
 </div>
 
 <button className="btnFilterSmallScreen" onClick={setFilerMenu}

@@ -10,6 +10,7 @@ import MinusIcon from "../../Assets/minus.svg"
 import PlusIcon from "../../Assets/plus.svg"
 import { setCartVisibility } from '../../Store/Reducers/CartReducer/cartActions';
 
+
 const CartBag = ({isCheckOutPage})=>{
     const cartItems = useSelector((state)=> state.cart.cartItems);
     const isCartOpen = useSelector((state)=> state.cart.isCartOpen);
@@ -33,44 +34,52 @@ const CartBag = ({isCheckOutPage})=>{
   
     return(
         <div    className={`${isCheckOutPage ? "checkOutItems" : "bagItems"}`}>
+
 {
     cartItems.length > 0? 
     <div className={`${isCheckOutPage ? "item-container checkoutItemContainer" : "item-container"}`} >   
     {cartItems.map((item)=>{
             return(<div  key={item.id} className={`${isCheckOutPage ? "items checkOutItemDiv" : "items"}`}> 
               <div className={`${isCheckOutPage ? "checkOutCartImage" : "cartItemImage"}`} > 
-               <img src={item.image} /> </div>
+               <img src={item.image} alt={item.title} tabIndex="0"  /> </div>
                
                <div className='cartDescription'>  
-                <h2>{item.title}</h2>
+                <h2 tabIndex="0"    >{item.title}</h2>
 
-            <img src={MinusIcon} onClick={()=> decreaseQuantity(item.id)}/>   
-            <span className='quantity'>{item.quantity}</span>
+            <img src={MinusIcon} onClick={()=> decreaseQuantity(item.id)} tabIndex="0" alt='A minus button, click to decrease quanitity' />   
+            <span className='quantity' tabIndex="0">{item.quantity}</span>
 
-            <img className='plusIcon' src={PlusIcon} onClick={()=> increaseQuantity(item.id)} />  
+            <img className='plusIcon' src={PlusIcon} onClick={()=> increaseQuantity(item.id)} tabIndex="0" alt='A minus button, click to increase quanitity' />  
 
-                <span className='price'> ${item.price} </span>
+                <span className='price' tabIndex="0"> ${item.price} </span>
                </div>
 
             </div>
             )
         })}
 
-       {!isCheckOutPage && <h3 className='totalPrice'> Total: ${getTotal} </h3> } 
+       {!isCheckOutPage && <h3 className='totalPrice' tabIndex="0"  > Total: ${getTotal} </h3> } 
 
    
              
         {isCheckOutPage ?  
                  <div className='checkOutPageDiv'> 
-         <Link to={"/payment"}><button className='paymentbtn'> 
+         <Link to={"/payment"}>
+        <button className='paymentbtn' role="button" aria-label="The button takes you to the payment page"> 
          Proceed to payment  </button>
      </Link> 
      </div>
             :
 
-         <Link to={"/checkout"}><button className='checkoutBtn' onClick={setCart}> 
-            Go to the checkout  </button>
-            </Link> 
+         <Link to={"/checkout"}>
+            <button
+            className='checkoutBtn'
+            onClick={setCart} 
+            role="button" 
+            aria-label="The button takes you to check out page">  
+            Go to the checkout 
+            </button>
+        </Link> 
       
         }
 

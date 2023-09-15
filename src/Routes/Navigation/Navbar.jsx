@@ -16,10 +16,7 @@ import heartIcon from "../../Assets/heart.svg";
 import { NavLink } from 'react-router-dom'; // Import NavLink from React Router
 import ProfileDropDown from '../../Components/Profile/ProfileDropDown';
 import { getNumberOfItems } from '../../Store/Reducers/CartReducer/cartSelector';
-//please review if they are used or not
-import { useContext } from 'react';
-import { CartShopConext } from '../../Context/cartShopContext';
-import { UserContext } from '../../Context/userContext';
+import { Helmet } from 'react-helmet';
 
 const Navbar = () => {
   const [isShopBY, setShopBY] = useState(false);
@@ -43,11 +40,16 @@ console.log(numberOfItems)
   };
 
   return (
+  
     <div className="navbar">
+      <Helmet>
+        <title>Home page</title>
+        <meta name='description' content='This is the home page' /> 
+      </Helmet>
       <div className="navTop">
         <div className="profile">
           {profileDropDown && <ProfileDropDown />}
-          <img src={userIcon} onClick={() => setProfileDropDown(!profileDropDown)} />
+            <img src={userIcon} onClick={() => setProfileDropDown(!profileDropDown)} tabIndex="0" alt='Profile icon'/>
           {currentUser ? (
             <span className='displayCurrentUser'>Hi {currentUser.displayName}</span>
           ) : (
@@ -58,12 +60,12 @@ console.log(numberOfItems)
           <NavLink to={"/"} id="Logo-link"><img src={logo} alt="Logo" /></NavLink>
         </div>
 
-        <NavLink to={"/Wishlist"}  className='WishlistIcon trsn'><img src={heartIcon} /></NavLink> 
+        <NavLink to={"/Wishlist"}  className='WishlistIcon removeBground'><img src={heartIcon} /></NavLink> 
 
         <div className="Cart">      
         <span className={numberOfItems > 9 ? "numberOfItems adjustItems" : "numberOfItems"}>
           {numberOfItems}</span>
-         <img src={cartIcon} onClick={setCart} alt="Cart" />
+          <NavLink className="removeBground">  <img src={cartIcon} onClick={setCart} alt="Cart" /> </NavLink>
         </div>
         
       </div>

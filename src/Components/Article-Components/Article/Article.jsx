@@ -29,7 +29,7 @@ import "./Article.css"
             <h1 className="article-title">{selectedArticle.articleTitle}</h1>
             <p className="article-author">{selectedArticle.author}</p>
             <p className="article-date">{selectedArticle.publishedDate}</p>
-            <img src={selectedArticle.articlePicture} />
+            <img src={selectedArticle.articlePicture} alt={`Article ${selectedArticle.id} image`} />
         </header>
 
         <article className="article-content">

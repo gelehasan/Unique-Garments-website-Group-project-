@@ -18,6 +18,10 @@
    width: 100%;
     font-size: 1.3rem;
    }
+
+   .accountInput:focus{
+    outline: 1px solid black;
+  }
    
    .PaymentsectionLabels{
      margin-bottom: 0.5em;

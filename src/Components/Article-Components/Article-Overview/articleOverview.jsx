@@ -24,7 +24,9 @@ const ArticleOverView = ()=>{
         <h1>Explore our featured articles</h1>
         <div className="articles-list">
             <div className="article">
-                <img src="https://res.cloudinary.com/ddeif6hmk/image/upload/v1692798128/articleimg1_qyd3ya.jpg" alt="Article 1 Image" />
+               <Link to={`/articles/${1}`}>  <img src="https://res.cloudinary.com/ddeif6hmk/image/upload/v1692798128/articleimg1_qyd3ya.jpg" 
+                alt="Our featured article image, click to read it" />
+                </Link>
                 <h2 className="article-title">Is It Actually OK To Be Single?</h2>
                 <p className="article-author">Mr Tom M Ford</p>
             </div>
@@ -38,7 +40,7 @@ const ArticleOverView = ()=>{
                           return( 
                          <div className="article" key={id}>
                             <Link className="Links" to={`/articles/${id}`}> 
-                            <img src={articlePicture} alt="Article 1 Image" />
+                            <img src={articlePicture} alt={`Article ${id} image`} />
                             <h2 className="article-title">{articleTitle}</h2>
                             <p className="article-author">{author}</p>
                             </Link>
