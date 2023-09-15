@@ -3,6 +3,7 @@ import { countries } from "./countriesData";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { updateAccount } from "../../Firebase/firebase";
+import { resetPassword } from "../../Firebase/firebase";
 let inputFieldsValue  = {
     userName:"",
     fullName: "",
@@ -15,7 +16,20 @@ const AccountManagement = ()=>{
     const currentUser = useSelector((state)=>state.user.currentUser);
     const [isEdit, setisEdit] = useState(true);
     const [inputValues, setInputValues] = useState(inputFieldsValue);
+    const [resetPassResponse,setResetPassResponse] = useState("")
     
+    
+
+    const requestPasswordReset = async ()=>{
+      if(isEdit==false){ 
+        const result = await resetPassword (currentUser.email)
+      
+       const {message}= result
+     
+       setResetPassResponse(message)
+      }
+       
+    }
 
      useEffect(()=>{
         if(currentUser){
@@ -50,11 +64,18 @@ const AccountManagement = ()=>{
         window.location.reload()
       
     }
+
+    const toggleEditingMode=()=>{
+      if(currentUser){
+        setisEdit(!isEdit)
+      }
+    
+    }
  
  
     return(
    <div className="accountManagementContainer">
-    <button className="editbtn" onClick={()=>setisEdit(!isEdit)}>Edit</button>
+    <button className="editbtn" onClick={toggleEditingMode}>Edit</button>
 <form onSubmit={updateAccountDetails}> 
   <h3 className="accountInfoLabel"> Account Details </h3>
   <div className="accountInformation">
@@ -64,7 +85,7 @@ const AccountManagement = ()=>{
     <input className="accountInput" type="text" disabled={isEdit} name="fullName" value={fullName} onChange={ChangeHandlar}/>
 
     <h5 className="fieldLabel"> User name </h5>
-    <input className="accountInput" type="text"  disabled={isEdit} name="userName" value={userName} required onChange={ChangeHandlar}/>
+    <input className="accountInput" type="text" maxlength="6"  disabled={isEdit} name="userName" value={userName} required onChange={ChangeHandlar}/>
 
     <h5 className="fieldLabel"> Phone Number</h5>
     <input className="accountInput" type="number" disabled={isEdit} name="phone" value={phone} onChange={ChangeHandlar} />
@@ -73,14 +94,10 @@ const AccountManagement = ()=>{
 
   <div className="passWordDetails">
     <h3 className="sectionLabels"> Password </h3>
-    <h5 className="fieldLabel">Old Password </h5>
-
-    <input className="accountInput" name="oldPassword" type="text" disabled={isEdit} onChange={ChangeHandlar} />
-
-    <h5 className="fieldLabel"> New Password </h5>
-
-    <input className="accountInput" name="newPassword" type="text" disabled={isEdit}  onChange={ChangeHandlar}/>
-
+     
+     {resetPassResponse ? <h5 className="fieldLabel"> {resetPassResponse}</h5> : ""   }
+    <p className="requestPasswordReset"  onClick={requestPasswordReset}
+    >Request password Reset</p>
   </div>
   <div className="shippingAddress">
     <h3 className="sectionLabels"> Shipping </h3>

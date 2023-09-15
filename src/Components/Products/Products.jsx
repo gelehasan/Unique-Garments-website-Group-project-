@@ -9,20 +9,21 @@ import { addToWishList } from '../../Firebase/firebase';
 import { UseSelector } from 'react-redux/es/hooks/useSelector';
 import { Link } from 'react-router-dom';
 const Product = ({item})=>{
-   // const {addItem,bagItem, setbagItem} = useContext(CartShopConext);
-    const cartItems = useSelector((state)=> state.cart.cartItems);
+  
     const currentUser = useSelector((state)=> state.user.currentUser);
    
 
     const dispatch = useDispatch();
 
     const addToYourWishList =  async ()=>{
-        
+        console.log(currentUser)
         if(currentUser){
             addToWishList(currentUser.id, item)
 
+        }else{
+            alert("Log in to add items to your wishlist!")
         }
-        //dispatch(addItemToCart(item, cartItems));
+
 
 }
 

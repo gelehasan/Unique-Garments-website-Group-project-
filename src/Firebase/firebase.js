@@ -3,9 +3,7 @@ import {createUserWithEmailAndPassword, getAuth,onAuthStateChanged, signInWithEm
 import {doc, setDoc, getDoc,getDocs, getFirestore, updateDoc, arrayRemove} from 'firebase/firestore';
 import { signOut } from "firebase/auth";
 import { collection, writeBatch,query } from 'firebase/firestore'; 
-
-
-
+import { sendPasswordResetEmail } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBJVmYLInO_9JMqKEKIS4lyCXEfSAxl-HU",
@@ -143,6 +141,15 @@ export const SignInUser = async (email, password) => {
   onAuthStateChanged(auth, callback);
 
 
+
+  export const resetPassword = async (email) => {
+    try {
+      await sendPasswordResetEmail(auth, email);
+      return { success: true, message: "Password reset has been sent!" };
+    } catch (error) {
+      return { success: false, message: error.message };
+    }
+  };
 
 
 export const addToWishList = async (userId, product)=>{
