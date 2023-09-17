@@ -52,14 +52,13 @@ const ShopBY = ({isShopBY,setShopBY})=>{
                 <ul >
                    {shopBYItems &&
                     shopBYItems.map((items)=>{
+                      
                         return(
-                            
-                            <li key={items.id} onClick={()=> handleNavigation(`/${items.urlLink}/${items.id}`)}>
-                          
-                              {items.title}
-                           
-                          </li>
-
+                            <li
+                             key={items.id} 
+                             onClick={()=> handleNavigation(`/${items.urlLink}/${items.id}`)}>
+                              {items.title} 
+                            </li>
                         )
                     })
                    }

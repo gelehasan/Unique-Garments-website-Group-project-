@@ -9,7 +9,7 @@ body {
     color: #333;
 }
 
-.article {
+.singleArticleView {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -59,14 +59,16 @@ body {
     color: #555;
     text-align: center;
 }
-.article img {
+.singleArticleView img {
     max-width: 100%;
-    height: auto;
+    height: 320px;
     display: block;
     margin: 20px auto;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
 
 /* Responsive adjustments */
 @media (max-width: 600px) {

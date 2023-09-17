@@ -8,71 +8,66 @@ import { SelectAllCatagories } from "../../Store/Reducers/CatagoriesReducer.js/C
 import { getCollectionData } from "../../Firebase/firebase"
 import { setCatagories, setCatagoryLoadError } from "../../Store/Reducers/CatagoriesReducer.js/CatagoryAction"
 import { getArticleData } from "../../Firebase/firebase"
-
-
+import { SetArticleData,fetchAndDispatchArticles } from "../../Store/Reducers/ArticleReducer/articleActions"
+import { RetrieveArticleData } from "../../Store/Reducers/ArticleReducer/articleSelector"
+import { fetchAndDispatchCategories } from "../../Store/Reducers/CatagoriesReducer.js/CatagoryAction"
 const HomePage = ()=>{
     const currentUser= useSelector((state)=> state.user.currentUser);
     const AllCataogires = useSelector(SelectAllCatagories)
+    const AllArticleData = useSelector(RetrieveArticleData)
     const [forYouItems, setForYouItems] = useState();
     const [randomArticles, setRandomArticles] = useState();
     const [latestRelease, setLatestRelease] = useState();
    
   const dispatch=useDispatch();
-    useEffect(()=>{
-        
-    
-      const FetchCatagories = async ()=>{
-     
-          try{
-                  let Data = await getCollectionData();
-                  console.log(Data)
-                  dispatch(setCatagories(Data))
-              
-        
-          }catch(error){
-              dispatch(setCatagoryLoadError, error)
-          }}
-          FetchCatagories();
-  },[dispatch])
 
-    useEffect(()=>{
-      const allItems = [...AllCataogires]; // Make a copy of the original array
+      useEffect(()=>{
+        
+        fetchAndDispatchArticles(dispatch)
+        fetchAndDispatchCategories(dispatch)
+      },[dispatch])
+
+  const showLatestRelease= () =>{
+    const allItems = [...AllCataogires]; 
       const sortedAllItems = allItems.slice().sort((a, b) => {
         const dateA = new Date(a.addedDate);
         const dateB = new Date(b.addedDate);
-        return dateB - dateA; // Sort in descending order (latest first)
+        return dateB - dateA; 
       });
-      
+  
       const latest3Items = sortedAllItems.slice(0, 3);
       
       setLatestRelease(latest3Items);
-      
-      if(currentUser && currentUser.type){
-        const filteredItems=  AllCataogires.filter((items)=> {
-            return items.occasions.toLowerCase() == currentUser.type.toLowerCase()
-           })
-          const shuffledItems = [...filteredItems].sort(() => 0.3 - Math.random());
-            const selectedItems = shuffledItems.slice(0, 3);
-            setForYouItems(selectedItems)
-      }else{
-        const shuffledItems = [...AllCataogires].sort(() => 0.3 - Math.random());
-        const selectedItems = shuffledItems.slice(0, 3);
-        setForYouItems(selectedItems)
-      }
+  }
+
+  const showForYouItems = ()=>{
+
+    if(currentUser && currentUser.type){
+      const filteredItems=  AllCataogires.filter((items)=> {
+          return items.occasions.toLowerCase() == currentUser.type.toLowerCase()
+         })
+        const shuffledItems = [...filteredItems].sort(() => 0.3 - Math.random());
+          const selectedItems = shuffledItems.slice(0, 3);
+          setForYouItems(selectedItems)
+    }else{
+      const shuffledItems = [...AllCataogires].sort(() => 0.3 - Math.random());
+      const selectedItems = shuffledItems.slice(0, 3);
+      setForYouItems(selectedItems)
+    }
+  }
+        
+    
+    useEffect(()=>{
+      showLatestRelease()
+      showForYouItems()
     },[currentUser, AllCataogires])
 
    useEffect(()=>{
-        const FetchArticle = async ()=>{
-            try{
-    
-                let ArticlesData = await getArticleData();
-                setRandomArticles(ArticlesData[Math.floor(Math.random() * 10)]);
-              
-            }catch(error){
-          
-            }}
-                FetchArticle();
-        },[])
+      if(!randomArticles){ 
+  setRandomArticles(AllArticleData[Math.floor(Math.random() * 10)]);
+
+  }
+    },[AllArticleData])
         
 
     return(

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { addToWishList } from "../../Firebase/firebase";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../Store/Reducers/CartReducer/cartActions";
+import { fetchAndDispatchCategories } from "../../Store/Reducers/CatagoriesReducer.js/CatagoryAction";
 const DisplayItem = ()=> {
   const {itemId} = useParams();
   const [selectedItem, setselectedItem] = useState();
@@ -31,13 +32,15 @@ const DisplayItem = ()=> {
   }
 
   useEffect( ()=>{
+
+    fetchAndDispatchCategories(dispatch)
     const findSelectedItem = async() => {
       const item= await AllCatagories.find((item) => item.id == itemId);
       setselectedItem(item)
 
     }
     findSelectedItem();
-  },[])
+  },[dispatch])
 
 
     return(

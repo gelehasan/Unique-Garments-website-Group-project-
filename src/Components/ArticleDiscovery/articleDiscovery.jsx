@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ArticleDiscovery = ({randomArticles})=>{
     let {id,articlePicture,articleTitle,introPassage}=randomArticles;
     introPassage = introPassage.split(' ').slice(0, 30).join(' ');
-console.log(randomArticles)
+
     return(
         <div className='articleDiscoveryContainer'>
          

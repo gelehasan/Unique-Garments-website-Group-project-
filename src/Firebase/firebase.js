@@ -5,6 +5,7 @@ import { signOut } from "firebase/auth";
 import { collection, writeBatch,query } from 'firebase/firestore'; 
 import { sendPasswordResetEmail } from "firebase/auth";
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyBJVmYLInO_9JMqKEKIS4lyCXEfSAxl-HU",
     authDomain: "unique-garments.firebaseapp.com",
@@ -262,6 +263,8 @@ export const addArticles = async (articlesToAdd) => {
 
   console.log('Articles added successfully!');
 };
+
+
 
 
 

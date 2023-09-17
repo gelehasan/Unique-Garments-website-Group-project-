@@ -2,19 +2,19 @@ import "./articlesStyling.css";
 import { getArticleData } from "../../../Firebase/firebase";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-const ArticleOverView = ()=>{
-    const [articles, setArticles] = useState();
+import { useDispatch } from "react-redux";
+import { fetchAndDispatchArticles } from "../../../Store/Reducers/ArticleReducer/articleActions";
+import {  RetrieveArticleData } from "../../../Store/Reducers/ArticleReducer/articleSelector";
+import { useSelector } from "react-redux";
 
-   useEffect(()=>{
-    const FetchArticle = async ()=>{
-        try{
-            let ArticlesData = await getArticleData();
-            setArticles(ArticlesData);
-        }catch(error){
-      
-        }}
-            FetchArticle();
-    },[articles])
+const ArticleOverView = ()=>{
+  
+    const articles = useSelector(RetrieveArticleData)
+    const dispatch= useDispatch();
+
+    useEffect(()=>{
+        fetchAndDispatchArticles(dispatch)
+    },[dispatch])
 
 
     return(
@@ -23,8 +23,9 @@ const ArticleOverView = ()=>{
 
         <h1>Explore our featured articles</h1>
         <div className="articles-list">
-            <div className="article">
-               <Link to={`/articles/${1}`}>  <img src="https://res.cloudinary.com/ddeif6hmk/image/upload/v1692798128/articleimg1_qyd3ya.jpg" 
+            <div className="articleContents">
+               <Link to={`/articles/${1}`}>  
+               <img src="https://images.unsplash.com/photo-1584953165719-3813269c9bb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" 
                 alt="Our featured article image, click to read it" />
                 </Link>
                 <h2 className="article-title">Is It Actually OK To Be Single?</h2>

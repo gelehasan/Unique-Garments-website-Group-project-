@@ -5,7 +5,7 @@ import { setCatagories,setCatagoryLoadError } from "../../Store/Reducers/Catagor
 import { useEffect } from "react";
 import Catagories from "../Categories/Categories";
 import { SelectGarments } from "../../Store/Reducers/CatagoriesReducer.js/CatagorySelector";
-
+import { fetchAndDispatchCategories } from "../../Store/Reducers/CatagoriesReducer.js/CatagoryAction";
 
 
 const GarmentsOverView = ()=>{
@@ -13,20 +13,7 @@ const GarmentsOverView = ()=>{
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        
-    
-        const FetchCatagories = async ()=>{
-       
-            try{
-                    let Data = await getCollectionData();
-                    console.log(Data)
-                    dispatch(setCatagories(Data))
-                
-          
-            }catch(error){
-                dispatch(setCatagoryLoadError, error)
-            }}
-            FetchCatagories();
+        fetchAndDispatchCategories(dispatch)
     },[dispatch])
 
     return(

@@ -2,27 +2,38 @@ import { useState, useEffect } from "react";
 import { getArticleData } from "../../../Firebase/firebase";
 import { useParams } from "react-router-dom"
 import "./Article.css"
+import { fetchAndDispatchArticles } from "../../../Store/Reducers/ArticleReducer/articleActions";
+import { useSelector } from "react-redux";
+import { RetrieveArticleData } from "../../../Store/Reducers/ArticleReducer/articleSelector";
+import { useDispatch } from "react-redux";
  const Article = ()=> {
     const {articleID} = useParams();
     const [selectedArticle, setselectedArticle] = useState();
+    const articles = useSelector(RetrieveArticleData)
+    const dispatch= useDispatch();
 
+    useEffect(()=>{
+        fetchAndDispatchArticles(dispatch)
+    },[dispatch])
+    
     useEffect(()=>{
         const FetchArticle = async ()=>{
             try{
-                let ArticlesData = await getArticleData();
+                const findSelectedArticle= articles.find((article)=> article.id ==articleID)
                 //Array starts at 0 and our article id starts with 1, 
                 //there fore we subtract 1 to display the correct data
-                setselectedArticle(ArticlesData[articleID-1]);
+                setselectedArticle(findSelectedArticle);
             }catch(error){
                
             }}
                 FetchArticle();
-        },[])
+        },[articles])
   
         
     return(
         <div>
-      {  selectedArticle && <div className="article">
+      {  selectedArticle && 
+      <div className="singleArticleView">
        
         <header className="article-header">
             

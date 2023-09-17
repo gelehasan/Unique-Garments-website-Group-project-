@@ -6,23 +6,17 @@ import { getCollectionData } from '../../Firebase/firebase';
 import { setCatagories, setCatagoryLoadError } from '../../Store/Reducers/CatagoriesReducer.js/CatagoryAction';
 import { useEffect } from 'react';
 import Catagories from '../../Components/Categories/Categories';
+import { fetchAndDispatchCategories } from '../../Store/Reducers/CatagoriesReducer.js/CatagoryAction';
 import { Helmet } from 'react-helmet';
 const ShopBy = ()=>{
     const ShopBYData = useSelector(SelectAllCatagories)
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        const FetchCatagories = async ()=>{
-            try{
-             
-                    let Data = await getCollectionData();
-                    dispatch(setCatagories(Data))
-               
-            }catch(error){
-                dispatch(setCatagoryLoadError, error)
-            }}
-            FetchCatagories();
-    },[ dispatch])
+
+        fetchAndDispatchCategories(dispatch)
+
+    },[dispatch])
 
     return(
         <div>

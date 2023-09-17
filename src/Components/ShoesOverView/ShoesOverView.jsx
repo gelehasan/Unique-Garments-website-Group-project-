@@ -5,27 +5,18 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Catagories from "../Categories/Categories";
 import { SelectShoes } from "../../Store/Reducers/CatagoriesReducer.js/CatagorySelector";
-
+import { fetchAndDispatchCategories } from "../../Store/Reducers/CatagoriesReducer.js/CatagoryAction";
 
 const ShoesOverView = ()=> {
     const ShoesData = useSelector(SelectShoes);
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        const FetchCatagories = async ()=>{
-    
-            try{
-                
-                    let Data = await getCollectionData();
-                    dispatch(setCatagories(Data))
-       
-             
-            }catch(error){
-                dispatch(setCatagoryLoadError, error)
-            }}
-            FetchCatagories();
+
+        fetchAndDispatchCategories(dispatch)
+
     },[dispatch])
-    console.log(ShoesData)
+
     return(
         <div>
 

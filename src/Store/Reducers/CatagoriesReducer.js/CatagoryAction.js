@@ -18,17 +18,12 @@ export const setCatagoryLoadError = (error)=>{
 
 
 
-
-export const StartFetchingCatagory = async()=>{
-
+ export async function fetchAndDispatchCategories(dispatch) {
     try {
-     const Data = await getCollectionData();
-     
-     return {type: catagoryTypes.FetchCatagorySuccess, payload: Data}
-     
+      let data = await getCollectionData();
+      dispatch(setCatagories(data));
     } catch (error) {
-     return {type:catagoryTypes.FetchCatagoryFail, payload:error}
- 
-    } 
-  
- }
+      // Handle the error here if needed
+      console.error("Error fetching categories:", error);
+    }
+  }
