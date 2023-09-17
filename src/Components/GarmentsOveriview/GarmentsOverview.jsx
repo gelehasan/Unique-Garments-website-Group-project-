@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { getCollectionData } from "../../Firebase/firebase";
 import { setCatagories,setCatagoryLoadError } from "../../Store/Reducers/CatagoriesReducer.js/CatagoryAction";
 import { useEffect } from "react";
-import Catagories from "../Categories/Categories";
+import Catagories from "../Catagories-Component/Categories/Categories";
 import { SelectGarments } from "../../Store/Reducers/CatagoriesReducer.js/CatagorySelector";
 import { fetchAndDispatchCategories } from "../../Store/Reducers/CatagoriesReducer.js/CatagoryAction";
 

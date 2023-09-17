@@ -1,0 +1,22 @@
+.shopNowContainer{
+    border: 1px solid black;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.shopNowTitle{
+    border: 1px solid;
+    display: flex;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopNowsubTitle{
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+

@@ -1,5 +1,5 @@
 
-import DisplayItem from '../../Components/DisplayItem/DisplayItem';
+import DisplayItem from '../../Components/Catagories-Component/DisplayItem/DisplayItem';
 import { Helmet } from 'react-helmet';
 import { Route, Routes } from 'react-router-dom';
 import GarmentsOverView from '../../Components/GarmentsOveriview/GarmentsOverview';

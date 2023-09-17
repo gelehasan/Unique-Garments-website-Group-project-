@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { getCollectionData } from '../../Firebase/firebase';
 import { setCatagories, setCatagoryLoadError } from '../../Store/Reducers/CatagoriesReducer.js/CatagoryAction';
 import { useEffect } from 'react';
-import Catagories from '../../Components/Categories/Categories';
+import Catagories from '../../Components/Catagories-Component/Categories/Categories';
 import { fetchAndDispatchCategories } from '../../Store/Reducers/CatagoriesReducer.js/CatagoryAction';
 import { Helmet } from 'react-helmet';
 const ShopBy = ()=>{

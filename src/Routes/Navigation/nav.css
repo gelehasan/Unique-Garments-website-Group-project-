@@ -1,15 +1,15 @@
 .navbar{
     position: relative;
- width: 98%;
-max-width: 1230px;
- margin: 0 auto;
- margin-top: 1.2em;
+    width: 98%;
+    max-width: 1230px;
+    margin: 0 auto;
+    margin-top: 1.2em;
 }
 
 
 /* Styling for top navigation bar*/
 .navTop{
-   border-bottom: 2px solid black;
+    border-bottom: 2px solid black;
     width: 95%;
     margin: 0 auto;
     height: 45px;
@@ -17,8 +17,9 @@ max-width: 1230px;
     justify-content: space-between;
     align-items: center;
 }
+
+/* Logos*/
 .profile, .Logo, .Cart {
- 
     cursor: pointer;
 }
 
@@ -27,13 +28,20 @@ max-width: 1230px;
     text-decoration: none;
     color: black;
     font-size: 1.2rem;
-  text-align: center;
+    text-align: center;
   
 }
-/* Image optimization for top navbar*/
+.displayCurrentUser{
+    position: absolute;
+    top: 1em;
+    left: 4.5em;
+    width: 120px;
+}
+
 .profile img {
     width: 40px;
 }
+
 
 .Logo img {
     width: 250px;
@@ -44,7 +52,7 @@ max-width: 1230px;
   
 }
 .Cart{
-position: relative;
+    position: relative;
 
 
 }
@@ -59,33 +67,30 @@ position: relative;
 }
 
 .adjustItems{
-right:0.5em;
+    right:0.5em;
 }
-.WishlistIcon{
-position: absolute;
 
-right: 8%;  
-z-index: 99;
+.WishlistIcon{
+    position: absolute;
+    right: 8%;  
+    z-index: 99;
 
 }
 .WishlistIcon img{
-   
- 
     width: 40px;
 }
+
+
 /* Styling bottom navbar */
 
 .navLinks{
     z-index: 2;
 }
 .navBottom{
-    
     width: 95%;
     display: flex;
     margin: 0 auto;
-    justify-content: center;
-   
-   
+    justify-content: center; 
 }
 
 .navLinks ul{
@@ -99,186 +104,165 @@ z-index: 99;
     color: black;
     font-size: 1.2rem;
     text-decoration: none;
-    transition: color 0.3s; /* Add a smooth color transition */
-    padding: 5px 10px; /* Add padding to make links easier to click */
-    border-radius: 5px; /* Add rounded corners for buttons */
+    transition: color 0.3s; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
 }
 
 /* Change the color when a link is active (e.g., on the current page) */
 .navLinks ul li a.active {
-    color: #245f96; /* Change the color for active links */
-    background-color: #f2f2f2; /* Add a subtle background color for active links */
+    color: #245f96;
+    background-color: #f2f2f2; 
 }
 
 /* Add a hover effect to the navigation links */
 .navLinks ul li a:hover {
-    color: blue; /* Change the color to your desired hover color */
-    transition: color 0.3s; /* Add a smooth transition effect */
+    color: blue; 
+    transition: color 0.3s; 
 }
 
 /* Add a background color change on hover for better usability */
 .navLinks ul li a:hover {
-    background-color: #f2f2f2; /* Change to a subtle background color */
+    background-color: #f2f2f2; 
 }
 /* Remove background color for the Logo link */
 #Logo-link {
-    background-color: transparent; /* Set the background to transparent for the Logo link */
+    background-color: transparent; 
 }
 
 
 .removeBground {
-    background-color: transparent !important
-    ; 
+    background-color: transparent !important; 
 }
-
-
 
 
 /* For close and open buttons*/
 
-
 .closeMenu, .openMenu{
     width: 34px;
-
 }
 
 .closeMenu{
     display: none;
 }
 
-
 .openMenu{
     display: none;
 }
 
 
+/* Optimization*/
 
 @media (max-width:830px) {
-    .navbar{
-width: 100%;
-    }
-.navTop{
+
+.navbar{
     width: 100%;
-   
 }
 
-    .openMenu{
-        cursor: pointer;
-        z-index: 2;
-        position: absolute;
-        display: block;
-        right: 0%;
-    }
-    .closeMenu{
-        cursor: pointer;
-        z-index: 2;
-        position: absolute;
-        display: block;
-        right: 10em;
-    }
-    .navLinkShow{
+.navTop{
+    width: 100%; 
+}
+
+.openMenu{
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    display: block;
+    right: 0%;
+}
+.closeMenu{
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    display: block;
+    right: 10em;
+}
+
+.navLinkShow{
      display: none;
-    }
-    .navLinks{
-        z-index: 2;
-        position: absolute;
-        background-color: cyan;
-        width: 200px;
-        
-        right: -0.6%;
-    }
-
-    .navLinks ul {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+}
     
-        gap: 20px;
-        height: 350px;   
-    }
+.navLinks{
+    z-index: 2;
+    position: absolute;
+    background-color: cyan;
+    width: 200px;
+    right: -0.6%;
+}
 
-
- 
+.navLinks ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 350px;   
+}
     
 }
 
+
+
+
+@media (max-width:830px) {
 
 .displayCurrentUser{
-  
-    position: absolute;
-    top: 1em;
-    left: 4.5em;
-    width: 120px;
-    
-
+    left: 2.4em;
 }
-
-@media (max-width:830px) {
-    .displayCurrentUser{
-        left: 2.4em;
-    }
 }
 
 
 @media (max-width:540px)
 {
-  
-    .displayCurrentUser{
-        top: 0.6em;
-        left: 1.9em;
-        font-size: 1rem;
-    }
-    .navTop{
-       
-        justify-content: space-between;
-    }
 
-    .profile{
-        
-        font-size: 15px;
-        width: 30px;
-    }
-
-    .profile img{
-        width: 30px;
-
-
-    }
-    .Cart{
-       
-        width: 35px;
-    }
-    .Cart img{
-        width: 35px;
-    }
-    .WishlistIcon{
-        right: 10%;
-    }
-    .WishlistIcon img{
-        width: 35px;
-    }
-    /*0.45*/
-    .numberOfItems{
-        font-size: 0.8rem;
-       top: 0.45em;
-       right: 0.66em;
-    }
-
-    .adjustItems{
-        right: 0.45em;
-    }
-
-    .Logo{
-    position: relative;
-     width: 160px;
-    }
-    .Logo img{
-       
-        width: 100%;
-        height: 30px;
-    }
+.displayCurrentUser{
+    top: 0.6em;
+    left: 1.9em;
+    font-size: 1rem;
+}
+.navTop{ 
+    justify-content: space-between;
 }
 
+.profile{
+    font-size: 15px;
+    width: 30px;
+}
+
+.profile img{
+    width: 30px;
+}
+.Cart{  
+    width: 35px;
+}
+.Cart img{
+    width: 35px;
+}
+.WishlistIcon{
+    right: 10%;
+}
+.WishlistIcon img{
+    width: 35px;
+}
+/*0.45*/
+.numberOfItems{
+    font-size: 0.8rem;
+    top: 0.45em;
+    right: 0.66em;
+}
+
+.adjustItems{
+    right: 0.45em;
+}
+
+.Logo{
+position: relative;
+    width: 160px;
+}
+.Logo img{
+    width: 100%;
+    height: 30px;
+}
+}
 
 
 @media (max-width:345px){

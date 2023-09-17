@@ -1,0 +1,38 @@
+.articleDiscoveryContainer{
+    position: relative ;
+    width: 95% ;
+    margin: 0 auto;
+    height: 550px;
+
+}
+
+.articleDiscoveryContainer img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.articleDiscoveryTtitle{
+    position: absolute;
+    border: 1px solid black;
+    position: absolute;
+    background-color: white;
+    height: fit-content;
+    padding: 10px;
+    padding-right: 15px;
+    bottom: 0%;
+    left: 2%;
+    
+}
+.articleDiscoveryTtitlebtn{
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}

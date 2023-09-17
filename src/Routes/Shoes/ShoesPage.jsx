@@ -1,6 +1,6 @@
 import ShoesOverView from "../../Components/ShoesOverView/ShoesOverView";
 import { Routes, Route } from "react-router-dom";
-import DisplayItem from "../../Components/DisplayItem/DisplayItem";
+import DisplayItem from "../../Components/Catagories-Component/DisplayItem/DisplayItem";
 import { Helmet } from "react-helmet";
 const Shoes = ()=>{
    
