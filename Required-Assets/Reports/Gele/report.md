@@ -27,9 +27,14 @@
 ### 4. State Management
 - Integrating from useContext to redux
 - Implementing Reselector
-- Implementing Middleware 
+- Implementing Middleware
 
-### 5. Overall
+### 5. Report 
+- Software development and agile section
+- Project Scope
+- SECUIRTY AND PERFORMANCE
+
+### 6. Overall
 - Code quality
 - Structuring and organiing folders
 - Documentation
