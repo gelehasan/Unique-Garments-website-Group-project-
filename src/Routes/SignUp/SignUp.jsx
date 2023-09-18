@@ -61,7 +61,7 @@ const SignUp = ()=>{
         <h1>Sign Up</h1>
         
         <label htmlFor="username" >Username</label>  <br/>
-        <input type="text" id="username" name='username' onChange={changeHandlar} required maxLength="7"/>
+        <input type="text" id="username" name='username' onChange={changeHandlar} required maxLength="6"/>
        
         <br/> 
         <label htmlFor="email" >Email</label> <br/>

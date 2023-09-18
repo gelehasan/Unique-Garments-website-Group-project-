@@ -19,7 +19,11 @@ const GarmentsOverView = ()=>{
        <div>
 
         { Catagory.length > 0 && 
-        <Catagories DataShop={Catagory} isGarmentsFilterOn={true} isShoesFilterOn={false} isShopByFilterOn={false}/>
+        <Catagories 
+        DataShop={Catagory} 
+        isGarmentsFilterOn={true} 
+        isShoesFilterOn={false} 
+        isShopByFilterOn={false}/>
          }
 
        </div>

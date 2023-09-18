@@ -78,7 +78,7 @@ const AccountManagement = ()=>{
           <label className="fieldLabel" htmlFor="fullName">Full name</label>
           <input className="accountInput" type="text" disabled={isEdit} name="fullName" value={fullName} onChange={ChangeHandlar}/>
           <label className="fieldLabel" htmlFor="userName">User name</label>
-          <input className="accountInput" type="text" maxLength="7" disabled={isEdit} name="userName" value={userName} required onChange={ChangeHandlar}/>
+          <input className="accountInput" type="text" maxLength="6" disabled={isEdit} name="userName" value={userName} required onChange={ChangeHandlar}/>
           <label className="fieldLabel" htmlFor="phone">Phone Number</label>
           <input className="accountInput" type="number" disabled={isEdit} name="phone" value={phone} onChange={ChangeHandlar} />
         </div>
