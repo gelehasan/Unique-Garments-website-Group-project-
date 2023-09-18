@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import './SignUpStyle.css';
-import { signUpAuthentication, getUserInformation } from '../../Firebase/firebase';
-import { useContext } from 'react';
-import { UserContext } from '../../Context/userContext';
+import { signUpAuthentication } from '../../Firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
@@ -20,45 +18,34 @@ const SignUp = ()=>{
       Navigate("/")
     
     }
-  },[Navigate,currentUser])
+  },[currentUser])
   
 
-
-
-const changeHandlar = (event)=>{
- let {value, name}=event.target;
-
- setInputFields({...inputFields, [name]:value})
-
-}
-
-const RegistrationHandlar = async (event)=>{
-  event.preventDefault();
- let {username,  email, password, comfirmPassword} = inputFields;
-
- //We check if the validity of the password
-if (password === comfirmPassword && password.length >=6) {
-  try {
-  
-   
-  // Here is where we send the data we gathered from the inputs
-  //And we wait for the a response back
- await signUpAuthentication({username, email, password});
-  window.location.reload()
-
-} catch (error) {
-  if (error.code === "auth/email-already-in-use") {
-    setErrorMesage("Email is already in use")
-
-  } else {
-  setErrorMesage(error.message);
-
+  const changeHandlar = (event)=>{
+  let {value, name}=event.target;
+  setInputFields({...inputFields, [name]:value})
   }
-  }}else{
- 
-  setErrorMesage("Your password doesn't meet the criteria")
-  }
+
+  const RegistrationHandlar = async (event) => {
+    event.preventDefault();
+    let { username, email, password, comfirmPassword } = inputFields;
+
+    if (password === comfirmPassword && password.length >= 6) {
+      try {
+        await signUpAuthentication({ username, email, password });
+        window.location.reload();
+      } catch (error) {
+        if (error.code === "auth/email-already-in-use") {
+          setErrorMesage("Email is already in use");
+        } else {
+          setErrorMesage(error.message);
+        }
+      }
+    } else {
+      setErrorMesage("Your password doesn't meet the criteria");
+    }
   };
+
   
     return(
       <div className='authContainer'>

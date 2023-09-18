@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect} from "react";
 import { SelectAllCatagories } from "../../../Store/Reducers/CatagoriesReducer.js/CatagorySelector";
 import { useSelector } from "react-redux";
-import { addToWishList } from "../../../Firebase/firebase";
+import { addToWishList } from "../../../Firebase/firebase"; 
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../../Store/Reducers/CartReducer/cartActions";
 import { fetchAndDispatchCategories } from "../../../Store/Reducers/CatagoriesReducer.js/CatagoryAction";

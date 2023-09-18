@@ -20,9 +20,9 @@ const firebaseConfig = {
 
   const auth = getAuth();
 
-const db =  getFirestore();
+  const db =  getFirestore();
 
-
+//Authentication
 export const signUpAuthentication = async (registrationFields={}) => {
 
     let {email, password}= registrationFields;
@@ -78,13 +78,13 @@ if (!userSnapshot.exists()) {
 //Retrieves user information  from firebase inside our "user" catagory 
 //by passing it a valid userId
 export const getUserInformation= async (userId)=>{
-        const userDocRef = doc(db, "users", userId);
-        const userSnapshot = await getDoc(userDocRef);
-        const userData = userSnapshot.data();
-      
-         return userData;
+  const userDocRef = doc(db, "users", userId);
+  const userSnapshot = await getDoc(userDocRef);
+  const userData = userSnapshot.data();
+
+    return userData;
          
-         }
+}
    
 
 
@@ -98,61 +98,86 @@ export const SignInUser = async (email, password) => {
   
 
 
-  export const addCollectionAndDocumentss =async (itemToAdd)=> {
 
-     const collectioRef =  collection(db,'Catagories');
-     
-    const batch=  writeBatch(db);
-    itemToAdd.forEach((item)=>{
-    let docRef= doc(collectioRef,item.itemName.toLowerCase());
-
-      
-      batch.set(docRef,item);
-
-     })
-     
-     
-    await batch.commit()
-     
-     console.log('Done!')
-     
-     }
  
-     export const getCollectionData = async ()=>{
-      const collectionRef= collection(db, 'Catagories');
-      const queryRequest =  query(collectionRef);
-      
-      const response = await getDocs(queryRequest);
-      const Data = response.docs.map((item)=>{
-        
-      return item.data()
-      
-      })
-      
-  return Data;
-      
-      }
+export const resetPassword = async (email) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    return { success: true, message: "Password reset has been sent!" };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
+};
+
 
   export const SignOutUser = async ()=> 
   {
     return await signOut(auth)
   }
 
-  export const onAuthStateChangedListener = (callback) =>
-  onAuthStateChanged(auth, callback);
+export const onAuthStateChangedListener = (callback) =>
+onAuthStateChanged(auth, callback);
 
 
 
-  export const resetPassword = async (email) => {
-    try {
-      await sendPasswordResetEmail(auth, email);
-      return { success: true, message: "Password reset has been sent!" };
-    } catch (error) {
-      return { success: false, message: error.message };
-    }
-  };
+//User account update
+export const updateAccount = async (userId, updatedFields) => {
+  const {userName, fullName, phone, country, shippingAdress, type} = updatedFields;
+      const userDocRef = doc(db, "users", userId);
+      try {
+        await updateDoc(userDocRef, {
+          displayName: userName,
+          fullName: fullName,
+          phone: phone,
+          country:country,
+          shippingAdress:shippingAdress,
+          type:type
 
 
+        });
+        return true;
+      } catch (error) {
+        console.log("Error updating username", error);
+        return false; 
+      }
+};
+  
+
+
+
+
+
+//Catagories Data
+export const addCategories =async (itemToAdd)=> {
+    const collectioRef =  collection(db,'Catagories');
+    const batch=  writeBatch(db);
+    itemToAdd.forEach((item)=>{
+    let docRef= doc(collectioRef,item.itemName.toLowerCase());
+      batch.set(docRef,item);
+
+      })
+      
+      await batch.commit()
+      console.log('Done!')
+}
+
+export const getCategoriesData = async ()=>{
+    const collectionRef= collection(db, 'Catagories');
+    const queryRequest =  query(collectionRef);
+    const response = await getDocs(queryRequest);
+    const Data = response.docs.map((item)=>{
+      
+    return item.data()
+    
+    })
+    
+    return Data;
+    
+}
+
+
+
+//WishList data
 export const addToWishList = async (userId, product)=>{
   try {
     const collectionRef= collection(db, "wishList");
@@ -225,31 +250,7 @@ export const removeItemFromWIshList= async(userId, item)=> {
 
 
 
-export const updateAccount = async (userId, updatedFields) => {
-  
-  const {userName, fullName, phone, country, shippingAdress, type} = updatedFields;
-      const userDocRef = doc(db, "users", userId);
-      try {
-        await updateDoc(userDocRef, {
-          displayName: userName,
-          fullName: fullName,
-          phone: phone,
-          country:country,
-          shippingAdress:shippingAdress,
-          type:type
-
-
-        });
-        return true;
-      } catch (error) {
-        console.log("Error updating username", error);
-        return false; 
-      }
-};
-
-
-
-
+//Articles Data
 export const addArticles = async (articlesToAdd) => {
   const collectionRef = collection(db, 'Articles');
   const batch = writeBatch(db);
@@ -263,12 +264,6 @@ export const addArticles = async (articlesToAdd) => {
 
   console.log('Articles added successfully!');
 };
-
-
-
-
-
-
 
 
 export const getArticleData = async () => {

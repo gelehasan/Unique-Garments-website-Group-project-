@@ -1,50 +1,38 @@
-  .authContainer{
+.authContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3em;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 3em;
+}
+.SignUpcontainer {
+  position: relative;
+  margin: 0 auto;
+  align-items: center;
+  width: fit-content;
+  height: 400px;
+}
+.SignUpcontainer h1{
+  text-align: center;
+}
 
-  }
-  .SignUpcontainer {
-    position: relative;
-  
-    margin: 0 auto;
+.SignUpcontainer  input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.SignUpcontainer input:focus{
+  outline: 1px solid black;
+}
+.SignUpcontainer button {
+  background-color: black;
+  width:330px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 0.3em;
+}
 
-  
-    align-items: center;
-    width: fit-content;
-  
-    height: 400px;
-
-   
-  }
-  .SignUpcontainer h1{
- 
-    text-align: center;
-  }
-
-
-
-  .SignUpcontainer  input {
-    width: 300px;
-   
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  .SignUpcontainer input:focus{
-    outline: 1px solid black;
-  }
-  .SignUpcontainer button {
-    
-    background-color: black;
-    width:330px;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 0.3em;
-  }
-  
 .SignUpcontainer label{
   text-align: left;
 }

@@ -1,55 +1,51 @@
 .authContainer{
-
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 3em;
 
 }
-  .SignIncontainer {
-    position: relative;
-    margin: 0 auto;
-    align-items: center;
-    width: fit-content;
-    height: 400px;
-  }
+.SignIncontainer {
+  position: relative;
+  margin: 0 auto;
+  align-items: center;
+  width: fit-content;
+  height: 400px;
+}
 
 
-  .SignIncontainer h1{
- 
-    text-align: center;
-  }
+.SignIncontainer h1{
+  text-align: center;
+}
 
-  .SignIncontainer p{
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-  }
-  .SignIncontainer  input {
-    width: 300px;
-   
-    padding: 10px;
-    margin-bottom: 10px;
-  }
+.SignIncontainer p{
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.SignIncontainer  input {
+  width: 300px; 
+  padding: 10px;
+  margin-bottom: 10px;
+}
 
-  .SignIncontainer input:focus {
-    outline: 1px solid black;
-  }
+.SignIncontainer input:focus {
+  outline: 1px solid black;
+}
 
 
-  
-  .SignIncontainer button {
-    
-    background-color: black;
-    width:330px;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 0.3em;
-  }
 
-  .errorSignIn{
-    color: red;
-    font-size: 1.08rem;
-    text-align: center;
-  }
+.SignIncontainer button {
+  background-color: black;
+  width:330px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 0.3em;
+}
+
+.errorSignIn{
+  color: red;
+  font-size: 1.08rem;
+  text-align: center;
+}

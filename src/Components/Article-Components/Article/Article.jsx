@@ -20,8 +20,6 @@ import { useDispatch } from "react-redux";
         const FetchArticle = async ()=>{
             try{
                 const findSelectedArticle= articles.find((article)=> article.id ==articleID)
-                //Array starts at 0 and our article id starts with 1, 
-                //there fore we subtract 1 to display the correct data
                 setselectedArticle(findSelectedArticle);
             }catch(error){
                

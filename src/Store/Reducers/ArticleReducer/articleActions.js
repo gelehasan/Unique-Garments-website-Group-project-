@@ -12,7 +12,6 @@ export async function fetchAndDispatchArticles(dispatch) {
       let articlesData = await getArticleData();
       dispatch(SetArticleData(articlesData));
     } catch (error) {
-      // Handle the error here if needed
       console.error("Error fetching articles:", error);
     }
   }

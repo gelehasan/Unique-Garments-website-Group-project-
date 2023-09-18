@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { getCollectionData } from "../../Firebase/firebase";
 import { setCatagories,setCatagoryLoadError } from "../../Store/Reducers/CatagoriesReducer.js/CatagoryAction";
 import { useEffect } from "react";
 import Catagories from "../Catagories-Component/Categories/Categories";

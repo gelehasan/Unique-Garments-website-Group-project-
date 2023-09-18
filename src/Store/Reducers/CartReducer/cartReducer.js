@@ -1,4 +1,8 @@
-import {cartTypes} from "../CartReducer/cartActionTypes";
+
+export const cartTypes = {
+    setIsCartOpen: "setIsCartOpen",
+    updateCartItems:"updateCartItems",
+}
 
 const initialCart = {
     isCartOpen: false,

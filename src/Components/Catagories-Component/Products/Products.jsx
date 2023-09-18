@@ -1,13 +1,11 @@
 import './Products.css';
-import { CartShopConext } from '../../../Context/cartShopContext';
-import { useContext } from 'react';
 import heartIcon from "../../../Assets/heart.svg";
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { addItemToCart } from '../../../Store/Reducers/CartReducer/cartActions';
-import { addToWishList } from '../../../Firebase/firebase';
-import { UseSelector } from 'react-redux/es/hooks/useSelector';
+import { addToWishList } from '../../../Firebase/firebase'; 
+
 import { Link } from 'react-router-dom';
+
 const Product = ({item})=>{
     const currentUser = useSelector((state)=> state.user.currentUser);
     const dispatch = useDispatch();

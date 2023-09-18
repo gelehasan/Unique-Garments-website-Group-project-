@@ -33,16 +33,16 @@ const HomePage = ()=>{
   const showForYouItems = ()=>{
 
   if(currentUser && currentUser.type){
-        const filteredItems=  AllCataogires.filter((items)=> {
-        return items.occasions.toLowerCase() == currentUser.type.toLowerCase()
-        })
-          const shuffledItems = [...filteredItems].sort(() => 0.3 - Math.random());
-        const selectedItems = shuffledItems.slice(0, 3);
-        setForYouItems(selectedItems)
+      const filteredItems=  AllCataogires.filter((items)=> {
+      return items.occasions.toLowerCase() == currentUser.type.toLowerCase()
+      })
+      const shuffledItems = [...filteredItems].sort(() => 0.3 - Math.random());
+      const selectedItems = shuffledItems.slice(0, 3);
+      setForYouItems(selectedItems)
   }else{
-    const shuffledItems = [...AllCataogires].sort(() => 0.3 - Math.random());
-    const selectedItems = shuffledItems.slice(0, 3);
-    setForYouItems(selectedItems)
+      const shuffledItems = [...AllCataogires].sort(() => 0.3 - Math.random());
+      const selectedItems = shuffledItems.slice(0, 3);
+      setForYouItems(selectedItems)
   }
   }
       

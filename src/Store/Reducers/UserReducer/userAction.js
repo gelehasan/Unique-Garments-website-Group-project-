@@ -1,4 +1,4 @@
-import { userActionTypes } from "./userTypex";
+import { userActionTypes } from "./userReducer";
 
 export const SetUser = (user)=>{
 

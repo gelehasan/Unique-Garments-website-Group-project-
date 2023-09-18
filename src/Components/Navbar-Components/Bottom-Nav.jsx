@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import closeBtn from '../../Assets/xmark.svg';
 import openBtn from '../../Assets/menu.svg';
-import ShopBY from "../ShopBY-Drop-Down/shopBY";
+import ShopBYDropDown from "../ShopBY-Drop-Down/shopBY";
 
 const BottomNav = ({setShopBY,showMenu, isShopBY,toggleMenu})=>{
 
@@ -34,7 +34,7 @@ const BottomNav = ({setShopBY,showMenu, isShopBY,toggleMenu})=>{
               <NavLink to="/ShopBy" className="active-link">
                 Shop By
               </NavLink>
-              {isShopBY && <ShopBY isShopBY={isShopBY} setShopBY={setShopBY} />}
+              {isShopBY && <ShopBYDropDown isShopBY={isShopBY} setShopBY={setShopBY} />}
             </li>
             <li>
               <NavLink to="/Articles" className="active-link">

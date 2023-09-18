@@ -5,8 +5,9 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-const ShopBY = ({isShopBY,setShopBY})=>{
-  //When a user clicks on one of the links it will set the drop down to false
+
+
+const ShopBYDropDown = ({isShopBY,setShopBY})=>{
   const currentUser = useSelector((state)=> state.user.currentUser);
   const AllCataogires = useSelector(SelectAllCatagories);
   const [shopBYItems, setShopBYItems] = useState();
@@ -14,20 +15,20 @@ const ShopBY = ({isShopBY,setShopBY})=>{
   const Navigate = useNavigate();
 
     useEffect(()=>{
-    if(currentUser )
-    {
-    const filteredItems=  AllCataogires.filter((items)=> {
-      return items.occasions.toLowerCase() == currentUser.type.toLowerCase()
-     })
-    const shuffledItems = [...filteredItems].sort(() => 0.5 - Math.random());
-      const selectedItems = shuffledItems.slice(0, 5);
-     setShopBYItems(selectedItems)
-
-    }else{
+      if (currentUser) {
+        const filteredItems = AllCataogires.filter((items) => {
+          return items.occasions.toLowerCase() === currentUser.type.toLowerCase();
+        });
+        const shuffledItems = [...filteredItems].sort(() => 0.5 - Math.random());
+        const selectedItems = shuffledItems.slice(0, 5);
+        setShopBYItems(selectedItems);
+      } else {
         const shuffledItems = [...AllCataogires].sort(() => 0.5 - Math.random());
         const selectedItems = shuffledItems.slice(0, 5);
-        setShopBYItems(selectedItems)
-    }
+        
+        setShopBYItems(selectedItems);
+      }
+      
     },[currentUser])
 
     useEffect(()=>{
@@ -92,4 +93,4 @@ const ShopBY = ({isShopBY,setShopBY})=>{
 }
 
 
-export default ShopBY;
+export default ShopBYDropDown;

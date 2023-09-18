@@ -1,4 +1,4 @@
-import { cartTypes } from "./cartActionTypes"
+import { cartTypes } from "./cartReducer"
 
 const addTocartHandlar = (productToAdd, cartItems )=>{
     const doesProductExist = cartItems.find((item)=> item.id == productToAdd.id);

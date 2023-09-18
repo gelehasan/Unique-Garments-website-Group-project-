@@ -1,4 +1,4 @@
-import { getCollectionData } from "../../../Firebase/firebase";
+import { getCategoriesData } from "../../../Firebase/firebase";
 import { catagoryTypes } from "./CatagoryReducer";
 
 
@@ -20,7 +20,8 @@ export const setCatagoryLoadError = (error)=>{
 
  export async function fetchAndDispatchCategories(dispatch) {
     try {
-      let data = await getCollectionData();
+      let data = await getCategoriesData();
+  
       dispatch(setCatagories(data));
     } catch (error) {
       // Handle the error here if needed

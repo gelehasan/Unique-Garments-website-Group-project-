@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import {UserContext} from "../../Context/userContext";
+
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { SignOutUser } from "../../Firebase/firebase";
 import "./profileDropStyling.css";
+
 const ProfileDropDown = ()=>{
   const {currentUser} = useSelector((state)=> state.user)
 

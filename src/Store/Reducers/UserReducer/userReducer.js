@@ -1,4 +1,8 @@
-import { userActionTypes } from "./userTypex";
+
+export const userActionTypes = {
+  setCurrentUser: "setCurrentUser"
+}
+
 const userInitialState= {
     currentUser: null
 }

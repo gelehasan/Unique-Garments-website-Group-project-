@@ -1,6 +1,5 @@
 .accountManagementContainer{
   position: relative;
- 
   width: 70%;
   margin:0 auto;
   border: 1px solid black;
@@ -19,17 +18,16 @@
 
 
 
-.accountInformation, .passWordDetails, .shippingAddress, .categoryChoice{
-  
+.accountInformation, .passWordDetails, .shippingAddress, .categoryChoice{ 
   padding:10px;
 }
 .fieldLabel{
- margin-bottom:0.5em;
+  margin-bottom:0.5em;
 }
 
 .accountInput{
-width: 100%;
- font-size: 1.3rem;
+  width: 100%;
+  font-size: 1.3rem;
 }
 .accountInput:focus{
   outline: 1px solid black;
@@ -116,7 +114,7 @@ width: 100%;
 }
 
 .categoryImage input:focus {
-  outline: 2px solid blacks;
+  outline: 2px solid black;
 }
 
 @media  (max-width: 500px){

@@ -15,9 +15,8 @@ export const SelectGarments = createSelector(
     (catagory)=> {
         let AllCatagories = [];
         catagory.map((catagoryItem)=>{
-            if(catagoryItem.itemName !=="Shoes"){
+            if(catagoryItem.itemName !=="Shoes"){    
 
-           
             AllCatagories.push(...catagoryItem.itemData)
         }
         })
@@ -35,7 +34,6 @@ export const SelectShoes = createSelector(
         catagory.map((catagoryItem)=>{
             if(catagoryItem.itemName ==="Shoes"){
 
-           
             AllCatagories.push(...catagoryItem.itemData)
         }
         })
@@ -49,7 +47,6 @@ export const SelectAllCatagories = createSelector(
     (catagory)=> {
         let AllCatagories = [];
         catagory.map((catagoryItem)=>{
-        
             AllCatagories.push(...catagoryItem.itemData)
    
         })

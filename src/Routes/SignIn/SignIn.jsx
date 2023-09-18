@@ -1,8 +1,6 @@
 import './SignInStyle.css';
 import { useState, useContext, useEffect } from "react";
-import {  UserContext} from "../../Context/userContext";
-import {SignInUser, getUserInformation} from '../../Firebase/firebase';
-import { SetUser } from '../../Store/Reducers/UserReducer/userAction';
+import {SignInUser} from '../../Firebase/firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PasswordReset from '../../Components/PasswordReset/passwordReset';
@@ -11,7 +9,6 @@ import { Helmet } from 'react-helmet';
 const SignIn = ()=>{
     const {currentUser}= useSelector((state)=> state.user);
     const [inputFields, setInputFields]= useState();
-    const {setCurrentUser} = useContext(UserContext);
     const [isResetPassOn, setIsResetPassOn] = useState();
     const [errorMessage, setErrorMesage] = useState();
     const Navigate = useNavigate();
@@ -20,28 +17,24 @@ const SignIn = ()=>{
         if(currentUser){
             Navigate("/")
         }
-    },[currentUser,Navigate])
-
-  
+    },[currentUser])
 
     const ChangeHandlar = (event)=>{
     let  {value, name}= event.target;
-   
     setInputFields({...inputFields, [name]: value})
- }
- const submitHandlar = async (event)=>{
-    event.preventDefault();
-    let {email,password}= inputFields;
-    try{
-     await SignInUser(email, password);
-      
-    }catch(error){
-            let errorResponse =error.message.replace("Firebase:", "");
-                
-        setErrorMesage(errorResponse)
-     
     }
-}
+
+    const submitHandlar = async (event) => {
+        event.preventDefault();
+        let { email, password } = inputFields;
+        try {
+        await SignInUser(email, password);
+        } catch (error) {
+        let errorResponse = error.message.replace("Firebase:", "");
+        setErrorMesage(errorResponse);
+        }
+    };
+  
     return(   
         <div className='authContainer'> 
         <Helmet>
