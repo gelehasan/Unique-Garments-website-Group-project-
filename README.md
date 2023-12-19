@@ -3,7 +3,7 @@ Welcome to to unique-garments, this website purpose is to serve as an e-commerce
 our software is unique in a way where we show users their clothing preference on their for you section in the main page.
 
 
-### Getting started
+### Main page
 
 <img width="1198" alt="image" src="https://github.com/gelehasan/Unique-Garments-website-Group-project-/assets/111875403/2b1a4cb1-2ff9-4aa1-a99b-bcae794c4f92">
 
