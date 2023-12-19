@@ -31,7 +31,7 @@ Here you can modify your account and if you scroll down you can choose a prefere
 <img width="1188" alt="image" src="https://github.com/gelehasan/Unique-Garments-website-Group-project-/assets/111875403/35aa1f35-0fa7-4f72-9c2a-2700864aa4ae">
 <img width="854" alt="image" src="https://github.com/gelehasan/Unique-Garments-website-Group-project-/assets/111875403/162ac979-938a-4c45-8181-99e5ea4fcd7d">
 
-### For you items
+### For you sections
 once you have set a preference your type is shown on the for you section on the main page
 <img width="1229" alt="image" src="https://github.com/gelehasan/Unique-Garments-website-Group-project-/assets/111875403/ca9295d4-52e1-4246-8d31-b2b3223cf920">
 
